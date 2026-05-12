@@ -1,0 +1,17 @@
+{
+  "count": 1,
+  "format": "closed_graph_cache",
+  "graph_type": "closed_bipartite_cubic_girth6",
+  "graphs": [
+    {
+      "closed_key": "OIO??SQG_g@_H?_QOCS?g",
+      "graph6": "O????B_eCKIGL?Q_@g@E?",
+      "id": "e6_closed_bipartite_t16_000",
+      "num_edges": 24,
+      "num_vertices": 16
+    }
+  ],
+  "name": "closed_bipartite_t16",
+  "project": "e6",
+  "version": 1
+}

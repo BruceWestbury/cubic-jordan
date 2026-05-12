@@ -1,0 +1,353 @@
+{
+  "count": 49,
+  "format": "closed_graph_cache",
+  "graph_type": "closed_cubic_girth5",
+  "graphs": [
+    {
+      "closed_key": "OIO??SQG_g@_H?_QOCS?g",
+      "graph6": "O????B_eCKIGL?Q_@g@E?",
+      "id": "f4_closed_t16_000",
+      "num_edges": 24,
+      "num_vertices": 16
+    },
+    {
+      "closed_key": "OBHA?WI@?CAAGA_KOHC?K",
+      "graph6": "O???CB?[AQCg`_I_B_?d?",
+      "id": "f4_closed_t16_001",
+      "num_edges": 24,
+      "num_vertices": 16
+    },
+    {
+      "closed_key": "OHP??gIC`C@?@@_GoAcAO",
+      "graph6": "O???C@_sAQOoBGI_E_?e?",
+      "id": "f4_closed_t16_002",
+      "num_edges": 24,
+      "num_vertices": 16
+    },
+    {
+      "closed_key": "OIGOACa@_WA?A@_OoAc@O",
+      "graph6": "O???C@_UEGU?H_BOAW?T?",
+      "id": "f4_closed_t16_003",
+      "num_edges": 24,
+      "num_vertices": 16
+    },
+    {
+      "closed_key": "OHP??gQA`C?_A@_HO@SA_",
+      "graph6": "O???C@_UEGU?@gCo@g@S?",
+      "id": "f4_closed_t16_004",
+      "num_edges": 24,
+      "num_vertices": 16
+    },
+    {
+      "closed_key": "O@P?@GgC_S?oS?_QOEC?K",
+      "graph6": "O???C@_UEGU??wD_@g@S?",
+      "id": "f4_closed_t16_005",
+      "num_edges": 24,
+      "num_vertices": 16
+    },
+    {
+      "closed_key": "O@P?@OSG_S?oS?_PODC?c",
+      "graph6": "O???C@_UEGQOL?IO@o?F?",
+      "id": "f4_closed_t16_006",
+      "num_edges": 24,
+      "num_vertices": 16
+    },
+    {
+      "closed_key": "OIC_ACgA_KA?@@_Co@cB?",
+      "graph6": "O???C@_UEGQOL?IO@S?M?",
+      "id": "f4_closed_t16_007",
+      "num_edges": 24,
+      "num_vertices": 16
+    },
+    {
+      "closed_key": "O@PA@GWC`O?_?`_OoCc?o",
+      "graph6": "O???C@_UEGQOAgIOCo?i?",
+      "id": "f4_closed_t16_008",
+      "num_edges": 24,
+      "num_vertices": 16
+    },
+    {
+      "closed_key": "O@P@?oSA`G?OO@_OoCc?o",
+      "graph6": "O???C@_UEGQOAgBOEG@K?",
+      "id": "f4_closed_t16_009",
+      "num_edges": 24,
+      "num_vertices": 16
+    },
+    {
+      "closed_key": "OHP??gQA`C@?@@_HO@SA_",
+      "graph6": "O???C@_UEGQO@gKO@g@S?",
+      "id": "f4_closed_t16_010",
+      "num_edges": 24,
+      "num_vertices": 16
+    },
+    {
+      "closed_key": "OBHA?WI@?_?PGC_KOHC?K",
+      "graph6": "O???C@_UEGQOAWL?@o@E?",
+      "id": "f4_closed_t16_011",
+      "num_edges": 24,
+      "num_vertices": 16
+    },
+    {
+      "closed_key": "OBHA?WIH?CA??B_CoHC@G",
+      "graph6": "O???C@_UAKQCb?AoCg@c?",
+      "id": "f4_closed_t16_012",
+      "num_edges": 24,
+      "num_vertices": 16
+    },
+    {
+      "closed_key": "OHOOPDC@__@??B_CoGc@O",
+      "graph6": "O???E?oB@QSO`GSCHO?k?",
+      "id": "f4_closed_t16_013",
+      "num_edges": 24,
+      "num_vertices": 16
+    },
+    {
+      "closed_key": "OHOGaCS@_OC??B_CoGc@O",
+      "graph6": "O???E?oB@EPCh?SCBOAK?",
+      "id": "f4_closed_t16_014",
+      "num_edges": 24,
+      "num_vertices": 16
+    },
+    {
+      "closed_key": "OGD@?gEC`O@?O@_GoGc?o",
+      "graph6": "O???E?oB@EPCh?CcJ?AK?",
+      "id": "f4_closed_t16_015",
+      "num_edges": 24,
+      "num_vertices": 16
+    },
+    {
+      "closed_key": "OIGO@CQ@_WG?A@_OoAc@O",
+      "graph6": "O??CA?_eF?I_H_CW@g?T?",
+      "id": "f4_closed_t16_016",
+      "num_edges": 24,
+      "num_vertices": 16
+    },
+    {
+      "closed_key": "O@Oa?oQIAG?_?`_POAS@O",
+      "graph6": "O??CA?_eF?I_CgAW?w@W?",
+      "id": "f4_closed_t16_017",
+      "num_edges": 24,
+      "num_vertices": 16
+    },
+    {
+      "closed_key": "OIC_ACgD?S?O@@_AoCcA_",
+      "graph6": "O??CA?_eF?IODGAW?w@W?",
+      "id": "f4_closed_t16_018",
+      "num_edges": 24,
+      "num_vertices": 16
+    },
+    {
+      "closed_key": "OIC_@CQ@_WG?A@_CoGc@O",
+      "graph6": "O??CA?_eEGM?GoBOAc?T?",
+      "id": "f4_closed_t16_019",
+      "num_edges": 24,
+      "num_vertices": 16
+    },
+    {
+      "closed_key": "OIGO@CQ@_WG?A@_CoGc@O",
+      "graph6": "O??CA?_eEGM?DGAWCW?[?",
+      "id": "f4_closed_t16_020",
+      "num_edges": 24,
+      "num_vertices": 16
+    },
+    {
+      "closed_key": "OIC_@CQ@_WG?A@_OoAc@O",
+      "graph6": "O??CA?_eEGM?DG?w@g@S?",
+      "id": "f4_closed_t16_021",
+      "num_edges": 24,
+      "num_vertices": 16
+    },
+    {
+      "closed_key": "OIGG`CEAA?a?@@_KOGS?W",
+      "graph6": "O??CA?_eEGKOKODG@g?T?",
+      "id": "f4_closed_t16_022",
+      "num_edges": 24,
+      "num_vertices": 16
+    },
+    {
+      "closed_key": "OIGOACcE?S?O@@_AoCcA_",
+      "graph6": "O??CA?_eEGKOKODG@K?[?",
+      "id": "f4_closed_t16_023",
+      "num_edges": 24,
+      "num_vertices": 16
+    },
+    {
+      "closed_key": "OGD@?gQIAO?O@@_POAS@O",
+      "graph6": "O??CAA_EE_HCL?B_CW?I_",
+      "id": "f4_closed_t16_024",
+      "num_edges": 24,
+      "num_vertices": 16
+    },
+    {
+      "closed_key": "OIC_?caO_W@?@@_POCS?o",
+      "graph6": "O??CAA_EE_HCJ?D_CW?I_",
+      "id": "f4_closed_t16_025",
+      "num_edges": 24,
+      "num_vertices": 16
+    },
+    {
+      "closed_key": "OGD@?KSA`_@?O@_Oo@c@_",
+      "graph6": "O??CAA_EEGICHCCoDG?[?",
+      "id": "f4_closed_t16_026",
+      "num_edges": 24,
+      "num_vertices": 16
+    },
+    {
+      "closed_key": "O@XQ?cCAH??O?B_OoDC?g",
+      "graph6": "O??CA?oIF?PC@SCoGo?w?",
+      "id": "f4_closed_t16_027",
+      "num_edges": 24,
+      "num_vertices": 16
+    },
+    {
+      "closed_key": "OIGW@DAC_O?_?B_CoHC@G",
+      "graph6": "O??CA?oICH[?Q_F??w?a_",
+      "id": "f4_closed_t16_028",
+      "num_edges": 24,
+      "num_vertices": 16
+    },
+    {
+      "closed_key": "O@XQ?cG@H??O?B_OoDC?g",
+      "graph6": "O??CA?oICH[?Q_EO?w?g_",
+      "id": "f4_closed_t16_029",
+      "num_edges": 24,
+      "num_vertices": 16
+    },
+    {
+      "closed_key": "OIGGaGaC?O_O@@_KOGc?S",
+      "graph6": "O??CA?oICH[?Q_BOAo?a_",
+      "id": "f4_closed_t16_030",
+      "num_edges": 24,
+      "num_vertices": 16
+    },
+    {
+      "closed_key": "OIGOOoEO@??P@C_KOGc?S",
+      "graph6": "O??CA?oICH[?Q_BOAW?g_",
+      "id": "f4_closed_t16_031",
+      "num_edges": 24,
+      "num_vertices": 16
+    },
+    {
+      "closed_key": "OGD@?KQB@_@?O@_Oo@c@_",
+      "graph6": "O??CA?oICHK_q?E_?w?a_",
+      "id": "f4_closed_t16_032",
+      "num_edges": 24,
+      "num_vertices": 16
+    },
+    {
+      "closed_key": "OHOGaCS@_OC??B_CoHC@G",
+      "graph6": "O??CA?oICHK_q?EO?w?c_",
+      "id": "f4_closed_t16_033",
+      "num_edges": 24,
+      "num_vertices": 16
+    },
+    {
+      "closed_key": "OGCa?gQIAO?O@@_POAS@O",
+      "graph6": "O??CA?oICHKOq?F??w?a_",
+      "id": "f4_closed_t16_034",
+      "num_edges": 24,
+      "num_vertices": 16
+    },
+    {
+      "closed_key": "OIGW?KIGA?AA?a_SODC?K",
+      "graph6": "O??CA?oICHKOq?BOAo?a_",
+      "id": "f4_closed_t16_035",
+      "num_edges": 24,
+      "num_vertices": 16
+    },
+    {
+      "closed_key": "OGCa?gES@O?OA@_POCS?o",
+      "graph6": "O??CA?oICHKOR?e?Ag?E_",
+      "id": "f4_closed_t16_036",
+      "num_edges": 24,
+      "num_vertices": 16
+    },
+    {
+      "closed_key": "OIGG_oaO?C?a@A_HOHC?c",
+      "graph6": "O??CA?oICHKOR?e??w?a_",
+      "id": "f4_closed_t16_037",
+      "num_edges": 24,
+      "num_vertices": 16
+    },
+    {
+      "closed_key": "OICa?KIA?Ga?G@_SOCc?S",
+      "graph6": "O??CA?oICHCos?Q_@g?a_",
+      "id": "f4_closed_t16_038",
+      "num_edges": 24,
+      "num_vertices": 16
+    },
+    {
+      "closed_key": "O@Ta?caA?G?A?B_EOGc@C",
+      "graph6": "O??CA?oI?X[?Q_cO?w?g_",
+      "id": "f4_closed_t16_039",
+      "num_edges": 24,
+      "num_vertices": 16
+    },
+    {
+      "closed_key": "OIGG_oaO?G?P@C_WO?s?o",
+      "graph6": "O??CA?oI?X[?Q_`OAW?g_",
+      "id": "f4_closed_t16_040",
+      "num_edges": 24,
+      "num_vertices": 16
+    },
+    {
+      "closed_key": "OICa?WI@__C??B_OoDC?g",
+      "graph6": "O??CA?oBE@T?X??sBO?i?",
+      "id": "f4_closed_t16_041",
+      "num_edges": 24,
+      "num_vertices": 16
+    },
+    {
+      "closed_key": "O@PPOL?CGOC??B_GoHC?g",
+      "graph6": "O?AA@?OaF?IAE_HG@g?F?",
+      "id": "f4_closed_t16_042",
+      "num_edges": 24,
+      "num_vertices": 16
+    },
+    {
+      "closed_key": "O@XQ?c_A?G?S?E_OoEC?W",
+      "graph6": "O?AA@?OaF?IAEO@o@c@D?",
+      "id": "f4_closed_t16_043",
+      "num_edges": 24,
+      "num_vertices": 16
+    },
+    {
+      "closed_key": "OIGG`CEO?_@A@A_KOHC?K",
+      "graph6": "O?AA@?OaF?IAEOHG@o?F?",
+      "id": "f4_closed_t16_044",
+      "num_edges": 24,
+      "num_vertices": 16
+    },
+    {
+      "closed_key": "OGD@?cK@`_@?O@_GoGc?o",
+      "graph6": "O?AA@?OaF?IAEO@W@S@K?",
+      "id": "f4_closed_t16_045",
+      "num_edges": 24,
+      "num_vertices": 16
+    },
+    {
+      "closed_key": "OGD@?cS@`O@?O@_OoCc?o",
+      "graph6": "O?AA@?OaF?IADOIG@o?F?",
+      "id": "f4_closed_t16_046",
+      "num_edges": 24,
+      "num_vertices": 16
+    },
+    {
+      "closed_key": "OGD@?gQ@`O@?O@_OoCc?o",
+      "graph6": "O?AA@?OaF?IADOAW?s@S?",
+      "id": "f4_closed_t16_047",
+      "num_edges": 24,
+      "num_vertices": 16
+    },
+    {
+      "closed_key": "O@XQ?cGG?G?S?E_GoIC?W",
+      "graph6": "O?AA@?OaF?IACoAW?s@W?",
+      "id": "f4_closed_t16_048",
+      "num_edges": 24,
+      "num_vertices": 16
+    }
+  ],
+  "name": "closed_t16",
+  "project": "f4",
+  "version": 1
+}

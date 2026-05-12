@@ -1,0 +1,24 @@
+{
+  "count": 2,
+  "format": "closed_graph_cache",
+  "graph_type": "closed_cubic_girth5",
+  "graphs": [
+    {
+      "closed_key": "K?HHa`_aSKQC",
+      "graph6": "K?ABEagE`gH_",
+      "id": "f4_closed_t12_000",
+      "num_edges": 18,
+      "num_vertices": 12
+    },
+    {
+      "closed_key": "KG?qPPO_[WQO",
+      "graph6": "K?`@E`gEcKE_",
+      "id": "f4_closed_t12_001",
+      "num_edges": 18,
+      "num_vertices": 12
+    }
+  ],
+  "name": "closed_t12",
+  "project": "f4",
+  "version": 1
+}

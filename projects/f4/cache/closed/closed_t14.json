@@ -1,0 +1,73 @@
+{
+  "count": 9,
+  "format": "closed_graph_cache",
+  "graph_type": "closed_cubic_girth5",
+  "graphs": [
+    {
+      "closed_key": "M??haPOEB?OB`G_o?",
+      "graph6": "M???FAW`agD_K_Q_?",
+      "id": "f4_closed_t14_000",
+      "num_edges": 21,
+      "num_vertices": 14
+    },
+    {
+      "closed_key": "MAK?gP@HB?Og_a_K?",
+      "graph6": "M??CBBOQcWAgM?H_?",
+      "id": "f4_closed_t14_001",
+      "num_edges": 21,
+      "num_vertices": 14
+    },
+    {
+      "closed_key": "M?CHI_oQB?OE_o`A?",
+      "graph6": "M??CB@WpD_@WJ?D_?",
+      "id": "f4_closed_t14_002",
+      "num_edges": 21,
+      "num_vertices": 14
+    },
+    {
+      "closed_key": "M@O_aDCE@OOS`C_Q?",
+      "graph6": "M?AA@BOi@KHGE_DO?",
+      "id": "f4_closed_t14_003",
+      "num_edges": 21,
+      "num_vertices": 14
+    },
+    {
+      "closed_key": "MAK?gP@HB?OW`A_K?",
+      "graph6": "M?AA@AWwAgDOCoBO?",
+      "id": "f4_closed_t14_004",
+      "num_edges": 21,
+      "num_vertices": 14
+    },
+    {
+      "closed_key": "M@SOP@@GaGOB`O_g?",
+      "graph6": "M?AAD?oqAa@cI_D_?",
+      "id": "f4_closed_t14_005",
+      "num_edges": 21,
+      "num_vertices": 14
+    },
+    {
+      "closed_key": "M@OPAHAE@OOo_K_Q?",
+      "graph6": "M?AAD?WsAQEOB_HG?",
+      "id": "f4_closed_t14_006",
+      "num_edges": 21,
+      "num_vertices": 14
+    },
+    {
+      "closed_key": "MAK?gX?GJ?OH_g`C?",
+      "graph6": "M?AA@_gwCQ@oT?Cg?",
+      "id": "f4_closed_t14_007",
+      "num_edges": 21,
+      "num_vertices": 14
+    },
+    {
+      "closed_key": "MAKOQ?`HACOD`O_c?",
+      "graph6": "M?AA@_gaQWCoSGc_?",
+      "id": "f4_closed_t14_008",
+      "num_edges": 21,
+      "num_vertices": 14
+    }
+  ],
+  "name": "closed_t14",
+  "project": "f4",
+  "version": 1
+}
