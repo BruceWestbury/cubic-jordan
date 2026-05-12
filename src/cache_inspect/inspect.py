@@ -14,16 +14,25 @@ from visualisation.dot import graph_to_dot
 
 
 def load_json_cache(path: str | Path) -> list[Any]:
-    """Load a JSON cache whose top-level object is a list."""
     path = Path(path)
 
     with path.open("r", encoding="utf-8") as f:
         data = json.load(f)
 
-    if not isinstance(data, list):
-        raise TypeError(f"Expected top-level JSON list in {path}")
+    if isinstance(data, list):
+        return data
 
-    return data
+    if isinstance(data, dict):
+        for key in ["graphs", "records", "sources", "items", "data"]:
+            if key in data and isinstance(data[key], list):
+                return data[key]
+
+        raise TypeError(
+            f"Expected a list-valued key such as graphs/sources/items/data in {path}; "
+            f"found keys {list(data.keys())}"
+        )
+
+    raise TypeError(f"Expected JSON list or dict in {path}")
 
 
 def cache_item(cache: list[Any], index: int) -> Any:
@@ -55,18 +64,13 @@ def adjacency_from_edges(
 
 
 def adjacency_from_cache_item(item: Any) -> dict[Any, list[Any]]:
-    """
-    Extract an adjacency dictionary from a cache item.
-
-    Accepted shapes include:
-
-        {"adjacency": {...}}
-        {"adj": {...}}
-        {"edges": [[0, 1], [1, 2], ...]}
-        [[0, 1], [1, 2], ...]        # bare edge list
-    """
-
     if isinstance(item, dict):
+        if "vertex_of" in item and "edge_of" in item and "vertices" in item:
+            return adjacency_from_dart_graph_dict(item)
+
+        if "graph" in item:
+            return adjacency_from_cache_item(item["graph"])
+
         if "adjacency" in item:
             return normalise_adjacency(item["adjacency"])
 
@@ -76,8 +80,10 @@ def adjacency_from_cache_item(item: Any) -> dict[Any, list[Any]]:
         if "edges" in item:
             return adjacency_from_edges(item["edges"])
 
+        if "graph6" in item:
+            return adjacency_from_graph6(item["graph6"])
+
     if isinstance(item, list):
-        # Assume bare edge list.
         return adjacency_from_edges(item)
 
     raise TypeError(f"Cannot extract adjacency from cache item: {item!r}")
@@ -170,3 +176,57 @@ def source_cache_to_dot(path: str | Path, index: int) -> str:
     item = cache_item(cache, index)
 
     return source_cache_item_to_dot(item)
+
+
+def adjacency_from_graph6(s: str) -> dict[int, list[int]]:
+    """Decode small graph6 strings into an adjacency dict.
+
+    This handles the ordinary graph6 format for n <= 62.
+    """
+    data = [ord(c) - 63 for c in s.strip()]
+
+    if not data:
+        raise ValueError("Empty graph6 string")
+
+    n = data[0]
+    if n >= 63:
+        raise NotImplementedError("Only graph6 with n <= 62 is supported for now")
+
+    bits = []
+    for x in data[1:]:
+        for k in range(5, -1, -1):
+            bits.append((x >> k) & 1)
+
+    adjacency = {i: [] for i in range(n)}
+
+    bit_index = 0
+    for j in range(1, n):
+        for i in range(j):
+            if bits[bit_index]:
+                adjacency[i].append(j)
+                adjacency[j].append(i)
+            bit_index += 1
+
+    return {v: sorted(nbrs) for v, nbrs in adjacency.items()}
+
+
+def adjacency_from_dart_graph_dict(g: dict[str, Any]) -> dict[int, list[int]]:
+    vertex_of = {int(d): v for d, v in g["vertex_of"].items()}
+    edge_of = {int(d): (None if e is None else int(e)) for d, e in g["edge_of"].items()}
+
+    adjacency = {v: [] for v in g["vertices"]}
+
+    for d, e in edge_of.items():
+        if e is None:
+            continue
+
+        if d > e:
+            continue
+
+        u = vertex_of[d]
+        v = vertex_of[e]
+
+        adjacency[u].append(v)
+        adjacency[v].append(u)
+
+    return {v: sorted(nbrs) for v, nbrs in adjacency.items()}

@@ -1,5 +1,5 @@
 """
-visualisation.plot
+visualisation.dot
 
 Functions for visualising graphs in DOT format.
 
