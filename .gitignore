@@ -1,0 +1,70 @@
+# =========================
+# Python / Sage
+# =========================
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.so
+
+# Virtual environments
+venv/
+.env/
+.venv/
+
+# Sage temporary files
+*.sage.py
+
+# =========================
+# Jupyter notebooks
+# =========================
+.ipynb_checkpoints/
+
+# =========================
+# LaTeX build files
+# =========================
+*.aux
+*.log
+*.out
+*.toc
+*.lof
+*.lot
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.bbl
+*.blg
+
+# =========================
+# Editors
+# =========================
+*~
+*.swp
+*.swo
+.vscode/
+.idea/
+
+# =========================
+# OS files
+# =========================
+.DS_Store
+Thumbs.db
+
+# =========================
+# Misc
+# =========================
+*.pdf
+!F4series.pdf
+!finiteseries.pdf
+!families.pdf
+*.txt
+*.bak
+*.tmp
+*.cache
+*.ipynb
+cache/
+notebooks/*
+!notebooks/marimo/
+!notebooks/marimo/*.py
+docs/
+diagnostics/
