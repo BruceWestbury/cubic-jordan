@@ -45,14 +45,9 @@ venv/
 .idea/
 
 # =========================
-# OS files
-# =========================
-.DS_Store
-Thumbs.db
-
-# =========================
 # Misc
 # =========================
+*.html
 *.pdf
 *.txt
 *.bak
@@ -60,4 +55,3 @@ Thumbs.db
 *.ipynb
 notebooks/*
 !notebooks/*.py
-
