@@ -387,11 +387,11 @@ for connected simple cubic girth ≥ 5 graphs.
 
 # Milestones
 
-## Milestone 1
+## Milestone 1: Done
 
 Create repository structure.
 
-## Milestone 2
+## Milestone 2: Done
 
 Export cached DartGraphs from the research codebase.
 
