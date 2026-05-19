@@ -7,84 +7,102 @@
   "project": "f4",
   "records": [
     {
+      "dot": null,
       "evaluation": null,
       "id": "f4_closed_t14_000",
       "internal": {
         "closed_key": "M??haPOEB?OB`G_o?",
         "graph6": "M???FAW`agD_K_Q_?"
       },
+      "invariants": {},
       "svg": "<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120'><text x='10' y='60'>SVG TODO</text></svg>"
     },
     {
+      "dot": null,
       "evaluation": null,
       "id": "f4_closed_t14_001",
       "internal": {
         "closed_key": "MAK?gP@HB?Og_a_K?",
         "graph6": "M??CBBOQcWAgM?H_?"
       },
+      "invariants": {},
       "svg": "<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120'><text x='10' y='60'>SVG TODO</text></svg>"
     },
     {
+      "dot": null,
       "evaluation": null,
       "id": "f4_closed_t14_002",
       "internal": {
         "closed_key": "M?CHI_oQB?OE_o`A?",
         "graph6": "M??CB@WpD_@WJ?D_?"
       },
+      "invariants": {},
       "svg": "<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120'><text x='10' y='60'>SVG TODO</text></svg>"
     },
     {
+      "dot": null,
       "evaluation": null,
       "id": "f4_closed_t14_003",
       "internal": {
         "closed_key": "M@O_aDCE@OOS`C_Q?",
         "graph6": "M?AA@BOi@KHGE_DO?"
       },
+      "invariants": {},
       "svg": "<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120'><text x='10' y='60'>SVG TODO</text></svg>"
     },
     {
+      "dot": null,
       "evaluation": null,
       "id": "f4_closed_t14_004",
       "internal": {
         "closed_key": "MAK?gP@HB?OW`A_K?",
         "graph6": "M?AA@AWwAgDOCoBO?"
       },
+      "invariants": {},
       "svg": "<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120'><text x='10' y='60'>SVG TODO</text></svg>"
     },
     {
+      "dot": null,
       "evaluation": null,
       "id": "f4_closed_t14_005",
       "internal": {
         "closed_key": "M@SOP@@GaGOB`O_g?",
         "graph6": "M?AAD?oqAa@cI_D_?"
       },
+      "invariants": {},
       "svg": "<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120'><text x='10' y='60'>SVG TODO</text></svg>"
     },
     {
+      "dot": null,
       "evaluation": null,
       "id": "f4_closed_t14_006",
       "internal": {
         "closed_key": "M@OPAHAE@OOo_K_Q?",
         "graph6": "M?AAD?WsAQEOB_HG?"
       },
+      "invariants": {},
       "svg": "<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120'><text x='10' y='60'>SVG TODO</text></svg>"
     },
     {
+      "dot": null,
       "evaluation": null,
       "id": "f4_closed_t14_007",
       "internal": {
         "closed_key": "MAK?gX?GJ?OH_g`C?",
         "graph6": "M?AA@_gwCQ@oT?Cg?"
       },
+      "invariants": {},
       "svg": "<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120'><text x='10' y='60'>SVG TODO</text></svg>"
     },
     {
+      "dot": null,
       "evaluation": null,
       "id": "f4_closed_t14_008",
       "internal": {
         "closed_key": "MAKOQ?`HACOD`O_c?",
         "graph6": "M?AA@_gaQWCoSGc_?"
       },
+      "invariants": {},
       "svg": "<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120'><text x='10' y='60'>SVG TODO</text></svg>"
     }
   ],

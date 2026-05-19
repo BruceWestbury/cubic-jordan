@@ -7,21 +7,25 @@
   "project": "f4",
   "records": [
     {
+      "dot": null,
       "evaluation": null,
       "id": "f4_closed_t12_000",
       "internal": {
         "closed_key": "K?HHa`_aSKQC",
         "graph6": "K?ABEagE`gH_"
       },
+      "invariants": {},
       "svg": "<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120'><text x='10' y='60'>SVG TODO</text></svg>"
     },
     {
+      "dot": null,
       "evaluation": null,
       "id": "f4_closed_t12_001",
       "internal": {
         "closed_key": "KG?qPPO_[WQO",
         "graph6": "K?`@E`gEcKE_"
       },
+      "invariants": {},
       "svg": "<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120'><text x='10' y='60'>SVG TODO</text></svg>"
     }
   ],

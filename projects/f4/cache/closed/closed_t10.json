@@ -7,12 +7,14 @@
   "project": "f4",
   "records": [
     {
+      "dot": null,
       "evaluation": null,
       "id": "f4_closed_t10_000",
       "internal": {
         "closed_key": "I@OZCMgs?",
         "graph6": "ICOf@pSb?"
       },
+      "invariants": {},
       "svg": "<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120'><text x='10' y='60'>SVG TODO</text></svg>"
     }
   ],
