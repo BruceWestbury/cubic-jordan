@@ -8,7 +8,7 @@
   "records": [
     {
       "dot": null,
-      "evaluation": null,
+      "evaluation": "1/4*n^6 - 27/4*n^5 + 25/2*n^4 + 45*n^3 - 54*n^2 - 72*n",
       "id": "f4_closed_t10_000",
       "internal": {
         "closed_key": "I@OZCMgs?",

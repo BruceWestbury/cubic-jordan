@@ -1,0 +1,61 @@
+{
+  "format": "evaluation_cache",
+  "project": "f4",
+  "records": [
+    {
+      "graph": "M??haPOEB?OB`G_o?",
+      "method": "compute_t14_evaluations",
+      "status": "known",
+      "value": "-1/8*n^8 + 23/4*n^7 - 271/4*n^6 + 219*n^5 + 316*n^4 + 116*n^3 + 3924*n^2 + 3856*n"
+    },
+    {
+      "graph": "M?CHI_oQB?OE_o`A?",
+      "method": "compute_t14_evaluations",
+      "status": "known",
+      "value": "1/16*n^8 - 23/8*n^7 + 143/4*n^6 - 261/2*n^5 - 67*n^4 + 818*n^3 - 308*n^2 - 1000*n"
+    },
+    {
+      "graph": "M@OPAHAE@OOo_K_Q?",
+      "method": "compute_t14_evaluations",
+      "status": "known",
+      "value": "5/32*n^8 - 115/16*n^7 + 727/8*n^6 - 1239/4*n^5 - 541/2*n^4 + 1879*n^3 - 382*n^2 - 2100*n"
+    },
+    {
+      "graph": "M@O_aDCE@OOS`C_Q?",
+      "method": "compute_t14_evaluations",
+      "status": "known",
+      "value": "-1/8*n^8 + 89/16*n^7 - 277/4*n^6 + 477/2*n^5 + 177*n^4 - 1489*n^3 + 408*n^2 + 1784*n"
+    },
+    {
+      "graph": "M@SOP@@GaGOB`O_g?",
+      "method": "compute_t14_evaluations",
+      "status": "known",
+      "value": "-11/64*n^8 + 61/8*n^7 - 755/8*n^6 + 2811/8*n^5 + 1149/4*n^4 - 2113*n^3 + 372*n^2 + 2342*n"
+    },
+    {
+      "graph": "MAK?gP@HB?OW`A_K?",
+      "method": "compute_t14_evaluations",
+      "status": "known",
+      "value": "7/64*n^8 - 155/32*n^7 + 953/16*n^6 - 1701/8*n^5 - 671/4*n^4 + 2579/2*n^3 - 289*n^2 - 1446*n"
+    },
+    {
+      "graph": "MAK?gP@HB?Og_a_K?",
+      "method": "compute_t14_evaluations",
+      "status": "known",
+      "value": "-5/64*n^8 + 109/32*n^7 - 691/16*n^6 + 1323/8*n^5 + 533/4*n^4 - 1981/2*n^3 + 163*n^2 + 1098*n"
+    },
+    {
+      "graph": "MAK?gX?GJ?OH_g`C?",
+      "method": "compute_t14_evaluations",
+      "status": "known",
+      "value": "-1/8*n^8 + 89/16*n^7 - 1105/16*n^6 + 1893/8*n^5 + 387/2*n^4 - 1462*n^3 + 339*n^2 + 1706*n"
+    },
+    {
+      "graph": "MAKOQ?`HACOD`O_c?",
+      "method": "compute_t14_evaluations",
+      "status": "known",
+      "value": "5/32*n^8 - 53/8*n^7 + 335/4*n^6 - 297*n^5 - 445/2*n^4 + 1816*n^3 - 460*n^2 - 2088*n"
+    }
+  ],
+  "version": 1
+}

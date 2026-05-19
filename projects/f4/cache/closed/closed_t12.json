@@ -8,7 +8,7 @@
   "records": [
     {
       "dot": null,
-      "evaluation": null,
+      "evaluation": "-1/8*n^7 + 19/4*n^6 - 33*n^5 + 5*n^4 + 192*n^3 - 96*n^2 - 232*n",
       "id": "f4_closed_t12_000",
       "internal": {
         "closed_key": "K?HHa`_aSKQC",
@@ -19,7 +19,7 @@
     },
     {
       "dot": null,
-      "evaluation": null,
+      "evaluation": "5/32*n^7 - 43/8*n^6 + 81/2*n^5 - 11/2*n^4 - 485/2*n^3 + 108*n^2 + 312*n",
       "id": "f4_closed_t12_001",
       "internal": {
         "closed_key": "KG?qPPO_[WQO",

@@ -1,0 +1,13 @@
+{
+  "format": "evaluation_cache",
+  "project": "f4",
+  "records": [
+    {
+      "graph": "I@OZCMgs?",
+      "method": "seeded_closed_evaluations",
+      "status": "known",
+      "value": "1/4*n^6 - 27/4*n^5 + 25/2*n^4 + 45*n^3 - 54*n^2 - 72*n"
+    }
+  ],
+  "version": 1
+}
