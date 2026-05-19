@@ -7,102 +7,183 @@
   "project": "f4",
   "records": [
     {
-      "dot": null,
+      "dot": "graph {\n  0;\n  1;\n  2;\n  3;\n  4;\n  5;\n  6;\n  7;\n  8;\n  9;\n  10;\n  11;\n  12;\n  13;\n  0 -- 7;\n  0 -- 8;\n  0 -- 9;\n  1 -- 7;\n  1 -- 10;\n  1 -- 13;\n  2 -- 7;\n  2 -- 11;\n  2 -- 12;\n  3 -- 8;\n  3 -- 10;\n  3 -- 12;\n  4 -- 8;\n  4 -- 11;\n  4 -- 13;\n  5 -- 9;\n  5 -- 10;\n  5 -- 11;\n  6 -- 9;\n  6 -- 12;\n  6 -- 13;\n}",
       "evaluation": "-1/8*n^8 + 23/4*n^7 - 271/4*n^6 + 219*n^5 + 316*n^4 + 116*n^3 + 3924*n^2 + 3856*n",
       "id": "f4_closed_t14_000",
       "internal": {
         "closed_key": "M??haPOEB?OB`G_o?",
         "graph6": "M???FAW`agD_K_Q_?"
       },
-      "invariants": {},
+      "invariants": {
+        "automorphism_group_order": 336,
+        "chromatic_number": 2,
+        "chromatic_polynomial": "x^14 - 21*x^13 + 210*x^12 - 1330*x^11 + 5985*x^10 - 20321*x^9 + 53816*x^8 - 112927*x^7 + 188020*x^6 - 245133*x^5 + 242494*x^4 - 171318*x^3 + 76685*x^2 - 16161*x",
+        "crossing_number": 3,
+        "diameter": 3,
+        "is_hamiltonian": true,
+        "num_spanning_trees": 50421,
+        "radius": 3
+      },
       "svg": "<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120'><text x='10' y='60'>SVG TODO</text></svg>"
     },
     {
-      "dot": null,
+      "dot": "graph {\n  0;\n  1;\n  2;\n  3;\n  4;\n  5;\n  6;\n  7;\n  8;\n  9;\n  10;\n  11;\n  12;\n  13;\n  0 -- 6;\n  0 -- 8;\n  0 -- 10;\n  1 -- 7;\n  1 -- 8;\n  1 -- 9;\n  2 -- 7;\n  2 -- 12;\n  2 -- 13;\n  3 -- 8;\n  3 -- 11;\n  3 -- 12;\n  4 -- 9;\n  4 -- 10;\n  4 -- 12;\n  5 -- 10;\n  5 -- 11;\n  5 -- 13;\n  6 -- 9;\n  6 -- 13;\n  7 -- 11;\n}",
       "evaluation": "-5/64*n^8 + 109/32*n^7 - 691/16*n^6 + 1323/8*n^5 + 533/4*n^4 - 1981/2*n^3 + 163*n^2 + 1098*n",
       "id": "f4_closed_t14_001",
       "internal": {
         "closed_key": "MAK?gP@HB?Og_a_K?",
         "graph6": "M??CBBOQcWAgM?H_?"
       },
-      "invariants": {},
+      "invariants": {
+        "automorphism_group_order": 4,
+        "chromatic_number": 3,
+        "chromatic_polynomial": "x^14 - 21*x^13 + 210*x^12 - 1330*x^11 + 5979*x^10 - 20235*x^9 + 53250*x^8 - 110681*x^7 + 182083*x^6 - 234250*x^5 + 228610*x^4 - 159425*x^3 + 70515*x^2 - 14706*x",
+        "crossing_number": 2,
+        "diameter": 3,
+        "is_hamiltonian": true,
+        "num_spanning_trees": 48195,
+        "radius": 3
+      },
       "svg": "<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120'><text x='10' y='60'>SVG TODO</text></svg>"
     },
     {
-      "dot": null,
+      "dot": "graph {\n  0;\n  1;\n  2;\n  3;\n  4;\n  5;\n  6;\n  7;\n  8;\n  9;\n  10;\n  11;\n  12;\n  13;\n  0 -- 6;\n  0 -- 9;\n  0 -- 10;\n  1 -- 7;\n  1 -- 8;\n  1 -- 9;\n  2 -- 7;\n  2 -- 10;\n  2 -- 12;\n  3 -- 8;\n  3 -- 10;\n  3 -- 13;\n  4 -- 8;\n  4 -- 11;\n  4 -- 12;\n  5 -- 9;\n  5 -- 12;\n  5 -- 13;\n  6 -- 11;\n  6 -- 13;\n  7 -- 11;\n}",
       "evaluation": "1/16*n^8 - 23/8*n^7 + 143/4*n^6 - 261/2*n^5 - 67*n^4 + 818*n^3 - 308*n^2 - 1000*n",
       "id": "f4_closed_t14_002",
       "internal": {
         "closed_key": "M?CHI_oQB?OE_o`A?",
         "graph6": "M??CB@WpD_@WJ?D_?"
       },
-      "invariants": {},
+      "invariants": {
+        "automorphism_group_order": 8,
+        "chromatic_number": 3,
+        "chromatic_polynomial": "x^14 - 21*x^13 + 210*x^12 - 1330*x^11 + 5981*x^10 - 20265*x^9 + 53454*x^8 - 111509*x^7 + 184304*x^6 - 238357*x^5 + 233874*x^4 - 163944*x^3 + 72862*x^2 - 15260*x",
+        "crossing_number": 3,
+        "diameter": 3,
+        "is_hamiltonian": true,
+        "num_spanning_trees": 49049,
+        "radius": 3
+      },
       "svg": "<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120'><text x='10' y='60'>SVG TODO</text></svg>"
     },
     {
-      "dot": null,
+      "dot": "graph {\n  0;\n  1;\n  2;\n  3;\n  4;\n  5;\n  6;\n  7;\n  8;\n  9;\n  10;\n  11;\n  12;\n  13;\n  0 -- 5;\n  0 -- 8;\n  0 -- 9;\n  1 -- 6;\n  1 -- 8;\n  1 -- 11;\n  2 -- 7;\n  2 -- 9;\n  2 -- 10;\n  3 -- 8;\n  3 -- 12;\n  3 -- 13;\n  4 -- 9;\n  4 -- 11;\n  4 -- 12;\n  5 -- 10;\n  5 -- 13;\n  6 -- 10;\n  6 -- 12;\n  7 -- 11;\n  7 -- 13;\n}",
       "evaluation": "-1/8*n^8 + 89/16*n^7 - 277/4*n^6 + 477/2*n^5 + 177*n^4 - 1489*n^3 + 408*n^2 + 1784*n",
       "id": "f4_closed_t14_003",
       "internal": {
         "closed_key": "M@O_aDCE@OOS`C_Q?",
         "graph6": "M?AA@BOi@KHGE_DO?"
       },
-      "invariants": {},
+      "invariants": {
+        "automorphism_group_order": 4,
+        "chromatic_number": 3,
+        "chromatic_polynomial": "x^14 - 21*x^13 + 210*x^12 - 1330*x^11 + 5979*x^10 - 20237*x^9 + 53274*x^8 - 110809*x^7 + 182485*x^6 - 235075*x^5 + 229753*x^4 - 160468*x^3 + 71082*x^2 - 14844*x",
+        "crossing_number": 2,
+        "diameter": 3,
+        "is_hamiltonian": true,
+        "num_spanning_trees": 48433,
+        "radius": 3
+      },
       "svg": "<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120'><text x='10' y='60'>SVG TODO</text></svg>"
     },
     {
-      "dot": null,
+      "dot": "graph {\n  0;\n  1;\n  2;\n  3;\n  4;\n  5;\n  6;\n  7;\n  8;\n  9;\n  10;\n  11;\n  12;\n  13;\n  0 -- 5;\n  0 -- 8;\n  0 -- 9;\n  1 -- 6;\n  1 -- 9;\n  1 -- 10;\n  2 -- 7;\n  2 -- 9;\n  2 -- 11;\n  3 -- 8;\n  3 -- 10;\n  3 -- 12;\n  4 -- 8;\n  4 -- 11;\n  4 -- 13;\n  5 -- 10;\n  5 -- 13;\n  6 -- 11;\n  6 -- 12;\n  7 -- 12;\n  7 -- 13;\n}",
       "evaluation": "7/64*n^8 - 155/32*n^7 + 953/16*n^6 - 1701/8*n^5 - 671/4*n^4 + 2579/2*n^3 - 289*n^2 - 1446*n",
       "id": "f4_closed_t14_004",
       "internal": {
         "closed_key": "MAK?gP@HB?OW`A_K?",
         "graph6": "M?AA@AWwAgDOCoBO?"
       },
-      "invariants": {},
+      "invariants": {
+        "automorphism_group_order": 2,
+        "chromatic_number": 3,
+        "chromatic_polynomial": "x^14 - 21*x^13 + 210*x^12 - 1330*x^11 + 5978*x^10 - 20221*x^9 + 53160*x^8 - 110331*x^7 + 181174*x^6 - 232613*x^5 + 226562*x^4 - 157706*x^3 + 69639*x^2 - 14502*x",
+        "crossing_number": 2,
+        "diameter": 3,
+        "is_hamiltonian": true,
+        "num_spanning_trees": 47891,
+        "radius": 3
+      },
       "svg": "<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120'><text x='10' y='60'>SVG TODO</text></svg>"
     },
     {
-      "dot": null,
+      "dot": "graph {\n  0;\n  1;\n  2;\n  3;\n  4;\n  5;\n  6;\n  7;\n  8;\n  9;\n  10;\n  11;\n  12;\n  13;\n  0 -- 5;\n  0 -- 7;\n  0 -- 9;\n  1 -- 6;\n  1 -- 9;\n  1 -- 10;\n  2 -- 7;\n  2 -- 8;\n  2 -- 12;\n  3 -- 8;\n  3 -- 10;\n  3 -- 13;\n  4 -- 9;\n  4 -- 11;\n  4 -- 12;\n  5 -- 11;\n  5 -- 13;\n  6 -- 12;\n  6 -- 13;\n  7 -- 10;\n  8 -- 11;\n}",
       "evaluation": "-11/64*n^8 + 61/8*n^7 - 755/8*n^6 + 2811/8*n^5 + 1149/4*n^4 - 2113*n^3 + 372*n^2 + 2342*n",
       "id": "f4_closed_t14_005",
       "internal": {
         "closed_key": "M@SOP@@GaGOB`O_g?",
         "graph6": "M?AAD?oqAa@cI_D_?"
       },
-      "invariants": {},
+      "invariants": {
+        "automorphism_group_order": 14,
+        "chromatic_number": 3,
+        "chromatic_polynomial": "x^14 - 21*x^13 + 210*x^12 - 1330*x^11 + 5978*x^10 - 20223*x^9 + 53184*x^8 - 110461*x^7 + 181594*x^6 - 233506*x^5 + 227843*x^4 - 158907*x^3 + 70302*x^2 - 14664*x",
+        "crossing_number": 3,
+        "diameter": 3,
+        "is_hamiltonian": true,
+        "num_spanning_trees": 48223,
+        "radius": 3
+      },
       "svg": "<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120'><text x='10' y='60'>SVG TODO</text></svg>"
     },
     {
-      "dot": null,
+      "dot": "graph {\n  0;\n  1;\n  2;\n  3;\n  4;\n  5;\n  6;\n  7;\n  8;\n  9;\n  10;\n  11;\n  12;\n  13;\n  0 -- 5;\n  0 -- 7;\n  0 -- 9;\n  1 -- 6;\n  1 -- 9;\n  1 -- 10;\n  2 -- 7;\n  2 -- 11;\n  2 -- 13;\n  3 -- 8;\n  3 -- 9;\n  3 -- 11;\n  4 -- 8;\n  4 -- 10;\n  4 -- 12;\n  5 -- 12;\n  5 -- 13;\n  6 -- 11;\n  6 -- 12;\n  7 -- 10;\n  8 -- 13;\n}",
       "evaluation": "5/32*n^8 - 115/16*n^7 + 727/8*n^6 - 1239/4*n^5 - 541/2*n^4 + 1879*n^3 - 382*n^2 - 2100*n",
       "id": "f4_closed_t14_006",
       "internal": {
         "closed_key": "M@OPAHAE@OOo_K_Q?",
         "graph6": "M?AAD?WsAQEOB_HG?"
       },
-      "invariants": {},
+      "invariants": {
+        "automorphism_group_order": 12,
+        "chromatic_number": 3,
+        "chromatic_polynomial": "x^14 - 21*x^13 + 210*x^12 - 1330*x^11 + 5979*x^10 - 20238*x^9 + 53286*x^8 - 110874*x^7 + 182695*x^6 - 235522*x^5 + 230396*x^4 - 161073*x^3 + 71417*x^2 - 14926*x",
+        "crossing_number": 3,
+        "diameter": 4,
+        "is_hamiltonian": true,
+        "num_spanning_trees": 48600,
+        "radius": 3
+      },
       "svg": "<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120'><text x='10' y='60'>SVG TODO</text></svg>"
     },
     {
-      "dot": null,
+      "dot": "graph {\n  0;\n  1;\n  2;\n  3;\n  4;\n  5;\n  6;\n  7;\n  8;\n  9;\n  10;\n  11;\n  12;\n  13;\n  0 -- 5;\n  0 -- 9;\n  0 -- 10;\n  1 -- 6;\n  1 -- 9;\n  1 -- 12;\n  2 -- 7;\n  2 -- 8;\n  2 -- 9;\n  3 -- 7;\n  3 -- 12;\n  3 -- 13;\n  4 -- 8;\n  4 -- 10;\n  4 -- 11;\n  5 -- 11;\n  5 -- 12;\n  6 -- 11;\n  6 -- 13;\n  7 -- 10;\n  8 -- 13;\n}",
       "evaluation": "-1/8*n^8 + 89/16*n^7 - 1105/16*n^6 + 1893/8*n^5 + 387/2*n^4 - 1462*n^3 + 339*n^2 + 1706*n",
       "id": "f4_closed_t14_007",
       "internal": {
         "closed_key": "MAK?gX?GJ?OH_g`C?",
         "graph6": "M?AA@_gwCQ@oT?Cg?"
       },
-      "invariants": {},
+      "invariants": {
+        "automorphism_group_order": 4,
+        "chromatic_number": 3,
+        "chromatic_polynomial": "x^14 - 21*x^13 + 210*x^12 - 1330*x^11 + 5977*x^10 - 20206*x^9 + 53058*x^8 - 109918*x^7 + 180074*x^6 - 230605*x^5 + 224033*x^4 - 155574*x^3 + 68547*x^2 - 14246*x",
+        "crossing_number": 2,
+        "diameter": 4,
+        "is_hamiltonian": true,
+        "num_spanning_trees": 47520,
+        "radius": 3
+      },
       "svg": "<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120'><text x='10' y='60'>SVG TODO</text></svg>"
     },
     {
-      "dot": null,
+      "dot": "graph {\n  0;\n  1;\n  2;\n  3;\n  4;\n  5;\n  6;\n  7;\n  8;\n  9;\n  10;\n  11;\n  12;\n  13;\n  0 -- 5;\n  0 -- 9;\n  0 -- 13;\n  1 -- 6;\n  1 -- 10;\n  1 -- 12;\n  2 -- 7;\n  2 -- 8;\n  2 -- 11;\n  3 -- 7;\n  3 -- 12;\n  3 -- 13;\n  4 -- 8;\n  4 -- 9;\n  4 -- 10;\n  5 -- 10;\n  5 -- 11;\n  6 -- 11;\n  6 -- 13;\n  7 -- 9;\n  8 -- 12;\n}",
       "evaluation": "5/32*n^8 - 53/8*n^7 + 335/4*n^6 - 297*n^5 - 445/2*n^4 + 1816*n^3 - 460*n^2 - 2088*n",
       "id": "f4_closed_t14_008",
       "internal": {
         "closed_key": "MAKOQ?`HACOD`O_c?",
         "graph6": "M?AA@_gaQWCoSGc_?"
       },
-      "invariants": {},
+      "invariants": {
+        "automorphism_group_order": 8,
+        "chromatic_number": 3,
+        "chromatic_polynomial": "x^14 - 21*x^13 + 210*x^12 - 1330*x^11 + 5977*x^10 - 20207*x^9 + 53070*x^8 - 109983*x^7 + 180284*x^6 - 231051*x^5 + 224671*x^4 - 156170*x^3 + 68875*x^2 - 14326*x",
+        "crossing_number": 2,
+        "diameter": 3,
+        "is_hamiltonian": true,
+        "num_spanning_trees": 47685,
+        "radius": 3
+      },
       "svg": "<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120'><text x='10' y='60'>SVG TODO</text></svg>"
     }
   ],

@@ -7,25 +7,43 @@
   "project": "f4",
   "records": [
     {
-      "dot": null,
+      "dot": "graph {\n  0;\n  1;\n  2;\n  3;\n  4;\n  5;\n  6;\n  7;\n  8;\n  9;\n  10;\n  11;\n  0 -- 5;\n  0 -- 7;\n  0 -- 8;\n  1 -- 6;\n  1 -- 7;\n  1 -- 11;\n  2 -- 6;\n  2 -- 8;\n  2 -- 10;\n  3 -- 7;\n  3 -- 9;\n  3 -- 10;\n  4 -- 8;\n  4 -- 9;\n  4 -- 11;\n  5 -- 10;\n  5 -- 11;\n  6 -- 9;\n}",
       "evaluation": "-1/8*n^7 + 19/4*n^6 - 33*n^5 + 5*n^4 + 192*n^3 - 96*n^2 - 232*n",
       "id": "f4_closed_t12_000",
       "internal": {
         "closed_key": "K?HHa`_aSKQC",
         "graph6": "K?ABEagE`gH_"
       },
-      "invariants": {},
+      "invariants": {
+        "automorphism_group_order": 16,
+        "chromatic_number": 3,
+        "chromatic_polynomial": "x^12 - 18*x^11 + 153*x^10 - 816*x^9 + 3052*x^8 - 8444*x^7 + 17680*x^6 - 28015*x^5 + 32819*x^4 - 26877*x^3 + 13675*x^2 - 3210*x",
+        "crossing_number": 2,
+        "diameter": 3,
+        "is_hamiltonian": true,
+        "num_spanning_trees": 9800,
+        "radius": 3
+      },
       "svg": "<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120'><text x='10' y='60'>SVG TODO</text></svg>"
     },
     {
-      "dot": null,
+      "dot": "graph {\n  0;\n  1;\n  2;\n  3;\n  4;\n  5;\n  6;\n  7;\n  8;\n  9;\n  10;\n  11;\n  0 -- 4;\n  0 -- 7;\n  0 -- 10;\n  1 -- 5;\n  1 -- 7;\n  1 -- 8;\n  2 -- 6;\n  2 -- 8;\n  2 -- 11;\n  3 -- 7;\n  3 -- 9;\n  3 -- 11;\n  4 -- 8;\n  4 -- 9;\n  5 -- 10;\n  5 -- 11;\n  6 -- 9;\n  6 -- 10;\n}",
       "evaluation": "5/32*n^7 - 43/8*n^6 + 81/2*n^5 - 11/2*n^4 - 485/2*n^3 + 108*n^2 + 312*n",
       "id": "f4_closed_t12_001",
       "internal": {
         "closed_key": "KG?qPPO_[WQO",
         "graph6": "K?`@E`gEcKE_"
       },
-      "invariants": {},
+      "invariants": {
+        "automorphism_group_order": 18,
+        "chromatic_number": 3,
+        "chromatic_polynomial": "x^12 - 18*x^11 + 153*x^10 - 816*x^9 + 3051*x^8 - 8433*x^7 + 17628*x^6 - 27876*x^5 + 32588*x^4 - 26635*x^3 + 13527*x^2 - 3170*x",
+        "crossing_number": 2,
+        "diameter": 3,
+        "is_hamiltonian": true,
+        "num_spanning_trees": 9747,
+        "radius": 3
+      },
       "svg": "<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120'><text x='10' y='60'>SVG TODO</text></svg>"
     }
   ],
