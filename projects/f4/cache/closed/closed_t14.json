@@ -8,7 +8,7 @@
   "records": [
     {
       "dot": null,
-      "evaluation": null,
+      "evaluation": "-1/8*n^8 + 23/4*n^7 - 271/4*n^6 + 219*n^5 + 316*n^4 + 116*n^3 + 3924*n^2 + 3856*n",
       "id": "f4_closed_t14_000",
       "internal": {
         "closed_key": "M??haPOEB?OB`G_o?",
@@ -19,7 +19,7 @@
     },
     {
       "dot": null,
-      "evaluation": null,
+      "evaluation": "-5/64*n^8 + 109/32*n^7 - 691/16*n^6 + 1323/8*n^5 + 533/4*n^4 - 1981/2*n^3 + 163*n^2 + 1098*n",
       "id": "f4_closed_t14_001",
       "internal": {
         "closed_key": "MAK?gP@HB?Og_a_K?",
@@ -30,7 +30,7 @@
     },
     {
       "dot": null,
-      "evaluation": null,
+      "evaluation": "1/16*n^8 - 23/8*n^7 + 143/4*n^6 - 261/2*n^5 - 67*n^4 + 818*n^3 - 308*n^2 - 1000*n",
       "id": "f4_closed_t14_002",
       "internal": {
         "closed_key": "M?CHI_oQB?OE_o`A?",
@@ -41,7 +41,7 @@
     },
     {
       "dot": null,
-      "evaluation": null,
+      "evaluation": "-1/8*n^8 + 89/16*n^7 - 277/4*n^6 + 477/2*n^5 + 177*n^4 - 1489*n^3 + 408*n^2 + 1784*n",
       "id": "f4_closed_t14_003",
       "internal": {
         "closed_key": "M@O_aDCE@OOS`C_Q?",
@@ -52,7 +52,7 @@
     },
     {
       "dot": null,
-      "evaluation": null,
+      "evaluation": "7/64*n^8 - 155/32*n^7 + 953/16*n^6 - 1701/8*n^5 - 671/4*n^4 + 2579/2*n^3 - 289*n^2 - 1446*n",
       "id": "f4_closed_t14_004",
       "internal": {
         "closed_key": "MAK?gP@HB?OW`A_K?",
@@ -63,7 +63,7 @@
     },
     {
       "dot": null,
-      "evaluation": null,
+      "evaluation": "-11/64*n^8 + 61/8*n^7 - 755/8*n^6 + 2811/8*n^5 + 1149/4*n^4 - 2113*n^3 + 372*n^2 + 2342*n",
       "id": "f4_closed_t14_005",
       "internal": {
         "closed_key": "M@SOP@@GaGOB`O_g?",
@@ -74,7 +74,7 @@
     },
     {
       "dot": null,
-      "evaluation": null,
+      "evaluation": "5/32*n^8 - 115/16*n^7 + 727/8*n^6 - 1239/4*n^5 - 541/2*n^4 + 1879*n^3 - 382*n^2 - 2100*n",
       "id": "f4_closed_t14_006",
       "internal": {
         "closed_key": "M@OPAHAE@OOo_K_Q?",
@@ -85,7 +85,7 @@
     },
     {
       "dot": null,
-      "evaluation": null,
+      "evaluation": "-1/8*n^8 + 89/16*n^7 - 1105/16*n^6 + 1893/8*n^5 + 387/2*n^4 - 1462*n^3 + 339*n^2 + 1706*n",
       "id": "f4_closed_t14_007",
       "internal": {
         "closed_key": "MAK?gX?GJ?OH_g`C?",
@@ -96,7 +96,7 @@
     },
     {
       "dot": null,
-      "evaluation": null,
+      "evaluation": "5/32*n^8 - 53/8*n^7 + 335/4*n^6 - 297*n^5 - 445/2*n^4 + 1816*n^3 - 460*n^2 - 2088*n",
       "id": "f4_closed_t14_008",
       "internal": {
         "closed_key": "MAKOQ?`HACOD`O_c?",
