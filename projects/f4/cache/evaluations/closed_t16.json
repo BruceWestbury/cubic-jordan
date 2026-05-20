@@ -1,0 +1,287 @@
+{
+  "format": "evaluation_cache",
+  "metadata": {
+    "count": 49,
+    "known_count": 28,
+    "method": "F4_series_pentagons",
+    "t": 16,
+    "unknown_count": 21
+  },
+  "project": "f4",
+  "records": [
+    {
+      "graph": "O@Oa?oQIAG?_?`_POAS@O",
+      "method": "residual",
+      "status": "unknown"
+    },
+    {
+      "graph": "O@P?@GgC_S?oS?_QOEC?K",
+      "method": "residual",
+      "status": "unknown"
+    },
+    {
+      "graph": "O@P?@OSG_S?oS?_PODC?c",
+      "method": "residual",
+      "status": "unknown"
+    },
+    {
+      "graph": "O@P@?oSA`G?OO@_OoCc?o",
+      "method": "residual",
+      "status": "unknown"
+    },
+    {
+      "graph": "O@PA@GWC`O?_?`_OoCc?o",
+      "method": "F4_series_pentagons",
+      "status": "known",
+      "value": "1/16*n^9 - 105/32*n^8 + 227/4*n^7 - 3097/8*n^6 + 883*n^5 + 2805/2*n^4 - 6228*n^3 + 794*n^2 + 7136*n"
+    },
+    {
+      "graph": "O@PPOL?CGOC??B_GoHC?g",
+      "method": "F4_series_pentagons",
+      "status": "known",
+      "value": "11/128*n^9 - 297/64*n^8 + 643/8*n^7 - 4297/8*n^6 + 8493/8*n^5 + 8707/4*n^4 - 7623*n^3 + 184*n^2 + 8340*n"
+    },
+    {
+      "graph": "O@Ta?caA?G?A?B_EOGc@C",
+      "method": "F4_series_pentagons",
+      "status": "known",
+      "value": "1/16*n^9 - 213/64*n^8 + 1735/32*n^7 - 1913/8*n^6 + 307/4*n^5 + 5215/4*n^4 - 3005/2*n^3 - 1176*n^2 + 1296*n"
+    },
+    {
+      "graph": "O@XQ?cCAH??O?B_OoDC?g",
+      "method": "F4_series_pentagons",
+      "status": "known",
+      "value": "11/128*n^9 - 141/32*n^8 + 2401/32*n^7 - 4069/8*n^6 + 8459/8*n^5 + 3977/2*n^4 - 15061/2*n^3 + 466*n^2 + 8380*n"
+    },
+    {
+      "graph": "O@XQ?cG@H??O?B_OoDC?g",
+      "method": "F4_series_pentagons",
+      "status": "known",
+      "value": "-13/128*n^9 + 21/4*n^8 - 2855/32*n^7 + 2389/4*n^6 - 9645/8*n^5 - 2356*n^4 + 17275/2*n^3 - 468*n^2 - 9524*n"
+    },
+    {
+      "graph": "O@XQ?cGG?G?S?E_GoIC?W",
+      "method": "F4_series_pentagons",
+      "status": "known",
+      "value": "-13/128*n^9 + 333/64*n^8 - 1429/16*n^7 + 2473/4*n^6 - 10265/8*n^5 - 9691/4*n^4 + 9064*n^3 - 534*n^2 - 9984*n"
+    },
+    {
+      "graph": "O@XQ?c_A?G?S?E_OoEC?W",
+      "method": "F4_series_pentagons",
+      "status": "known",
+      "value": "-13/128*n^9 + 87/16*n^8 - 767/8*n^7 + 5237/8*n^6 - 2617/2*n^5 - 2634*n^4 + 9304*n^3 - 286*n^2 - 10118*n"
+    },
+    {
+      "graph": "OBHA?WI@?CAAGA_KOHC?K",
+      "method": "residual",
+      "status": "unknown"
+    },
+    {
+      "graph": "OBHA?WI@?_?PGC_KOHC?K",
+      "method": "residual",
+      "status": "unknown"
+    },
+    {
+      "graph": "OBHA?WIH?CA??B_CoHC@G",
+      "method": "F4_series_pentagons",
+      "status": "known",
+      "value": "5/128*n^9 - 123/64*n^8 + 131/4*n^7 - 2131/8*n^6 + 5523/8*n^5 + 3913/4*n^4 - 4551*n^3 + 472*n^2 + 5052*n"
+    },
+    {
+      "graph": "OGCa?gES@O?OA@_POCS?o",
+      "method": "F4_series_pentagons",
+      "status": "known",
+      "value": "11/128*n^9 - 297/64*n^8 + 2635/32*n^7 - 1117/2*n^6 + 4475/4*n^5 + 9007/4*n^4 - 15965/2*n^3 + 226*n^2 + 8738*n"
+    },
+    {
+      "graph": "OGCa?gQIAO?O@@_POAS@O",
+      "method": "F4_series_pentagons",
+      "status": "known",
+      "value": "-1/8*n^9 + 423/64*n^8 - 115*n^7 + 3133/4*n^6 - 12247/8*n^5 - 12353/4*n^4 + 11033*n^3 - 602*n^2 - 12246*n"
+    },
+    {
+      "graph": "OGD@?KQB@_@?O@_Oo@c@_",
+      "method": "residual",
+      "status": "unknown"
+    },
+    {
+      "graph": "OGD@?KSA`_@?O@_Oo@c@_",
+      "method": "residual",
+      "status": "unknown"
+    },
+    {
+      "graph": "OGD@?cK@`_@?O@_GoGc?o",
+      "method": "F4_series_pentagons",
+      "status": "known",
+      "value": "-5/64*n^9 + 261/64*n^8 - 2237/32*n^7 + 1921/4*n^6 - 3965/4*n^5 - 7651/4*n^4 + 13983/2*n^3 - 294*n^2 - 7612*n"
+    },
+    {
+      "graph": "OGD@?cS@`O@?O@_OoCc?o",
+      "method": "residual",
+      "status": "unknown"
+    },
+    {
+      "graph": "OGD@?gEC`O@?O@_GoGc?o",
+      "method": "F4_series_pentagons",
+      "status": "known",
+      "value": "-1/8*n^9 + 411/64*n^8 - 1753/16*n^7 + 6227/8*n^6 - 14371/8*n^5 - 11321/4*n^4 + 12476*n^3 - 1544*n^2 - 14118*n"
+    },
+    {
+      "graph": "OGD@?gQ@`O@?O@_OoCc?o",
+      "method": "residual",
+      "status": "unknown"
+    },
+    {
+      "graph": "OGD@?gQIAO?O@@_POAS@O",
+      "method": "residual",
+      "status": "unknown"
+    },
+    {
+      "graph": "OHOGaCS@_OC??B_CoGc@O",
+      "method": "F4_series_pentagons",
+      "status": "known",
+      "value": "17/128*n^9 - 27/4*n^8 + 919/8*n^7 - 809*n^6 + 7435/4*n^5 + 2988*n^4 - 12930*n^3 + 1424*n^2 + 14594*n"
+    },
+    {
+      "graph": "OHOGaCS@_OC??B_CoHC@G",
+      "method": "residual",
+      "status": "unknown"
+    },
+    {
+      "graph": "OHOOPDC@__@??B_CoGc@O",
+      "method": "F4_series_pentagons",
+      "status": "known",
+      "value": "-1/8*n^9 + 99/16*n^8 - 1657/16*n^7 + 5951/8*n^6 - 1764*n^5 - 2794*n^4 + 12047*n^3 - 1122*n^2 - 13304*n"
+    },
+    {
+      "graph": "OHP??gIC`C@?@@_GoAcAO",
+      "method": "F4_series_pentagons",
+      "status": "known",
+      "value": "-7/128*n^9 + 183/64*n^8 - 775/16*n^7 + 2771/8*n^6 - 6245/8*n^5 - 5333/4*n^4 + 5370*n^3 - 392*n^2 - 5876*n"
+    },
+    {
+      "graph": "OHP??gQA`C?_A@_HO@SA_",
+      "method": "residual",
+      "status": "unknown"
+    },
+    {
+      "graph": "OHP??gQA`C@?@@_HO@SA_",
+      "method": "residual",
+      "status": "unknown"
+    },
+    {
+      "graph": "OIC_?caO_W@?@@_POCS?o",
+      "method": "residual",
+      "status": "unknown"
+    },
+    {
+      "graph": "OIC_@CQ@_WG?A@_CoGc@O",
+      "method": "residual",
+      "status": "unknown"
+    },
+    {
+      "graph": "OIC_@CQ@_WG?A@_OoAc@O",
+      "method": "residual",
+      "status": "unknown"
+    },
+    {
+      "graph": "OIC_ACgA_KA?@@_Co@cB?",
+      "method": "F4_series_pentagons",
+      "status": "known",
+      "value": "-7/128*n^9 + 45/16*n^8 - 781/16*n^7 + 2837/8*n^6 - 3297/4*n^5 - 1310*n^4 + 5659*n^3 - 614*n^2 - 6310*n"
+    },
+    {
+      "graph": "OIC_ACgD?S?O@@_AoCcA_",
+      "method": "F4_series_pentagons",
+      "status": "known",
+      "value": "-5/64*n^9 + 261/64*n^8 - 2213/32*n^7 + 3701/8*n^6 - 1987/2*n^5 - 6919/4*n^4 + 14163/2*n^3 - 744*n^2 - 7984*n"
+    },
+    {
+      "graph": "OICa?KIA?Ga?G@_SOCc?S",
+      "method": "F4_series_pentagons",
+      "status": "known",
+      "value": "-1/8*n^9 + 219/32*n^8 - 971/8*n^7 + 814*n^6 - 6007/4*n^5 - 6633/2*n^4 + 10952*n^3 - 196*n^2 - 11980*n"
+    },
+    {
+      "graph": "OICa?WI@__C??B_OoDC?g",
+      "method": "F4_series_pentagons",
+      "status": "known",
+      "value": "7/64*n^9 - 183/32*n^8 + 1529/16*n^7 - 5419/8*n^6 + 6747/4*n^5 + 5003/2*n^4 - 11469*n^3 + 1198*n^2 + 12744*n"
+    },
+    {
+      "graph": "OIGG_oaO?C?a@A_HOHC?c",
+      "method": "F4_series_pentagons",
+      "status": "known",
+      "value": "7/64*n^9 - 189/32*n^8 + 1661/16*n^7 - 2825/4*n^6 + 1414*n^5 + 5755/2*n^4 - 10051*n^3 + 168*n^2 + 10908*n"
+    },
+    {
+      "graph": "OIGG_oaO?G?P@C_WO?s?o",
+      "method": "F4_series_pentagons",
+      "status": "known",
+      "value": "-1/32*n^9 + 111/64*n^8 - 899/32*n^7 + 991/8*n^6 - 85/2*n^5 - 2661/4*n^4 + 1565/2*n^3 + 568*n^2 - 644*n"
+    },
+    {
+      "graph": "OIGG`CEAA?a?@@_KOGS?W",
+      "method": "residual",
+      "status": "unknown"
+    },
+    {
+      "graph": "OIGG`CEO?_@A@A_KOHC?K",
+      "method": "residual",
+      "status": "unknown"
+    },
+    {
+      "graph": "OIGGaGaC?O_O@@_KOGc?S",
+      "method": "F4_series_pentagons",
+      "status": "known",
+      "value": "7/64*n^9 - 189/32*n^8 + 841/8*n^7 - 5707/8*n^6 + 1341*n^5 + 5849/2*n^4 - 9702*n^3 + 94*n^2 + 10596*n"
+    },
+    {
+      "graph": "OIGO@CQ@_WG?A@_CoGc@O",
+      "method": "F4_series_pentagons",
+      "status": "known",
+      "value": "-5/64*n^9 + 129/32*n^8 - 1123/16*n^7 + 2005/4*n^6 - 1069*n^5 - 4019/2*n^4 + 7393*n^3 - 240*n^2 - 7956*n"
+    },
+    {
+      "graph": "OIGO@CQ@_WG?A@_OoAc@O",
+      "method": "F4_series_pentagons",
+      "status": "known",
+      "value": "11/128*n^9 - 147/32*n^8 + 80*n^7 - 2207/4*n^6 + 1142*n^5 + 4273/2*n^4 - 8130*n^3 + 576*n^2 + 9106*n"
+    },
+    {
+      "graph": "OIGOACa@_WA?A@_OoAc@O",
+      "method": "residual",
+      "status": "unknown"
+    },
+    {
+      "graph": "OIGOACcE?S?O@@_AoCcA_",
+      "method": "F4_series_pentagons",
+      "status": "known",
+      "value": "1/16*n^9 - 99/32*n^8 + 209/4*n^7 - 380*n^6 + 3281/4*n^5 + 3089/2*n^4 - 5638*n^3 + 100*n^2 + 6068*n"
+    },
+    {
+      "graph": "OIGOOoEO@??P@C_KOGc?S",
+      "method": "F4_series_pentagons",
+      "status": "known",
+      "value": "7/64*n^9 - 363/64*n^8 + 3079/32*n^7 - 5257/8*n^6 + 2653/2*n^5 + 10465/4*n^4 - 18929/2*n^3 + 412*n^2 + 10448*n"
+    },
+    {
+      "graph": "OIGW?KIGA?AA?a_SODC?K",
+      "method": "F4_series_pentagons",
+      "status": "known",
+      "value": "-13/128*n^9 + 177/32*n^8 - 3137/32*n^7 + 2617/4*n^6 - 9877/8*n^5 - 5251/2*n^4 + 17977/2*n^3 - 320*n^2 - 9900*n"
+    },
+    {
+      "graph": "OIGW@DAC_O?_?B_CoHC@G",
+      "method": "F4_series_pentagons",
+      "status": "known",
+      "value": "17/128*n^9 - 441/64*n^8 + 3841/32*n^7 - 827*n^6 + 1668*n^5 + 13311/4*n^4 - 23675/2*n^3 + 362*n^2 + 12946*n"
+    },
+    {
+      "graph": "OIO??SQG_g@_H?_QOCS?g",
+      "method": "residual",
+      "status": "unknown"
+    }
+  ],
+  "version": 1
+}
