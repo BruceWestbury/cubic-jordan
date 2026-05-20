@@ -108,15 +108,6 @@
                 overflow-x: auto;
             }
 
-            .graph-svg {
-                margin-top: 1rem;
-            }
-
-            .graph-svg svg {
-                max-width: 100%;
-                height: auto;
-            }
-
             .invariants,
             .dot {
                 margin-top: 1rem;
@@ -237,7 +228,7 @@
                     catalogue.appendChild(graphCard(record));
                 }
 
-                if (window.MathJax) {
+                if (window.MathJax && MathJax.typesetPromise) {
                     MathJax.typesetPromise();
                 }
             }
@@ -275,13 +266,6 @@
                 drawing.innerHTML =
                     record.svg || "<p class='small'>No SVG available.</p>";
 
-                if (record.invariants) {
-                    const invariants = document.createElement("div");
-                    invariants.className = "invariants";
-                    invariants.innerHTML = invariantHTML(record.invariants);
-                    card.appendChild(invariants);
-                }
-
                 const evaluation = document.createElement("div");
                 evaluation.className = "evaluation";
                 if (
@@ -293,33 +277,22 @@
                     evaluation.innerHTML = `\\[${sagePolynomialToLatex(record.evaluation)}\\]`;
                 }
 
-                card.appendChild(drawing);
-                card.appendChild(evaluation);
-
-                if (record.svg) {
-                    const picture = document.createElement("div");
-                    picture.className = "graph-svg";
-                    picture.innerHTML = record.svg;
-                    card.appendChild(picture);
-                }
-
                 if (record.invariants) {
-                    const invariants = document.createElement("pre");
+                    const invariants = document.createElement("div");
                     invariants.className = "invariants";
-                    invariants.textContent = JSON.stringify(
-                        record.invariants,
-                        null,
-                        2,
-                    );
+
+                    invariants.innerHTML = Object.entries(record.invariants)
+                        .map(
+                            ([key, value]) =>
+                                `<span><strong>${key}</strong>: ${value}</span>`,
+                        )
+                        .join("");
+
                     card.appendChild(invariants);
                 }
 
-                if (record.dot) {
-                    const dot = document.createElement("pre");
-                    dot.className = "dot";
-                    dot.textContent = record.dot;
-                    card.appendChild(dot);
-                }
+                card.appendChild(drawing);
+                card.appendChild(evaluation);
 
                 if (record.dot) {
                     const dotDetails = document.createElement("details");
