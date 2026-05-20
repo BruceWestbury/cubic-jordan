@@ -4,6 +4,20 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>Closed Graph Catalogue</title>
+        <script>
+            window.MathJax = {
+                tex: {
+                    inlineMath: [
+                        ["\\(", "\\)"],
+                        ["$", "$"],
+                    ],
+                },
+            };
+        </script>
+        <script
+            src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"
+            async
+        ></script>
 
         <style>
             body {
@@ -94,6 +108,24 @@
                 overflow-x: auto;
             }
 
+            .graph-svg {
+                margin-top: 1rem;
+            }
+
+            .graph-svg svg {
+                max-width: 100%;
+                height: auto;
+            }
+
+            .invariants,
+            .dot {
+                margin-top: 1rem;
+                padding: 0.75rem;
+                background: #f2f2f2;
+                overflow-x: auto;
+                font-size: 0.9rem;
+            }
+
             details {
                 margin-top: 0.75rem;
             }
@@ -116,6 +148,15 @@
                 font-size: 0.85rem;
                 color: #666;
             }
+
+            .invariants {
+                display: grid;
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 0.25rem 0.75rem;
+                margin-bottom: 0.75rem;
+                font-size: 0.9rem;
+                color: #333;
+            }
         </style>
     </head>
 
@@ -127,12 +168,18 @@
                 loads cached JSON files generated offline.
             </p>
         </header>
+        <p>
+            <a href="https://brucewestbury.github.io/">
+                ← Back to Bruce Westbury
+            </a>
+        </p>
 
         <section class="controls">
             <strong>Number of vertices:</strong>
             <button data-t="10">t = 10</button>
             <button data-t="12">t = 12</button>
             <button data-t="14">t = 14</button>
+            <button data-t="16">t = 16</button>
         </section>
 
         <p id="status">Choose a value of t.</p>
@@ -159,7 +206,7 @@
             }
 
             async function loadCatalogue(t) {
-                const path = `/trivalent-graphs/projects/f4/cache/closed/closed_t${t}.json`;
+                const path = `../projects/f4/cache/closed/closed_t${t}.json`;
 
                 status.textContent = `Loading ${path} ...`;
                 catalogue.innerHTML = "";
@@ -189,6 +236,34 @@
                 for (const record of records) {
                     catalogue.appendChild(graphCard(record));
                 }
+
+                if (window.MathJax) {
+                    MathJax.typesetPromise();
+                }
+            }
+
+            function sagePolynomialToLatex(text) {
+                return String(text).replaceAll("*", "\\,");
+            }
+
+            function invariantHTML(inv) {
+                return `
+                    <div><strong>aut</strong> = ${valueOrDash(inv.automorphism_group_order)}</div>
+                    <div><strong>diam</strong> = ${valueOrDash(inv.diameter)}</div>
+                    <div><strong>χ</strong> = ${valueOrDash(inv.chromatic_number)}</div>
+                    <div><strong>hamiltonian</strong> = ${yesNo(inv.is_hamiltonian)}</div>
+                    <div><strong>spanning trees</strong> = ${valueOrDash(inv.num_spanning_trees)}</div>
+                `;
+            }
+
+            function valueOrDash(x) {
+                return x === null || x === undefined ? "–" : x;
+            }
+
+            function yesNo(x) {
+                if (x === true) return "yes";
+                if (x === false) return "no";
+                return "–";
             }
 
             function graphCard(record) {
@@ -200,16 +275,51 @@
                 drawing.innerHTML =
                     record.svg || "<p class='small'>No SVG available.</p>";
 
+                if (record.invariants) {
+                    const invariants = document.createElement("div");
+                    invariants.className = "invariants";
+                    invariants.innerHTML = invariantHTML(record.invariants);
+                    card.appendChild(invariants);
+                }
+
                 const evaluation = document.createElement("div");
                 evaluation.className = "evaluation";
-                evaluation.textContent =
+                if (
                     record.evaluation === null ||
                     record.evaluation === undefined
-                        ? "evaluation: not cached"
-                        : `evaluation: ${record.evaluation}`;
+                ) {
+                    evaluation.textContent = "evaluation: not cached";
+                } else {
+                    evaluation.innerHTML = `\\[${sagePolynomialToLatex(record.evaluation)}\\]`;
+                }
 
                 card.appendChild(drawing);
                 card.appendChild(evaluation);
+
+                if (record.svg) {
+                    const picture = document.createElement("div");
+                    picture.className = "graph-svg";
+                    picture.innerHTML = record.svg;
+                    card.appendChild(picture);
+                }
+
+                if (record.invariants) {
+                    const invariants = document.createElement("pre");
+                    invariants.className = "invariants";
+                    invariants.textContent = JSON.stringify(
+                        record.invariants,
+                        null,
+                        2,
+                    );
+                    card.appendChild(invariants);
+                }
+
+                if (record.dot) {
+                    const dot = document.createElement("pre");
+                    dot.className = "dot";
+                    dot.textContent = record.dot;
+                    card.appendChild(dot);
+                }
 
                 if (record.dot) {
                     const dotDetails = document.createElement("details");
