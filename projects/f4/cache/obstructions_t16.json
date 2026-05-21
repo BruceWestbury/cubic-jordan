@@ -1,0 +1,3154 @@
+{
+  "count": 38,
+  "format": "f4_obstruction_witness_cache",
+  "project": "f4",
+  "records": [
+    {
+      "display_index": 0,
+      "factorisation": "(9/64) * (n - 26) * (n - 14) * (n - 8) * (n - 5) * n * (n + 1) * (n + 2) * (n - 2)^2",
+      "multiplier": "9/64",
+      "normalised_obstruction": "n^9 - 54*n^8 + 971*n^7 - 6934*n^6 + 15144*n^5 + 26704*n^4 - 105296*n^3 + 7584*n^2 + 116480*n",
+      "provenance": {
+        "constructions": [
+          {
+            "closed_class": "unknown",
+            "closed_key": "OIGOACa@_WA?A@_OoAc@O",
+            "operation": {
+              "edge": [
+                0,
+                7
+              ],
+              "type": "contract_edge"
+            }
+          },
+          {
+            "closed_class": "unknown",
+            "closed_key": "OIGOACa@_WA?A@_OoAc@O",
+            "operation": {
+              "edge": [
+                8,
+                15
+              ],
+              "type": "contract_edge"
+            }
+          },
+          {
+            "closed_class": "unknown",
+            "closed_key": "O@P@?oSA`G?OO@_OoCc?o",
+            "operation": {
+              "edge": [
+                0,
+                7
+              ],
+              "type": "contract_edge"
+            }
+          },
+          {
+            "closed_class": "unknown",
+            "closed_key": "O@P@?oSA`G?OO@_OoCc?o",
+            "operation": {
+              "edge": [
+                8,
+                12
+              ],
+              "type": "contract_edge"
+            }
+          }
+        ],
+        "site": [
+          6,
+          9,
+          20,
+          25
+        ],
+        "source_key": "N????WRMAKS_g_q?Y??"
+      },
+      "raw_obstruction": "9/64*n^9 - 243/32*n^8 + 8739/64*n^7 - 31203/32*n^6 + 17037/8*n^5 + 15021/4*n^4 - 59229/4*n^3 + 2133/2*n^2 + 16380*n",
+      "relation": [
+        [
+          "1/64*n^9 - 3/4*n^8 + 391/32*n^7 - 193/2*n^6 + 979/8*n^5 + 494*n^4 - 1691/2*n^3 - 384*n^2 + 638*n",
+          "?"
+        ],
+        [
+          "1",
+          "O@P@?oSA`G?OO@_OoCc?o"
+        ],
+        [
+          "1",
+          "OIGOACa@_WA?A@_OoAc@O"
+        ]
+      ],
+      "source_key": "N????WRMAKS_g_q?Y??"
+    },
+    {
+      "display_index": 1,
+      "factorisation": "(9/64) * (n - 26) * (n - 14) * (n - 8) * (n - 5) * n * (n + 1) * (n + 2) * (n - 2)^2",
+      "multiplier": "9/64",
+      "normalised_obstruction": "n^9 - 54*n^8 + 971*n^7 - 6934*n^6 + 15144*n^5 + 26704*n^4 - 105296*n^3 + 7584*n^2 + 116480*n",
+      "provenance": {
+        "constructions": [
+          {
+            "closed_class": "unknown",
+            "closed_key": "O@Oa?oQIAG?_?`_POAS@O",
+            "operation": {
+              "edge": [
+                3,
+                12
+              ],
+              "type": "contract_edge"
+            }
+          },
+          {
+            "closed_class": "unknown",
+            "closed_key": "O@Oa?oQIAG?_?`_POAS@O",
+            "operation": {
+              "edge": [
+                4,
+                13
+              ],
+              "type": "contract_edge"
+            }
+          },
+          {
+            "closed_class": "unknown",
+            "closed_key": "O@Oa?oQIAG?_?`_POAS@O",
+            "operation": {
+              "edge": [
+                5,
+                14
+              ],
+              "type": "contract_edge"
+            }
+          },
+          {
+            "closed_class": "unknown",
+            "closed_key": "OGCa?gES@O?OA@_POCS?o",
+            "operation": {
+              "edge": [
+                7,
+                14
+              ],
+              "type": "contract_edge"
+            }
+          }
+        ],
+        "site": [
+          14,
+          39,
+          40,
+          41
+        ],
+        "source_key": "N???GOYHR_WOoOd?T??"
+      },
+      "raw_obstruction": "9/64*n^9 - 243/32*n^8 + 8739/64*n^7 - 31203/32*n^6 + 17037/8*n^5 + 15021/4*n^4 - 59229/4*n^3 + 2133/2*n^2 + 16380*n",
+      "relation": [
+        [
+          "1/16*n^9 - 213/64*n^8 + 1903/32*n^7 - 1799/4*n^6 + 1105*n^5 + 5731/4*n^4 - 15273/2*n^3 + 1678*n^2 + 9044*n",
+          "?"
+        ],
+        [
+          "1",
+          "O@Oa?oQIAG?_?`_POAS@O"
+        ],
+        [
+          "1",
+          "OGCa?gES@O?OA@_POCS?o"
+        ]
+      ],
+      "source_key": "N???GOYHR_WOoOd?T??"
+    },
+    {
+      "display_index": 2,
+      "factorisation": "(-9/32) * (n - 26) * (n - 14) * (n - 8) * (n - 5) * n * (n + 1) * (n + 2) * (n - 2)^2",
+      "multiplier": "-9/32",
+      "normalised_obstruction": "n^9 - 54*n^8 + 971*n^7 - 6934*n^6 + 15144*n^5 + 26704*n^4 - 105296*n^3 + 7584*n^2 + 116480*n",
+      "provenance": {
+        "constructions": [
+          {
+            "closed_class": "unknown",
+            "closed_key": "OIC_@CQ@_WG?A@_OoAc@O",
+            "operation": {
+              "edge": [
+                2,
+                11
+              ],
+              "type": "contract_edge"
+            }
+          },
+          {
+            "closed_class": "unknown",
+            "closed_key": "OIC_@CQ@_WG?A@_OoAc@O",
+            "operation": {
+              "edge": [
+                4,
+                15
+              ],
+              "type": "contract_edge"
+            }
+          },
+          {
+            "closed_class": "unknown",
+            "closed_key": "OGD@?KSA`_@?O@_Oo@c@_",
+            "operation": {
+              "edge": [
+                5,
+                10
+              ],
+              "type": "contract_edge"
+            }
+          }
+        ],
+        "site": [
+          6,
+          31,
+          36,
+          41
+        ],
+        "source_key": "N???X?XHA_wGo_i?Q_?"
+      },
+      "raw_obstruction": "-9/32*n^9 + 243/16*n^8 - 8739/32*n^7 + 31203/16*n^6 - 17037/4*n^5 - 15021/2*n^4 + 59229/2*n^3 - 2133*n^2 - 32760*n",
+      "relation": [
+        [
+          "-1/32*n^9 + 117/64*n^8 - 1175/32*n^7 + 1087/4*n^6 - 518*n^5 - 4019/4*n^4 + 7569/2*n^3 - 446*n^2 - 4492*n",
+          "?"
+        ],
+        [
+          "1",
+          "OGD@?KSA`_@?O@_Oo@c@_"
+        ],
+        [
+          "1",
+          "OIC_@CQ@_WG?A@_OoAc@O"
+        ]
+      ],
+      "source_key": "N???X?XHA_wGo_i?Q_?"
+    },
+    {
+      "display_index": 3,
+      "factorisation": "(9/32) * (n - 26) * (n - 14) * (n - 8) * (n - 5) * n * (n + 1) * (n + 2) * (n - 2)^2",
+      "multiplier": "9/32",
+      "normalised_obstruction": "n^9 - 54*n^8 + 971*n^7 - 6934*n^6 + 15144*n^5 + 26704*n^4 - 105296*n^3 + 7584*n^2 + 116480*n",
+      "provenance": {
+        "constructions": [
+          {
+            "closed_class": "unknown",
+            "closed_key": "OHP??gQA`C@?@@_HO@SA_",
+            "operation": {
+              "edge": [
+                2,
+                15
+              ],
+              "type": "contract_edge"
+            }
+          },
+          {
+            "closed_class": "unknown",
+            "closed_key": "OHP??gQA`C@?@@_HO@SA_",
+            "operation": {
+              "edge": [
+                3,
+                13
+              ],
+              "type": "contract_edge"
+            }
+          },
+          {
+            "closed_class": "unknown",
+            "closed_key": "OGD@?KQB@_@?O@_Oo@c@_",
+            "operation": {
+              "edge": [
+                2,
+                11
+              ],
+              "type": "contract_edge"
+            }
+          }
+        ],
+        "site": [
+          24,
+          37,
+          40,
+          41
+        ],
+        "source_key": "N?C_O_E?Z?wOoOk?P_?"
+      },
+      "raw_obstruction": "9/32*n^9 - 243/16*n^8 + 8739/32*n^7 - 31203/16*n^6 + 17037/4*n^5 + 15021/2*n^4 - 59229/2*n^3 + 2133*n^2 + 32760*n",
+      "relation": [
+        [
+          "1/16*n^9 - 111/32*n^8 + 2071/32*n^7 - 1937/4*n^6 + 9001/8*n^5 + 3545/2*n^4 - 15367/2*n^3 + 880*n^2 + 8574*n",
+          "?"
+        ],
+        [
+          "1",
+          "OGD@?KQB@_@?O@_Oo@c@_"
+        ],
+        [
+          "1",
+          "OHP??gQA`C@?@@_HO@SA_"
+        ]
+      ],
+      "source_key": "N?C_O_E?Z?wOoOk?P_?"
+    },
+    {
+      "display_index": 4,
+      "factorisation": "(9/32) * (n - 26) * (n - 14) * (n - 8) * (n - 5) * n * (n + 1) * (n + 2) * (n - 2)^2",
+      "multiplier": "9/32",
+      "normalised_obstruction": "n^9 - 54*n^8 + 971*n^7 - 6934*n^6 + 15144*n^5 + 26704*n^4 - 105296*n^3 + 7584*n^2 + 116480*n",
+      "provenance": {
+        "constructions": [
+          {
+            "closed_class": "unknown",
+            "closed_key": "OIC_@CQ@_WG?A@_CoGc@O",
+            "operation": {
+              "edge": [
+                3,
+                14
+              ],
+              "type": "contract_edge"
+            }
+          },
+          {
+            "closed_class": "unknown",
+            "closed_key": "OIGW@DAC_O?_?B_CoHC@G",
+            "operation": {
+              "edge": [
+                2,
+                11
+              ],
+              "type": "contract_edge"
+            }
+          }
+        ],
+        "site": [
+          14,
+          39,
+          40,
+          41
+        ],
+        "source_key": "N?C_`?H@a@wOoOd?T??"
+      },
+      "raw_obstruction": "9/32*n^9 - 243/16*n^8 + 8739/32*n^7 - 31203/16*n^6 + 17037/4*n^5 + 15021/2*n^4 - 59229/2*n^3 + 2133*n^2 + 32760*n",
+      "relation": [
+        [
+          "1/16*n^9 - 231/64*n^8 + 2167/32*n^7 - 991/2*n^6 + 4547/4*n^5 + 7401/4*n^4 - 15573/2*n^3 + 758*n^2 + 8608*n",
+          "?"
+        ],
+        [
+          "1",
+          "OIC_@CQ@_WG?A@_CoGc@O"
+        ],
+        [
+          "1",
+          "OIGW@DAC_O?_?B_CoHC@G"
+        ]
+      ],
+      "source_key": "N?C_`?H@a@wOoOd?T??"
+    },
+    {
+      "display_index": 5,
+      "factorisation": "(-9/32) * (n - 26) * (n - 14) * (n - 8) * (n - 5) * n * (n + 1) * (n + 2) * (n - 2)^2",
+      "multiplier": "-9/32",
+      "normalised_obstruction": "n^9 - 54*n^8 + 971*n^7 - 6934*n^6 + 15144*n^5 + 26704*n^4 - 105296*n^3 + 7584*n^2 + 116480*n",
+      "provenance": {
+        "constructions": [
+          {
+            "closed_class": "unknown",
+            "closed_key": "OBHA?WI@?_?PGC_KOHC?K",
+            "operation": {
+              "edge": [
+                2,
+                13
+              ],
+              "type": "contract_edge"
+            }
+          },
+          {
+            "closed_class": "unknown",
+            "closed_key": "OGD@?cS@`O@?O@_OoCc?o",
+            "operation": {
+              "edge": [
+                2,
+                10
+              ],
+              "type": "contract_edge"
+            }
+          },
+          {
+            "closed_class": "unknown",
+            "closed_key": "OGD@?cS@`O@?O@_OoCc?o",
+            "operation": {
+              "edge": [
+                3,
+                11
+              ],
+              "type": "contract_edge"
+            }
+          },
+          {
+            "closed_class": "unknown",
+            "closed_key": "OGD@?cS@`O@?O@_OoCc?o",
+            "operation": {
+              "edge": [
+                4,
+                13
+              ],
+              "type": "contract_edge"
+            }
+          },
+          {
+            "closed_class": "unknown",
+            "closed_key": "OGD@?cS@`O@?O@_OoCc?o",
+            "operation": {
+              "edge": [
+                5,
+                12
+              ],
+              "type": "contract_edge"
+            }
+          }
+        ],
+        "site": [
+          30,
+          35,
+          40,
+          41
+        ],
+        "source_key": "N?C`A@?DOTOc_ok?X??"
+      },
+      "raw_obstruction": "-9/32*n^9 + 243/16*n^8 - 8739/32*n^7 + 31203/16*n^6 - 17037/4*n^5 - 15021/2*n^4 + 59229/2*n^3 - 2133*n^2 - 32760*n",
+      "relation": [
+        [
+          "3/16*n^8 - 15/2*n^7 + 357/4*n^6 - 337/2*n^5 - 613*n^4 + 880*n^3 + 1012*n^2 - 344*n",
+          "?"
+        ],
+        [
+          "1",
+          "OBHA?WI@?_?PGC_KOHC?K"
+        ],
+        [
+          "2",
+          "OGD@?cS@`O@?O@_OoCc?o"
+        ]
+      ],
+      "source_key": "N?C`A@?DOTOc_ok?X??"
+    },
+    {
+      "display_index": 6,
+      "factorisation": "(-9/32) * (n - 26) * (n - 14) * (n - 8) * (n - 5) * n * (n + 1) * (n + 2) * (n - 2)^2",
+      "multiplier": "-9/32",
+      "normalised_obstruction": "n^9 - 54*n^8 + 971*n^7 - 6934*n^6 + 15144*n^5 + 26704*n^4 - 105296*n^3 + 7584*n^2 + 116480*n",
+      "provenance": {
+        "constructions": [
+          {
+            "closed_class": "unknown",
+            "closed_key": "OHP??gQA`C?_A@_HO@SA_",
+            "operation": {
+              "edge": [
+                4,
+                9
+              ],
+              "type": "contract_edge"
+            }
+          },
+          {
+            "closed_class": "unknown",
+            "closed_key": "OGCa?gQIAO?O@@_POAS@O",
+            "operation": {
+              "edge": [
+                4,
+                12
+              ],
+              "type": "contract_edge"
+            }
+          },
+          {
+            "closed_class": "unknown",
+            "closed_key": "O@XQ?cGG?G?S?E_GoIC?W",
+            "operation": {
+              "edge": [
+                5,
+                14
+              ],
+              "type": "contract_edge"
+            }
+          }
+        ],
+        "site": [
+          6,
+          29,
+          34,
+          41
+        ],
+        "source_key": "N?Ca@@?DGUP_c_gGWG?"
+      },
+      "raw_obstruction": "-9/32*n^9 + 243/16*n^8 - 8739/32*n^7 + 31203/16*n^6 - 17037/4*n^5 - 15021/2*n^4 + 59229/2*n^3 - 2133*n^2 - 32760*n",
+      "relation": [
+        [
+          "9/32*n^8 - 21/2*n^7 + 537/4*n^6 - 2213/4*n^5 - 911/2*n^4 + 3250*n^3 - 344*n^2 - 3476*n",
+          "?"
+        ],
+        [
+          "1",
+          "O@XQ?cGG?G?S?E_GoIC?W"
+        ],
+        [
+          "1",
+          "OGCa?gQIAO?O@@_POAS@O"
+        ],
+        [
+          "1",
+          "OHP??gQA`C?_A@_HO@SA_"
+        ]
+      ],
+      "source_key": "N?Ca@@?DGUP_c_gGWG?"
+    },
+    {
+      "display_index": 7,
+      "factorisation": "(9/32) * (n - 26) * (n - 14) * (n - 8) * (n - 5) * n * (n + 1) * (n + 2) * (n - 2)^2",
+      "multiplier": "9/32",
+      "normalised_obstruction": "n^9 - 54*n^8 + 971*n^7 - 6934*n^6 + 15144*n^5 + 26704*n^4 - 105296*n^3 + 7584*n^2 + 116480*n",
+      "provenance": {
+        "constructions": [
+          {
+            "closed_class": "unknown",
+            "closed_key": "OHP??gQA`C@?@@_HO@SA_",
+            "operation": {
+              "edge": [
+                1,
+                9
+              ],
+              "type": "contract_edge"
+            }
+          },
+          {
+            "closed_class": "unknown",
+            "closed_key": "OHP??gQA`C@?@@_HO@SA_",
+            "operation": {
+              "edge": [
+                4,
+                14
+              ],
+              "type": "contract_edge"
+            }
+          },
+          {
+            "closed_class": "unknown",
+            "closed_key": "OIGO@CQ@_WG?A@_OoAc@O",
+            "operation": {
+              "edge": [
+                8,
+                13
+              ],
+              "type": "contract_edge"
+            }
+          },
+          {
+            "closed_class": "unknown",
+            "closed_key": "OGD@?gQ@`O@?O@_OoCc?o",
+            "operation": {
+              "edge": [
+                6,
+                14
+              ],
+              "type": "contract_edge"
+            }
+          }
+        ],
+        "site": [
+          6,
+          39,
+          40,
+          41
+        ],
+        "source_key": "N?D@@@?DOTOoaOgGY??"
+      },
+      "raw_obstruction": "9/32*n^9 - 243/16*n^8 + 8739/32*n^7 - 31203/16*n^6 + 17037/4*n^5 + 15021/2*n^4 - 59229/2*n^3 + 2133*n^2 + 32760*n",
+      "relation": [
+        [
+          "-3/16*n^8 + 63/8*n^7 - 87*n^6 + 173*n^5 + 305*n^4 - 1122*n^3 + 184*n^2 + 1216*n",
+          "?"
+        ],
+        [
+          "1",
+          "OGD@?gQ@`O@?O@_OoCc?o"
+        ],
+        [
+          "1",
+          "OHP??gQA`C@?@@_HO@SA_"
+        ],
+        [
+          "1",
+          "OIGO@CQ@_WG?A@_OoAc@O"
+        ]
+      ],
+      "source_key": "N?D@@@?DOTOoaOgGY??"
+    },
+    {
+      "display_index": 8,
+      "factorisation": "(-9/32) * (n - 26) * (n - 14) * (n - 8) * (n - 5) * n * (n + 1) * (n + 2) * (n - 2)^2",
+      "multiplier": "-9/32",
+      "normalised_obstruction": "n^9 - 54*n^8 + 971*n^7 - 6934*n^6 + 15144*n^5 + 26704*n^4 - 105296*n^3 + 7584*n^2 + 116480*n",
+      "provenance": {
+        "constructions": [
+          {
+            "closed_class": "unknown",
+            "closed_key": "OIC_@CQ@_WG?A@_OoAc@O",
+            "operation": {
+              "edge": [
+                0,
+                9
+              ],
+              "type": "contract_edge"
+            }
+          },
+          {
+            "closed_class": "unknown",
+            "closed_key": "OIC_@CQ@_WG?A@_OoAc@O",
+            "operation": {
+              "edge": [
+                3,
+                12
+              ],
+              "type": "contract_edge"
+            }
+          },
+          {
+            "closed_class": "unknown",
+            "closed_key": "OGD@?KSA`_@?O@_Oo@c@_",
+            "operation": {
+              "edge": [
+                6,
+                15
+              ],
+              "type": "contract_edge"
+            }
+          }
+        ],
+        "site": [
+          6,
+          39,
+          40,
+          41
+        ],
+        "source_key": "N?GO_?DAr@WGo_h?R??"
+      },
+      "raw_obstruction": "-9/32*n^9 + 243/16*n^8 - 8739/32*n^7 + 31203/16*n^6 - 17037/4*n^5 - 15021/2*n^4 + 59229/2*n^3 - 2133*n^2 - 32760*n",
+      "relation": [
+        [
+          "-1/32*n^9 + 117/64*n^8 - 1175/32*n^7 + 1087/4*n^6 - 518*n^5 - 4019/4*n^4 + 7569/2*n^3 - 446*n^2 - 4492*n",
+          "?"
+        ],
+        [
+          "1",
+          "OGD@?KSA`_@?O@_Oo@c@_"
+        ],
+        [
+          "1",
+          "OIC_@CQ@_WG?A@_OoAc@O"
+        ]
+      ],
+      "source_key": "N?GO_?DAr@WGo_h?R??"
+    },
+    {
+      "display_index": 9,
+      "factorisation": "(-9/64) * (n - 26) * (n - 14) * (n - 8) * (n - 5) * n * (n + 1) * (n + 2) * (n - 2)^2",
+      "multiplier": "-9/64",
+      "normalised_obstruction": "n^9 - 54*n^8 + 971*n^7 - 6934*n^6 + 15144*n^5 + 26704*n^4 - 105296*n^3 + 7584*n^2 + 116480*n",
+      "provenance": {
+        "constructions": [
+          {
+            "closed_class": "unknown",
+            "closed_key": "O@Oa?oQIAG?_?`_POAS@O",
+            "operation": {
+              "edge": [
+                0,
+                6
+              ],
+              "type": "contract_edge"
+            }
+          },
+          {
+            "closed_class": "unknown",
+            "closed_key": "O@Oa?oQIAG?_?`_POAS@O",
+            "operation": {
+              "edge": [
+                0,
+                9
+              ],
+              "type": "contract_edge"
+            }
+          },
+          {
+            "closed_class": "unknown",
+            "closed_key": "O@Oa?oQIAG?_?`_POAS@O",
+            "operation": {
+              "edge": [
+                1,
+                7
+              ],
+              "type": "contract_edge"
+            }
+          },
+          {
+            "closed_class": "unknown",
+            "closed_key": "O@Oa?oQIAG?_?`_POAS@O",
+            "operation": {
+              "edge": [
+                1,
+                11
+              ],
+              "type": "contract_edge"
+            }
+          },
+          {
+            "closed_class": "unknown",
+            "closed_key": "O@Oa?oQIAG?_?`_POAS@O",
+            "operation": {
+              "edge": [
+                2,
+                8
+              ],
+              "type": "contract_edge"
+            }
+          },
+          {
+            "closed_class": "unknown",
+            "closed_key": "O@Oa?oQIAG?_?`_POAS@O",
+            "operation": {
+              "edge": [
+                2,
+                15
+              ],
+              "type": "contract_edge"
+            }
+          },
+          {
+            "closed_class": "unknown",
+            "closed_key": "OIC_@CQ@_WG?A@_OoAc@O",
+            "operation": {
+              "edge": [
+                0,
+                6
+              ],
+              "type": "contract_edge"
+            }
+          },
+          {
+            "closed_class": "unknown",
+            "closed_key": "OIC_@CQ@_WG?A@_OoAc@O",
+            "operation": {
+              "edge": [
+                8,
+                12
+              ],
+              "type": "contract_edge"
+            }
+          }
+        ],
+        "site": [
+          6,
+          13,
+          24,
+          41
+        ],
+        "source_key": "N@??G?LCrOWGo_e?S_?"
+      },
+      "raw_obstruction": "-9/64*n^9 + 243/32*n^8 - 8739/64*n^7 + 31203/32*n^6 - 17037/8*n^5 - 15021/4*n^4 + 59229/4*n^3 - 2133/2*n^2 - 16380*n",
+      "relation": [
+        [
+          "-1/32*n^9 + 111/64*n^8 - 1019/32*n^7 + 1721/8*n^6 - 715/2*n^5 - 4133/4*n^4 + 5133/2*n^3 + 580*n^2 - 2500*n",
+          "?"
+        ],
+        [
+          "1",
+          "O@Oa?oQIAG?_?`_POAS@O"
+        ],
+        [
+          "1",
+          "OIC_@CQ@_WG?A@_OoAc@O"
+        ]
+      ],
+      "source_key": "N@??G?LCrOWGo_e?S_?"
+    },
+    {
+      "display_index": 10,
+      "factorisation": "(-9/64) * (n - 26) * (n - 14) * (n - 8) * (n - 5) * n * (n + 1) * (n + 2) * (n - 2)^2",
+      "multiplier": "-9/64",
+      "normalised_obstruction": "n^9 - 54*n^8 + 971*n^7 - 6934*n^6 + 15144*n^5 + 26704*n^4 - 105296*n^3 + 7584*n^2 + 116480*n",
+      "provenance": {
+        "constructions": [
+          {
+            "closed_class": "unknown",
+            "closed_key": "O@P@?oSA`G?OO@_OoCc?o",
+            "operation": {
+              "edge": [
+                1,
+                9
+              ],
+              "type": "contract_edge"
+            }
+          },
+          {
+            "closed_class": "unknown",
+            "closed_key": "O@P@?oSA`G?OO@_OoCc?o",
+            "operation": {
+              "edge": [
+                2,
+                15
+              ],
+              "type": "contract_edge"
+            }
+          },
+          {
+            "closed_class": "unknown",
+            "closed_key": "O@P@?oSA`G?OO@_OoCc?o",
+            "operation": {
+              "edge": [
+                3,
+                11
+              ],
+              "type": "contract_edge"
+            }
+          },
+          {
+            "closed_class": "unknown",
+            "closed_key": "O@P@?oSA`G?OO@_OoCc?o",
+            "operation": {
+              "edge": [
+                3,
+                14
+              ],
+              "type": "contract_edge"
+            }
+          },
+          {
+            "closed_class": "unknown",
+            "closed_key": "O@P@?oSA`G?OO@_OoCc?o",
+            "operation": {
+              "edge": [
+                4,
+                9
+              ],
+              "type": "contract_edge"
+            }
+          },
+          {
+            "closed_class": "unknown",
+            "closed_key": "O@P@?oSA`G?OO@_OoCc?o",
+            "operation": {
+              "edge": [
+                5,
+                10
+              ],
+              "type": "contract_edge"
+            }
+          },
+          {
+            "closed_class": "unknown",
+            "closed_key": "O@P@?oSA`G?OO@_OoCc?o",
+            "operation": {
+              "edge": [
+                5,
+                13
+              ],
+              "type": "contract_edge"
+            }
+          },
+          {
+            "closed_class": "unknown",
+            "closed_key": "O@P@?oSA`G?OO@_OoCc?o",
+            "operation": {
+              "edge": [
+                6,
+                15
+              ],
+              "type": "contract_edge"
+            }
+          },
+          {
+            "closed_class": "unknown",
+            "closed_key": "OHOGaCS@_OC??B_CoHC@G",
+            "operation": {
+              "edge": [
+                2,
+                11
+              ],
+              "type": "contract_edge"
+            }
+          }
+        ],
+        "site": [
+          6,
+          39,
+          40,
+          41
+        ],
+        "source_key": "N@??GOY@R?wOoOd?T??"
+      },
+      "raw_obstruction": "-9/64*n^9 + 243/32*n^8 - 8739/64*n^7 + 31203/32*n^6 - 17037/8*n^5 - 15021/4*n^4 + 59229/4*n^3 - 2133/2*n^2 - 16380*n",
+      "relation": [
+        [
+          "-7/128*n^9 + 189/64*n^8 - 1727/32*n^7 + 1603/4*n^6 - 4129/4*n^5 - 5251/4*n^4 + 14161/2*n^3 - 1350*n^2 - 8338*n",
+          "?"
+        ],
+        [
+          "1",
+          "O@P@?oSA`G?OO@_OoCc?o"
+        ],
+        [
+          "1",
+          "OHOGaCS@_OC??B_CoHC@G"
+        ]
+      ],
+      "source_key": "N@??GOY@R?wOoOd?T??"
+    },
+    {
+      "display_index": 11,
+      "factorisation": "(-9/32) * (n - 26) * (n - 14) * (n - 8) * (n - 5) * n * (n + 1) * (n + 2) * (n - 2)^2",
+      "multiplier": "-9/32",
+      "normalised_obstruction": "n^9 - 54*n^8 + 971*n^7 - 6934*n^6 + 15144*n^5 + 26704*n^4 - 105296*n^3 + 7584*n^2 + 116480*n",
+      "provenance": {
+        "constructions": [
+          {
+            "closed_class": "unknown",
+            "closed_key": "OIC_@CQ@_WG?A@_OoAc@O",
+            "operation": {
+              "edge": [
+                3,
+                11
+              ],
+              "type": "contract_edge"
+            }
+          },
+          {
+            "closed_class": "unknown",
+            "closed_key": "OIC_@CQ@_WG?A@_OoAc@O",
+            "operation": {
+              "edge": [
+                4,
+                9
+              ],
+              "type": "contract_edge"
+            }
+          },
+          {
+            "closed_class": "unknown",
+            "closed_key": "O@XQ?c_A?G?S?E_OoEC?W",
+            "operation": {
+              "edge": [
+                1,
+                11
+              ],
+              "type": "contract_edge"
+            }
+          }
+        ],
+        "site": [
+          6,
+          13,
+          36,
+          41
+        ],
+        "source_key": "N@??H?LCaOwOoOd?T??"
+      },
+      "raw_obstruction": "-9/32*n^9 + 243/16*n^8 - 8739/32*n^7 + 31203/16*n^6 - 17037/4*n^5 - 15021/2*n^4 + 59229/2*n^3 - 2133*n^2 - 32760*n",
+      "relation": [
+        [
+          "-5/64*n^9 + 273/64*n^8 - 2489/32*n^7 + 2275/4*n^6 - 5091/4*n^5 - 8335/4*n^4 + 17763/2*n^3 - 1038*n^2 - 10164*n",
+          "?"
+        ],
+        [
+          "1",
+          "O@XQ?c_A?G?S?E_OoEC?W"
+        ],
+        [
+          "1",
+          "OIC_@CQ@_WG?A@_OoAc@O"
+        ]
+      ],
+      "source_key": "N@??H?LCaOwOoOd?T??"
+    },
+    {
+      "display_index": 12,
+      "factorisation": "(9/32) * (n - 26) * (n - 14) * (n - 8) * (n - 5) * n * (n + 1) * (n + 2) * (n - 2)^2",
+      "multiplier": "9/32",
+      "normalised_obstruction": "n^9 - 54*n^8 + 971*n^7 - 6934*n^6 + 15144*n^5 + 26704*n^4 - 105296*n^3 + 7584*n^2 + 116480*n",
+      "provenance": {
+        "constructions": [
+          {
+            "closed_class": "unknown",
+            "closed_key": "OIC_@CQ@_WG?A@_CoGc@O",
+            "operation": {
+              "edge": [
+                3,
+                11
+              ],
+              "type": "contract_edge"
+            }
+          },
+          {
+            "closed_class": "unknown",
+            "closed_key": "OIC_@CQ@_WG?A@_CoGc@O",
+            "operation": {
+              "edge": [
+                8,
+                14
+              ],
+              "type": "contract_edge"
+            }
+          },
+          {
+            "closed_class": "unknown",
+            "closed_key": "OGD@?gQ@`O@?O@_OoCc?o",
+            "operation": {
+              "edge": [
+                4,
+                13
+              ],
+              "type": "contract_edge"
+            }
+          }
+        ],
+        "site": [
+          6,
+          25,
+          36,
+          41
+        ],
+        "source_key": "N@??H?LCaOwOoOe?S_?"
+      },
+      "raw_obstruction": "9/32*n^9 - 243/16*n^8 + 8739/32*n^7 - 31203/16*n^6 + 17037/4*n^5 + 15021/2*n^4 - 59229/2*n^3 + 2133*n^2 + 32760*n",
+      "relation": [
+        [
+          "1/16*n^9 - 225/64*n^8 + 2101/32*n^7 - 1847/4*n^6 + 3479/4*n^5 + 7455/4*n^4 - 12447/2*n^3 + 158*n^2 + 6760*n",
+          "?"
+        ],
+        [
+          "1",
+          "OGD@?gQ@`O@?O@_OoCc?o"
+        ],
+        [
+          "1",
+          "OIC_@CQ@_WG?A@_CoGc@O"
+        ]
+      ],
+      "source_key": "N@??H?LCaOwOoOe?S_?"
+    },
+    {
+      "display_index": 13,
+      "factorisation": "(9/32) * (n - 26) * (n - 14) * (n - 8) * (n - 5) * n * (n + 1) * (n + 2) * (n - 2)^2",
+      "multiplier": "9/32",
+      "normalised_obstruction": "n^9 - 54*n^8 + 971*n^7 - 6934*n^6 + 15144*n^5 + 26704*n^4 - 105296*n^3 + 7584*n^2 + 116480*n",
+      "provenance": {
+        "constructions": [
+          {
+            "closed_class": "unknown",
+            "closed_key": "OIGOACa@_WA?A@_OoAc@O",
+            "operation": {
+              "edge": [
+                1,
+                9
+              ],
+              "type": "contract_edge"
+            }
+          },
+          {
+            "closed_class": "unknown",
+            "closed_key": "OIGOACa@_WA?A@_OoAc@O",
+            "operation": {
+              "edge": [
+                2,
+                12
+              ],
+              "type": "contract_edge"
+            }
+          },
+          {
+            "closed_class": "unknown",
+            "closed_key": "OIGOACa@_WA?A@_OoAc@O",
+            "operation": {
+              "edge": [
+                3,
+                11
+              ],
+              "type": "contract_edge"
+            }
+          },
+          {
+            "closed_class": "unknown",
+            "closed_key": "OIGOACa@_WA?A@_OoAc@O",
+            "operation": {
+              "edge": [
+                3,
+                14
+              ],
+              "type": "contract_edge"
+            }
+          },
+          {
+            "closed_class": "unknown",
+            "closed_key": "OIGOACa@_WA?A@_OoAc@O",
+            "operation": {
+              "edge": [
+                4,
+                9
+              ],
+              "type": "contract_edge"
+            }
+          },
+          {
+            "closed_class": "unknown",
+            "closed_key": "OIGOACa@_WA?A@_OoAc@O",
+            "operation": {
+              "edge": [
+                5,
+                10
+              ],
+              "type": "contract_edge"
+            }
+          },
+          {
+            "closed_class": "unknown",
+            "closed_key": "OIGOACa@_WA?A@_OoAc@O",
+            "operation": {
+              "edge": [
+                5,
+                13
+              ],
+              "type": "contract_edge"
+            }
+          },
+          {
+            "closed_class": "unknown",
+            "closed_key": "OIGOACa@_WA?A@_OoAc@O",
+            "operation": {
+              "edge": [
+                6,
+                12
+              ],
+              "type": "contract_edge"
+            }
+          },
+          {
+            "closed_class": "unknown",
+            "closed_key": "OGD@?KQB@_@?O@_Oo@c@_",
+            "operation": {
+              "edge": [
+                8,
+                10
+              ],
+              "type": "contract_edge"
+            }
+          }
+        ],
+        "site": [
+          6,
+          39,
+          40,
+          41
+        ],
+        "source_key": "N@??H?Y@QOwOoOd?T??"
+      },
+      "raw_obstruction": "9/32*n^9 - 243/16*n^8 + 8739/32*n^7 - 31203/16*n^6 + 17037/4*n^5 + 15021/2*n^4 - 59229/2*n^3 + 2133*n^2 + 32760*n",
+      "relation": [
+        [
+          "1/16*n^9 - 207/64*n^8 + 1867/32*n^7 - 3583/8*n^6 + 1100*n^5 + 6365/4*n^4 - 14837/2*n^3 + 1008*n^2 + 8324*n",
+          "?"
+        ],
+        [
+          "1",
+          "OGD@?KQB@_@?O@_Oo@c@_"
+        ],
+        [
+          "1",
+          "OIGOACa@_WA?A@_OoAc@O"
+        ]
+      ],
+      "source_key": "N@??H?Y@QOwOoOd?T??"
+    },
+    {
+      "display_index": 14,
+      "factorisation": "(9/64) * (n - 26) * (n - 14) * (n - 8) * (n - 5) * n * (n + 1) * (n + 2) * (n - 2)^2",
+      "multiplier": "9/64",
+      "normalised_obstruction": "n^9 - 54*n^8 + 971*n^7 - 6934*n^6 + 15144*n^5 + 26704*n^4 - 105296*n^3 + 7584*n^2 + 116480*n",
+      "provenance": {
+        "constructions": [
+          {
+            "closed_class": "unknown",
+            "closed_key": "O@Oa?oQIAG?_?`_POAS@O",
+            "operation": {
+              "edge": [
+                3,
+                9
+              ],
+              "type": "contract_edge"
+            }
+          },
+          {
+            "closed_class": "unknown",
+            "closed_key": "O@Oa?oQIAG?_?`_POAS@O",
+            "operation": {
+              "edge": [
+                4,
+                15
+              ],
+              "type": "contract_edge"
+            }
+          },
+          {
+            "closed_class": "unknown",
+            "closed_key": "O@Oa?oQIAG?_?`_POAS@O",
+            "operation": {
+              "edge": [
+                5,
+                11
+              ],
+              "type": "contract_edge"
+            }
+          },
+          {
+            "closed_class": "unknown",
+            "closed_key": "O@Oa?oQIAG?_?`_POAS@O",
+            "operation": {
+              "edge": [
+                6,
+                12
+              ],
+              "type": "contract_edge"
+            }
+          },
+          {
+            "closed_class": "unknown",
+            "closed_key": "O@Oa?oQIAG?_?`_POAS@O",
+            "operation": {
+              "edge": [
+                7,
+                14
+              ],
+              "type": "contract_edge"
+            }
+          },
+          {
+            "closed_class": "unknown",
+            "closed_key": "O@Oa?oQIAG?_?`_POAS@O",
+            "operation": {
+              "edge": [
+                8,
+                13
+              ],
+              "type": "contract_edge"
+            }
+          },
+          {
+            "closed_class": "unknown",
+            "closed_key": "OGD@?gQ@`O@?O@_OoCc?o",
+            "operation": {
+              "edge": [
+                2,
+                7
+              ],
+              "type": "contract_edge"
+            }
+          }
+        ],
+        "site": [
+          0,
+          13,
+          16,
+          41
+        ],
+        "source_key": "N@??OGKCr@WOoOe?S_?"
+      },
+      "raw_obstruction": "9/64*n^9 - 243/32*n^8 + 8739/64*n^7 - 31203/32*n^6 + 17037/8*n^5 + 15021/4*n^4 - 59229/4*n^3 + 2133/2*n^2 + 16380*n",
+      "relation": [
+        [
+          "1/64*n^9 - 63/64*n^8 + 631/32*n^7 - 295/2*n^6 + 1155/4*n^5 + 1481/4*n^4 - 4437/2*n^3 + 942*n^2 + 2988*n",
+          "?"
+        ],
+        [
+          "1",
+          "O@Oa?oQIAG?_?`_POAS@O"
+        ],
+        [
+          "1",
+          "OGD@?gQ@`O@?O@_OoCc?o"
+        ]
+      ],
+      "source_key": "N@??OGKCr@WOoOe?S_?"
+    },
+    {
+      "display_index": 15,
+      "factorisation": "(9/32) * (n - 26) * (n - 14) * (n - 8) * (n - 5) * n * (n + 1) * (n + 2) * (n - 2)^2",
+      "multiplier": "9/32",
+      "normalised_obstruction": "n^9 - 54*n^8 + 971*n^7 - 6934*n^6 + 15144*n^5 + 26704*n^4 - 105296*n^3 + 7584*n^2 + 116480*n",
+      "provenance": {
+        "constructions": [
+          {
+            "closed_class": "unknown",
+            "closed_key": "OIC_@CQ@_WG?A@_CoGc@O",
+            "operation": {
+              "edge": [
+                1,
+                10
+              ],
+              "type": "contract_edge"
+            }
+          },
+          {
+            "closed_class": "unknown",
+            "closed_key": "OIC_@CQ@_WG?A@_CoGc@O",
+            "operation": {
+              "edge": [
+                4,
+                15
+              ],
+              "type": "contract_edge"
+            }
+          },
+          {
+            "closed_class": "unknown",
+            "closed_key": "OGD@?KQB@_@?O@_Oo@c@_",
+            "operation": {
+              "edge": [
+                6,
+                13
+              ],
+              "type": "contract_edge"
+            }
+          }
+        ],
+        "site": [
+          0,
+          5,
+          40,
+          41
+        ],
+        "source_key": "N@??X?H@I_wGo_i?Q_?"
+      },
+      "raw_obstruction": "9/32*n^9 - 243/16*n^8 + 8739/32*n^7 - 31203/16*n^6 + 17037/4*n^5 + 15021/2*n^4 - 59229/2*n^3 + 2133*n^2 + 32760*n",
+      "relation": [
+        [
+          "5/128*n^9 - 141/64*n^8 + 85/2*n^7 - 1229/4*n^6 + 5439/8*n^5 + 4779/4*n^4 - 4655*n^3 + 278*n^2 + 5012*n",
+          "?"
+        ],
+        [
+          "1",
+          "OGD@?KQB@_@?O@_Oo@c@_"
+        ],
+        [
+          "1",
+          "OIC_@CQ@_WG?A@_CoGc@O"
+        ]
+      ],
+      "source_key": "N@??X?H@I_wGo_i?Q_?"
+    },
+    {
+      "display_index": 16,
+      "factorisation": "(-9/32) * (n - 26) * (n - 14) * (n - 8) * (n - 5) * n * (n + 1) * (n + 2) * (n - 2)^2",
+      "multiplier": "-9/32",
+      "normalised_obstruction": "n^9 - 54*n^8 + 971*n^7 - 6934*n^6 + 15144*n^5 + 26704*n^4 - 105296*n^3 + 7584*n^2 + 116480*n",
+      "provenance": {
+        "constructions": [
+          {
+            "closed_class": "unknown",
+            "closed_key": "OIC_@CQ@_WG?A@_OoAc@O",
+            "operation": {
+              "edge": [
+                1,
+                10
+              ],
+              "type": "contract_edge"
+            }
+          },
+          {
+            "closed_class": "unknown",
+            "closed_key": "OIC_@CQ@_WG?A@_OoAc@O",
+            "operation": {
+              "edge": [
+                5,
+                14
+              ],
+              "type": "contract_edge"
+            }
+          },
+          {
+            "closed_class": "unknown",
+            "closed_key": "OHOGaCS@_OC??B_CoHC@G",
+            "operation": {
+              "edge": [
+                7,
+                13
+              ],
+              "type": "contract_edge"
+            }
+          }
+        ],
+        "site": [
+          0,
+          5,
+          40,
+          41
+        ],
+        "source_key": "N@??_OK@r@WOoOd?T??"
+      },
+      "raw_obstruction": "-9/32*n^9 + 243/16*n^8 - 8739/32*n^7 + 31203/16*n^6 - 17037/4*n^5 - 15021/2*n^4 + 59229/2*n^3 - 2133*n^2 - 32760*n",
+      "relation": [
+        [
+          "-1/32*n^9 + 15/8*n^8 - 145/4*n^7 + 515/2*n^6 - 511*n^5 - 950*n^4 + 3724*n^3 - 440*n^2 - 4392*n",
+          "?"
+        ],
+        [
+          "1",
+          "OHOGaCS@_OC??B_CoHC@G"
+        ],
+        [
+          "1",
+          "OIC_@CQ@_WG?A@_OoAc@O"
+        ]
+      ],
+      "source_key": "N@??_OK@r@WOoOd?T??"
+    },
+    {
+      "display_index": 17,
+      "factorisation": "(9/64) * (n - 26) * (n - 14) * (n - 8) * (n - 5) * n * (n + 1) * (n + 2) * (n - 2)^2",
+      "multiplier": "9/64",
+      "normalised_obstruction": "n^9 - 54*n^8 + 971*n^7 - 6934*n^6 + 15144*n^5 + 26704*n^4 - 105296*n^3 + 7584*n^2 + 116480*n",
+      "provenance": {
+        "constructions": [
+          {
+            "closed_class": "unknown",
+            "closed_key": "O@P@?oSA`G?OO@_OoCc?o",
+            "operation": {
+              "edge": [
+                0,
+                10
+              ],
+              "type": "contract_edge"
+            }
+          },
+          {
+            "closed_class": "unknown",
+            "closed_key": "O@P@?oSA`G?OO@_OoCc?o",
+            "operation": {
+              "edge": [
+                0,
+                11
+              ],
+              "type": "contract_edge"
+            }
+          },
+          {
+            "closed_class": "unknown",
+            "closed_key": "O@P@?oSA`G?OO@_OoCc?o",
+            "operation": {
+              "edge": [
+                1,
+                8
+              ],
+              "type": "contract_edge"
+            }
+          },
+          {
+            "closed_class": "unknown",
+            "closed_key": "O@P@?oSA`G?OO@_OoCc?o",
+            "operation": {
+              "edge": [
+                2,
+                8
+              ],
+              "type": "contract_edge"
+            }
+          },
+          {
+            "closed_class": "unknown",
+            "closed_key": "O@P@?oSA`G?OO@_OoCc?o",
+            "operation": {
+              "edge": [
+                4,
+                12
+              ],
+              "type": "contract_edge"
+            }
+          },
+          {
+            "closed_class": "unknown",
+            "closed_key": "O@P@?oSA`G?OO@_OoCc?o",
+            "operation": {
+              "edge": [
+                6,
+                12
+              ],
+              "type": "contract_edge"
+            }
+          },
+          {
+            "closed_class": "unknown",
+            "closed_key": "O@P@?oSA`G?OO@_OoCc?o",
+            "operation": {
+              "edge": [
+                7,
+                13
+              ],
+              "type": "contract_edge"
+            }
+          },
+          {
+            "closed_class": "unknown",
+            "closed_key": "O@P@?oSA`G?OO@_OoCc?o",
+            "operation": {
+              "edge": [
+                7,
+                14
+              ],
+              "type": "contract_edge"
+            }
+          },
+          {
+            "closed_class": "unknown",
+            "closed_key": "OHP??gQA`C@?@@_HO@SA_",
+            "operation": {
+              "edge": [
+                2,
+                8
+              ],
+              "type": "contract_edge"
+            }
+          },
+          {
+            "closed_class": "unknown",
+            "closed_key": "OHP??gQA`C@?@@_HO@SA_",
+            "operation": {
+              "edge": [
+                7,
+                13
+              ],
+              "type": "contract_edge"
+            }
+          }
+        ],
+        "site": [
+          0,
+          5,
+          40,
+          41
+        ],
+        "source_key": "N@??_OK@r@WOoOh?R??"
+      },
+      "raw_obstruction": "9/64*n^9 - 243/32*n^8 + 8739/64*n^7 - 31203/32*n^6 + 17037/8*n^5 + 15021/4*n^4 - 59229/4*n^3 + 2133/2*n^2 + 16380*n",
+      "relation": [
+        [
+          "1/64*n^9 - 63/64*n^8 + 595/32*n^7 - 1063/8*n^6 + 295/2*n^5 + 2701/4*n^4 - 2221/2*n^3 - 512*n^2 + 888*n",
+          "?"
+        ],
+        [
+          "1",
+          "O@P@?oSA`G?OO@_OoCc?o"
+        ],
+        [
+          "1",
+          "OHP??gQA`C@?@@_HO@SA_"
+        ]
+      ],
+      "source_key": "N@??_OK@r@WOoOh?R??"
+    },
+    {
+      "display_index": 18,
+      "factorisation": "(9/32) * (n - 26) * (n - 14) * (n - 8) * (n - 5) * n * (n + 1) * (n + 2) * (n - 2)^2",
+      "multiplier": "9/32",
+      "normalised_obstruction": "n^9 - 54*n^8 + 971*n^7 - 6934*n^6 + 15144*n^5 + 26704*n^4 - 105296*n^3 + 7584*n^2 + 116480*n",
+      "provenance": {
+        "constructions": [
+          {
+            "closed_class": "unknown",
+            "closed_key": "OHP??gQA`C@?@@_HO@SA_",
+            "operation": {
+              "edge": [
+                3,
+                11
+              ],
+              "type": "contract_edge"
+            }
+          },
+          {
+            "closed_class": "unknown",
+            "closed_key": "OHP??gQA`C@?@@_HO@SA_",
+            "operation": {
+              "edge": [
+                6,
+                15
+              ],
+              "type": "contract_edge"
+            }
+          },
+          {
+            "closed_class": "unknown",
+            "closed_key": "OIGG`CEO?_@A@A_KOHC?K",
+            "operation": {
+              "edge": [
+                2,
+                10
+              ],
+              "type": "contract_edge"
+            }
+          },
+          {
+            "closed_class": "unknown",
+            "closed_key": "OIGG`CEO?_@A@A_KOHC?K",
+            "operation": {
+              "edge": [
+                3,
+                11
+              ],
+              "type": "contract_edge"
+            }
+          },
+          {
+            "closed_class": "unknown",
+            "closed_key": "OIGG`CEO?_@A@A_KOHC?K",
+            "operation": {
+              "edge": [
+                4,
+                12
+              ],
+              "type": "contract_edge"
+            }
+          },
+          {
+            "closed_class": "unknown",
+            "closed_key": "OIGG`CEO?_@A@A_KOHC?K",
+            "operation": {
+              "edge": [
+                5,
+                13
+              ],
+              "type": "contract_edge"
+            }
+          }
+        ],
+        "site": [
+          0,
+          19,
+          40,
+          41
+        ],
+        "source_key": "N@??_OM@R?wOoOd?T??"
+      },
+      "raw_obstruction": "9/32*n^9 - 243/16*n^8 + 8739/32*n^7 - 31203/16*n^6 + 17037/4*n^5 + 15021/2*n^4 - 59229/2*n^3 + 2133*n^2 + 32760*n",
+      "relation": [
+        [
+          "1/16*n^9 - 225/64*n^8 + 2113/32*n^7 - 3829/8*n^6 + 2119/2*n^5 + 7155/4*n^4 - 14679/2*n^3 + 728*n^2 + 8164*n",
+          "?"
+        ],
+        [
+          "1",
+          "OHP??gQA`C@?@@_HO@SA_"
+        ],
+        [
+          "1",
+          "OIGG`CEO?_@A@A_KOHC?K"
+        ]
+      ],
+      "source_key": "N@??_OM@R?wOoOd?T??"
+    },
+    {
+      "display_index": 19,
+      "factorisation": "(-9/32) * (n - 26) * (n - 14) * (n - 8) * (n - 5) * n * (n + 1) * (n + 2) * (n - 2)^2",
+      "multiplier": "-9/32",
+      "normalised_obstruction": "n^9 - 54*n^8 + 971*n^7 - 6934*n^6 + 15144*n^5 + 26704*n^4 - 105296*n^3 + 7584*n^2 + 116480*n",
+      "provenance": {
+        "constructions": [
+          {
+            "closed_class": "unknown",
+            "closed_key": "OIGG`CEAA?a?@@_KOGS?W",
+            "operation": {
+              "edge": [
+                0,
+                9
+              ],
+              "type": "contract_edge"
+            }
+          },
+          {
+            "closed_class": "unknown",
+            "closed_key": "OIGG`CEAA?a?@@_KOGS?W",
+            "operation": {
+              "edge": [
+                3,
+                12
+              ],
+              "type": "contract_edge"
+            }
+          },
+          {
+            "closed_class": "unknown",
+            "closed_key": "OIGG`CEAA?a?@@_KOGS?W",
+            "operation": {
+              "edge": [
+                4,
+                15
+              ],
+              "type": "contract_edge"
+            }
+          },
+          {
+            "closed_class": "unknown",
+            "closed_key": "OIGG`CEAA?a?@@_KOGS?W",
+            "operation": {
+              "edge": [
+                5,
+                10
+              ],
+              "type": "contract_edge"
+            }
+          },
+          {
+            "closed_class": "unknown",
+            "closed_key": "OIGG`CEAA?a?@@_KOGS?W",
+            "operation": {
+              "edge": [
+                7,
+                14
+              ],
+              "type": "contract_edge"
+            }
+          },
+          {
+            "closed_class": "unknown",
+            "closed_key": "OIGG`CEAA?a?@@_KOGS?W",
+            "operation": {
+              "edge": [
+                8,
+                13
+              ],
+              "type": "contract_edge"
+            }
+          },
+          {
+            "closed_class": "unknown",
+            "closed_key": "OHOGaCS@_OC??B_CoHC@G",
+            "operation": {
+              "edge": [
+                4,
+                12
+              ],
+              "type": "contract_edge"
+            }
+          }
+        ],
+        "site": [
+          6,
+          39,
+          40,
+          41
+        ],
+        "source_key": "N@??_OM@R?wOoOh?R??"
+      },
+      "raw_obstruction": "-9/32*n^9 + 243/16*n^8 - 8739/32*n^7 + 31203/16*n^6 - 17037/4*n^5 - 15021/2*n^4 + 59229/2*n^3 - 2133*n^2 - 32760*n",
+      "relation": [
+        [
+          "-7/128*n^9 + 195/64*n^8 - 919/16*n^7 + 6625/16*n^6 - 3455/4*n^5 - 6955/4*n^4 + 5953*n^3 + 135*n^2 - 6302*n",
+          "?"
+        ],
+        [
+          "1",
+          "OHOGaCS@_OC??B_CoHC@G"
+        ],
+        [
+          "1",
+          "OIGG`CEAA?a?@@_KOGS?W"
+        ]
+      ],
+      "source_key": "N@??_OM@R?wOoOh?R??"
+    },
+    {
+      "display_index": 20,
+      "factorisation": "(-9/32) * (n - 26) * (n - 14) * (n - 8) * (n - 5) * n * (n + 1) * (n + 2) * (n - 2)^2",
+      "multiplier": "-9/32",
+      "normalised_obstruction": "n^9 - 54*n^8 + 971*n^7 - 6934*n^6 + 15144*n^5 + 26704*n^4 - 105296*n^3 + 7584*n^2 + 116480*n",
+      "provenance": {
+        "constructions": [
+          {
+            "closed_class": "unknown",
+            "closed_key": "OIC_@CQ@_WG?A@_OoAc@O",
+            "operation": {
+              "edge": [
+                5,
+                10
+              ],
+              "type": "contract_edge"
+            }
+          },
+          {
+            "closed_class": "unknown",
+            "closed_key": "OIGW?KIGA?AA?a_SODC?K",
+            "operation": {
+              "edge": [
+                0,
+                12
+              ],
+              "type": "contract_edge"
+            }
+          },
+          {
+            "closed_class": "unknown",
+            "closed_key": "OIGW?KIGA?AA?a_SODC?K",
+            "operation": {
+              "edge": [
+                3,
+                15
+              ],
+              "type": "contract_edge"
+            }
+          }
+        ],
+        "site": [
+          0,
+          5,
+          14,
+          25
+        ],
+        "source_key": "N@??`?I@YWWOoOe?S_?"
+      },
+      "raw_obstruction": "-9/32*n^9 + 243/16*n^8 - 8739/32*n^7 + 31203/16*n^6 - 17037/4*n^5 - 15021/2*n^4 + 59229/2*n^3 - 2133*n^2 - 32760*n",
+      "relation": [
+        [
+          "-5/64*n^9 + 267/64*n^8 - 605/8*n^7 + 4553/8*n^6 - 10773/8*n^5 - 8369/4*n^4 + 9197*n^3 - 1004*n^2 - 10382*n",
+          "?"
+        ],
+        [
+          "1",
+          "OIC_@CQ@_WG?A@_OoAc@O"
+        ],
+        [
+          "1",
+          "OIGW?KIGA?AA?a_SODC?K"
+        ]
+      ],
+      "source_key": "N@??`?I@YWWOoOe?S_?"
+    },
+    {
+      "display_index": 21,
+      "factorisation": "(9/32) * (n - 26) * (n - 14) * (n - 8) * (n - 5) * n * (n + 1) * (n + 2) * (n - 2)^2",
+      "multiplier": "9/32",
+      "normalised_obstruction": "n^9 - 54*n^8 + 971*n^7 - 6934*n^6 + 15144*n^5 + 26704*n^4 - 105296*n^3 + 7584*n^2 + 116480*n",
+      "provenance": {
+        "constructions": [
+          {
+            "closed_class": "unknown",
+            "closed_key": "OIC_@CQ@_WG?A@_CoGc@O",
+            "operation": {
+              "edge": [
+                4,
+                9
+              ],
+              "type": "contract_edge"
+            }
+          },
+          {
+            "closed_class": "unknown",
+            "closed_key": "OIC_@CQ@_WG?A@_CoGc@O",
+            "operation": {
+              "edge": [
+                5,
+                10
+              ],
+              "type": "contract_edge"
+            }
+          },
+          {
+            "closed_class": "unknown",
+            "closed_key": "OIGGaGaC?O_O@@_KOGc?S",
+            "operation": {
+              "edge": [
+                3,
+                15
+              ],
+              "type": "contract_edge"
+            }
+          },
+          {
+            "closed_class": "unknown",
+            "closed_key": "OIGGaGaC?O_O@@_KOGc?S",
+            "operation": {
+              "edge": [
+                6,
+                12
+              ],
+              "type": "contract_edge"
+            }
+          }
+        ],
+        "site": [
+          0,
+          23,
+          34,
+          41
+        ],
+        "source_key": "N@??`?M@QOwOoOh?R??"
+      },
+      "raw_obstruction": "9/32*n^9 - 243/16*n^8 + 8739/32*n^7 - 31203/16*n^6 + 17037/4*n^5 + 15021/2*n^4 - 59229/2*n^3 + 2133*n^2 + 32760*n",
+      "relation": [
+        [
+          "11/128*n^9 - 147/32*n^8 + 661/8*n^7 - 4873/8*n^6 + 5855/4*n^5 + 4507/2*n^4 - 9922*n^3 + 1026*n^2 + 10958*n",
+          "?"
+        ],
+        [
+          "1",
+          "OIC_@CQ@_WG?A@_CoGc@O"
+        ],
+        [
+          "1",
+          "OIGGaGaC?O_O@@_KOGc?S"
+        ]
+      ],
+      "source_key": "N@??`?M@QOwOoOh?R??"
+    },
+    {
+      "display_index": 22,
+      "factorisation": "(-9/32) * (n - 26) * (n - 14) * (n - 8) * (n - 5) * n * (n + 1) * (n + 2) * (n - 2)^2",
+      "multiplier": "-9/32",
+      "normalised_obstruction": "n^9 - 54*n^8 + 971*n^7 - 6934*n^6 + 15144*n^5 + 26704*n^4 - 105296*n^3 + 7584*n^2 + 116480*n",
+      "provenance": {
+        "constructions": [
+          {
+            "closed_class": "unknown",
+            "closed_key": "OHP??gQA`C?_A@_HO@SA_",
+            "operation": {
+              "edge": [
+                2,
+                15
+              ],
+              "type": "contract_edge"
+            }
+          },
+          {
+            "closed_class": "unknown",
+            "closed_key": "OHP??gQA`C?_A@_HO@SA_",
+            "operation": {
+              "edge": [
+                3,
+                13
+              ],
+              "type": "contract_edge"
+            }
+          },
+          {
+            "closed_class": "unknown",
+            "closed_key": "OHOGaCS@_OC??B_CoHC@G",
+            "operation": {
+              "edge": [
+                8,
+                10
+              ],
+              "type": "contract_edge"
+            }
+          }
+        ],
+        "site": [
+          14,
+          37,
+          40,
+          41
+        ],
+        "source_key": "N@?@?_M@QOwOoOh?R??"
+      },
+      "raw_obstruction": "-9/32*n^9 + 243/16*n^8 - 8739/32*n^7 + 31203/16*n^6 - 17037/4*n^5 - 15021/2*n^4 + 59229/2*n^3 - 2133*n^2 - 32760*n",
+      "relation": [
+        [
+          "-5/64*n^9 + 273/64*n^8 - 2477/32*n^7 + 4559/8*n^6 - 1297*n^5 - 8795/4*n^4 + 17771/2*n^3 - 596*n^2 - 9816*n",
+          "?"
+        ],
+        [
+          "1",
+          "OHOGaCS@_OC??B_CoHC@G"
+        ],
+        [
+          "1",
+          "OHP??gQA`C?_A@_HO@SA_"
+        ]
+      ],
+      "source_key": "N@?@?_M@QOwOoOh?R??"
+    },
+    {
+      "display_index": 23,
+      "factorisation": "(9/32) * (n - 26) * (n - 14) * (n - 8) * (n - 5) * n * (n + 1) * (n + 2) * (n - 2)^2",
+      "multiplier": "9/32",
+      "normalised_obstruction": "n^9 - 54*n^8 + 971*n^7 - 6934*n^6 + 15144*n^5 + 26704*n^4 - 105296*n^3 + 7584*n^2 + 116480*n",
+      "provenance": {
+        "constructions": [
+          {
+            "closed_class": "unknown",
+            "closed_key": "OIC_@CQ@_WG?A@_CoGc@O",
+            "operation": {
+              "edge": [
+                0,
+                9
+              ],
+              "type": "contract_edge"
+            }
+          },
+          {
+            "closed_class": "unknown",
+            "closed_key": "OIC_@CQ@_WG?A@_CoGc@O",
+            "operation": {
+              "edge": [
+                5,
+                13
+              ],
+              "type": "contract_edge"
+            }
+          },
+          {
+            "closed_class": "unknown",
+            "closed_key": "OGD@?KQB@_@?O@_Oo@c@_",
+            "operation": {
+              "edge": [
+                4,
+                12
+              ],
+              "type": "contract_edge"
+            }
+          }
+        ],
+        "site": [
+          6,
+          39,
+          40,
+          41
+        ],
+        "source_key": "N@?G_?H@r@WGo_i?Q_?"
+      },
+      "raw_obstruction": "9/32*n^9 - 243/16*n^8 + 8739/32*n^7 - 31203/16*n^6 + 17037/4*n^5 + 15021/2*n^4 - 59229/2*n^3 + 2133*n^2 + 32760*n",
+      "relation": [
+        [
+          "5/128*n^9 - 141/64*n^8 + 85/2*n^7 - 1229/4*n^6 + 5439/8*n^5 + 4779/4*n^4 - 4655*n^3 + 278*n^2 + 5012*n",
+          "?"
+        ],
+        [
+          "1",
+          "OGD@?KQB@_@?O@_Oo@c@_"
+        ],
+        [
+          "1",
+          "OIC_@CQ@_WG?A@_CoGc@O"
+        ]
+      ],
+      "source_key": "N@?G_?H@r@WGo_i?Q_?"
+    },
+    {
+      "display_index": 24,
+      "factorisation": "(-9/32) * (n - 26) * (n - 14) * (n - 8) * (n - 5) * n * (n + 1) * (n + 2) * (n - 2)^2",
+      "multiplier": "-9/32",
+      "normalised_obstruction": "n^9 - 54*n^8 + 971*n^7 - 6934*n^6 + 15144*n^5 + 26704*n^4 - 105296*n^3 + 7584*n^2 + 116480*n",
+      "provenance": {
+        "constructions": [
+          {
+            "closed_class": "unknown",
+            "closed_key": "OHP??gQA`C?_A@_HO@SA_",
+            "operation": {
+              "edge": [
+                3,
+                11
+              ],
+              "type": "contract_edge"
+            }
+          },
+          {
+            "closed_class": "unknown",
+            "closed_key": "OHP??gQA`C?_A@_HO@SA_",
+            "operation": {
+              "edge": [
+                6,
+                15
+              ],
+              "type": "contract_edge"
+            }
+          },
+          {
+            "closed_class": "unknown",
+            "closed_key": "OIC_?caO_W@?@@_POCS?o",
+            "operation": {
+              "edge": [
+                2,
+                12
+              ],
+              "type": "contract_edge"
+            }
+          },
+          {
+            "closed_class": "unknown",
+            "closed_key": "OIC_?caO_W@?@@_POCS?o",
+            "operation": {
+              "edge": [
+                3,
+                10
+              ],
+              "type": "contract_edge"
+            }
+          },
+          {
+            "closed_class": "unknown",
+            "closed_key": "OIC_?caO_W@?@@_POCS?o",
+            "operation": {
+              "edge": [
+                4,
+                11
+              ],
+              "type": "contract_edge"
+            }
+          },
+          {
+            "closed_class": "unknown",
+            "closed_key": "OIC_?caO_W@?@@_POCS?o",
+            "operation": {
+              "edge": [
+                6,
+                13
+              ],
+              "type": "contract_edge"
+            }
+          }
+        ],
+        "site": [
+          0,
+          19,
+          36,
+          41
+        ],
+        "source_key": "N@?G_OE?Z?wOoOi?Q_?"
+      },
+      "raw_obstruction": "-9/32*n^9 + 243/16*n^8 - 8739/32*n^7 + 31203/16*n^6 - 17037/4*n^5 - 15021/2*n^4 + 59229/2*n^3 - 2133*n^2 - 32760*n",
+      "relation": [
+        [
+          "-7/128*n^9 + 99/32*n^8 - 449/8*n^7 + 1723/4*n^6 - 2105/2*n^5 - 3105/2*n^4 + 7140*n^3 - 880*n^2 - 8114*n",
+          "?"
+        ],
+        [
+          "1",
+          "OHP??gQA`C?_A@_HO@SA_"
+        ],
+        [
+          "1",
+          "OIC_?caO_W@?@@_POCS?o"
+        ]
+      ],
+      "source_key": "N@?G_OE?Z?wOoOi?Q_?"
+    },
+    {
+      "display_index": 25,
+      "factorisation": "(-9/32) * (n - 26) * (n - 14) * (n - 8) * (n - 5) * n * (n + 1) * (n + 2) * (n - 2)^2",
+      "multiplier": "-9/32",
+      "normalised_obstruction": "n^9 - 54*n^8 + 971*n^7 - 6934*n^6 + 15144*n^5 + 26704*n^4 - 105296*n^3 + 7584*n^2 + 116480*n",
+      "provenance": {
+        "constructions": [
+          {
+            "closed_class": "unknown",
+            "closed_key": "OIGG`CEAA?a?@@_KOGS?W",
+            "operation": {
+              "edge": [
+                3,
+                13
+              ],
+              "type": "contract_edge"
+            }
+          },
+          {
+            "closed_class": "unknown",
+            "closed_key": "OIGG`CEAA?a?@@_KOGS?W",
+            "operation": {
+              "edge": [
+                4,
+                9
+              ],
+              "type": "contract_edge"
+            }
+          },
+          {
+            "closed_class": "unknown",
+            "closed_key": "OIGG`CEAA?a?@@_KOGS?W",
+            "operation": {
+              "edge": [
+                5,
+                14
+              ],
+              "type": "contract_edge"
+            }
+          },
+          {
+            "closed_class": "unknown",
+            "closed_key": "OICa?KIA?Ga?G@_SOCc?S",
+            "operation": {
+              "edge": [
+                2,
+                9
+              ],
+              "type": "contract_edge"
+            }
+          },
+          {
+            "closed_class": "unknown",
+            "closed_key": "OICa?KIA?Ga?G@_SOCc?S",
+            "operation": {
+              "edge": [
+                6,
+                13
+              ],
+              "type": "contract_edge"
+            }
+          }
+        ],
+        "site": [
+          18,
+          39,
+          40,
+          41
+        ],
+        "source_key": "N@?G`?I@Q@wOoOe?S_?"
+      },
+      "raw_obstruction": "-9/32*n^9 + 243/16*n^8 - 8739/32*n^7 + 31203/16*n^6 - 17037/4*n^5 - 15021/2*n^4 + 59229/2*n^3 - 2133*n^2 - 32760*n",
+      "relation": [
+        [
+          "-5/64*n^9 + 129/32*n^8 - 2351/32*n^7 + 9055/16*n^6 - 5729/4*n^5 - 2190*n^4 + 18925/2*n^3 - 553*n^2 - 10212*n",
+          "?"
+        ],
+        [
+          "1",
+          "OICa?KIA?Ga?G@_SOCc?S"
+        ],
+        [
+          "1",
+          "OIGG`CEAA?a?@@_KOGS?W"
+        ]
+      ],
+      "source_key": "N@?G`?I@Q@wOoOe?S_?"
+    },
+    {
+      "display_index": 26,
+      "factorisation": "(-9/32) * (n - 26) * (n - 14) * (n - 8) * (n - 5) * n * (n + 1) * (n + 2) * (n - 2)^2",
+      "multiplier": "-9/32",
+      "normalised_obstruction": "n^9 - 54*n^8 + 971*n^7 - 6934*n^6 + 15144*n^5 + 26704*n^4 - 105296*n^3 + 7584*n^2 + 116480*n",
+      "provenance": {
+        "constructions": [
+          {
+            "closed_class": "unknown",
+            "closed_key": "OBHA?WI@?_?PGC_KOHC?K",
+            "operation": {
+              "edge": [
+                3,
+                13
+              ],
+              "type": "contract_edge"
+            }
+          },
+          {
+            "closed_class": "unknown",
+            "closed_key": "OGCa?gQIAO?O@@_POAS@O",
+            "operation": {
+              "edge": [
+                2,
+                11
+              ],
+              "type": "contract_edge"
+            }
+          },
+          {
+            "closed_class": "unknown",
+            "closed_key": "OGCa?gQIAO?O@@_POAS@O",
+            "operation": {
+              "edge": [
+                7,
+                15
+              ],
+              "type": "contract_edge"
+            }
+          }
+        ],
+        "site": [
+          14,
+          35,
+          40,
+          41
+        ],
+        "source_key": "N@OOP@??oHr?g_p?OK?"
+      },
+      "raw_obstruction": "-9/32*n^9 + 243/16*n^8 - 8739/32*n^7 + 31203/16*n^6 - 17037/4*n^5 - 15021/2*n^4 + 59229/2*n^3 - 2133*n^2 - 32760*n",
+      "relation": [
+        [
+          "9/32*n^8 - 105/8*n^7 + 669/4*n^6 - 2771/4*n^5 - 919/2*n^4 + 4164*n^3 - 856*n^2 - 4732*n",
+          "?"
+        ],
+        [
+          "1",
+          "OBHA?WI@?_?PGC_KOHC?K"
+        ],
+        [
+          "2",
+          "OGCa?gQIAO?O@@_POAS@O"
+        ]
+      ],
+      "source_key": "N@OOP@??oHr?g_p?OK?"
+    },
+    {
+      "display_index": 27,
+      "factorisation": "(9/32) * (n - 26) * (n - 14) * (n - 8) * (n - 5) * n * (n + 1) * (n + 2) * (n - 2)^2",
+      "multiplier": "9/32",
+      "normalised_obstruction": "n^9 - 54*n^8 + 971*n^7 - 6934*n^6 + 15144*n^5 + 26704*n^4 - 105296*n^3 + 7584*n^2 + 116480*n",
+      "provenance": {
+        "constructions": [
+          {
+            "closed_class": "unknown",
+            "closed_key": "OBHA?WI@?_?PGC_KOHC?K",
+            "operation": {
+              "edge": [
+                5,
+                13
+              ],
+              "type": "contract_edge"
+            }
+          },
+          {
+            "closed_class": "unknown",
+            "closed_key": "OGD@?KQB@_@?O@_Oo@c@_",
+            "operation": {
+              "edge": [
+                7,
+                15
+              ],
+              "type": "contract_edge"
+            }
+          }
+        ],
+        "site": [
+          12,
+          23,
+          34,
+          37
+        ],
+        "source_key": "N@OOP@?@ODr?g_p?OK?"
+      },
+      "raw_obstruction": "9/32*n^9 - 243/16*n^8 + 8739/32*n^7 - 31203/16*n^6 + 17037/4*n^5 + 15021/2*n^4 - 59229/2*n^3 + 2133*n^2 + 32760*n",
+      "relation": [
+        [
+          "-9/32*n^8 + 201/16*n^7 - 1089/8*n^6 + 2057/4*n^5 + 837/2*n^4 - 3061*n^3 + 522*n^2 + 3212*n",
+          "?"
+        ],
+        [
+          "1",
+          "OBHA?WI@?_?PGC_KOHC?K"
+        ],
+        [
+          "2",
+          "OGD@?KQB@_@?O@_Oo@c@_"
+        ]
+      ],
+      "source_key": "N@OOP@?@ODr?g_p?OK?"
+    },
+    {
+      "display_index": 28,
+      "factorisation": "(9/32) * (n - 26) * (n - 14) * (n - 8) * (n - 5) * n * (n + 1) * (n + 2) * (n - 2)^2",
+      "multiplier": "9/32",
+      "normalised_obstruction": "n^9 - 54*n^8 + 971*n^7 - 6934*n^6 + 15144*n^5 + 26704*n^4 - 105296*n^3 + 7584*n^2 + 116480*n",
+      "provenance": {
+        "constructions": [
+          {
+            "closed_class": "unknown",
+            "closed_key": "O@P?@OSG_S?oS?_PODC?c",
+            "operation": {
+              "edge": [
+                3,
+                12
+              ],
+              "type": "contract_edge"
+            }
+          },
+          {
+            "closed_class": "unknown",
+            "closed_key": "OGD@?gQIAO?O@@_POAS@O",
+            "operation": {
+              "edge": [
+                7,
+                15
+              ],
+              "type": "contract_edge"
+            }
+          },
+          {
+            "closed_class": "unknown",
+            "closed_key": "OIGG_oaO?C?a@A_HOHC?c",
+            "operation": {
+              "edge": [
+                7,
+                15
+              ],
+              "type": "contract_edge"
+            }
+          }
+        ],
+        "site": [
+          14,
+          35,
+          40,
+          41
+        ],
+        "source_key": "N@Oa?_G?WKt?s?`GOW?"
+      },
+      "raw_obstruction": "9/32*n^9 - 243/16*n^8 + 8739/32*n^7 - 31203/16*n^6 + 17037/4*n^5 + 15021/2*n^4 - 59229/2*n^3 + 2133*n^2 + 32760*n",
+      "relation": [
+        [
+          "-3/16*n^8 + 189/16*n^7 - 1221/8*n^6 + 1041/2*n^5 + 680*n^4 - 2895*n^3 - 266*n^2 + 2496*n",
+          "?"
+        ],
+        [
+          "1",
+          "O@P?@OSG_S?oS?_PODC?c"
+        ],
+        [
+          "1",
+          "OGD@?gQIAO?O@@_POAS@O"
+        ],
+        [
+          "1",
+          "OIGG_oaO?C?a@A_HOHC?c"
+        ]
+      ],
+      "source_key": "N@Oa?_G?WKt?s?`GOW?"
+    },
+    {
+      "display_index": 29,
+      "factorisation": "(-9/32) * (n - 26) * (n - 14) * (n - 8) * (n - 5) * n * (n + 1) * (n + 2) * (n - 2)^2",
+      "multiplier": "-9/32",
+      "normalised_obstruction": "n^9 - 54*n^8 + 971*n^7 - 6934*n^6 + 15144*n^5 + 26704*n^4 - 105296*n^3 + 7584*n^2 + 116480*n",
+      "provenance": {
+        "constructions": [
+          {
+            "closed_class": "unknown",
+            "closed_key": "OHP??gQA`C?_A@_HO@SA_",
+            "operation": {
+              "edge": [
+                1,
+                9
+              ],
+              "type": "contract_edge"
+            }
+          },
+          {
+            "closed_class": "unknown",
+            "closed_key": "OHP??gQA`C?_A@_HO@SA_",
+            "operation": {
+              "edge": [
+                4,
+                14
+              ],
+              "type": "contract_edge"
+            }
+          },
+          {
+            "closed_class": "unknown",
+            "closed_key": "OIGO@CQ@_WG?A@_CoGc@O",
+            "operation": {
+              "edge": [
+                1,
+                10
+              ],
+              "type": "contract_edge"
+            }
+          },
+          {
+            "closed_class": "unknown",
+            "closed_key": "OIGO@CQ@_WG?A@_CoGc@O",
+            "operation": {
+              "edge": [
+                4,
+                13
+              ],
+              "type": "contract_edge"
+            }
+          },
+          {
+            "closed_class": "unknown",
+            "closed_key": "OGD@?KSA`_@?O@_Oo@c@_",
+            "operation": {
+              "edge": [
+                2,
+                8
+              ],
+              "type": "contract_edge"
+            }
+          }
+        ],
+        "site": [
+          6,
+          39,
+          40,
+          41
+        ],
+        "source_key": "N@P?`??AWLPOoOd?SC?"
+      },
+      "raw_obstruction": "-9/32*n^9 + 243/16*n^8 - 8739/32*n^7 + 31203/16*n^6 - 17037/4*n^5 - 15021/2*n^4 + 59229/2*n^3 - 2133*n^2 - 32760*n",
+      "relation": [
+        [
+          "3/16*n^8 - 123/16*n^7 + 663/8*n^6 - 235*n^5 - 244*n^4 + 1553*n^3 - 362*n^2 - 1960*n",
+          "?"
+        ],
+        [
+          "1",
+          "OGD@?KSA`_@?O@_Oo@c@_"
+        ],
+        [
+          "1",
+          "OHP??gQA`C?_A@_HO@SA_"
+        ],
+        [
+          "1",
+          "OIGO@CQ@_WG?A@_CoGc@O"
+        ]
+      ],
+      "source_key": "N@P?`??AWLPOoOd?SC?"
+    },
+    {
+      "display_index": 30,
+      "factorisation": "(9/32) * (n - 26) * (n - 14) * (n - 8) * (n - 5) * n * (n + 1) * (n + 2) * (n - 2)^2",
+      "multiplier": "9/32",
+      "normalised_obstruction": "n^9 - 54*n^8 + 971*n^7 - 6934*n^6 + 15144*n^5 + 26704*n^4 - 105296*n^3 + 7584*n^2 + 116480*n",
+      "provenance": {
+        "constructions": [
+          {
+            "closed_class": "unknown",
+            "closed_key": "O@P?@GgC_S?oS?_QOEC?K",
+            "operation": {
+              "edge": [
+                1,
+                9
+              ],
+              "type": "contract_edge"
+            }
+          },
+          {
+            "closed_class": "unknown",
+            "closed_key": "O@P?@GgC_S?oS?_QOEC?K",
+            "operation": {
+              "edge": [
+                3,
+                11
+              ],
+              "type": "contract_edge"
+            }
+          },
+          {
+            "closed_class": "unknown",
+            "closed_key": "O@P?@GgC_S?oS?_QOEC?K",
+            "operation": {
+              "edge": [
+                3,
+                13
+              ],
+              "type": "contract_edge"
+            }
+          },
+          {
+            "closed_class": "unknown",
+            "closed_key": "O@P?@GgC_S?oS?_QOEC?K",
+            "operation": {
+              "edge": [
+                4,
+                9
+              ],
+              "type": "contract_edge"
+            }
+          },
+          {
+            "closed_class": "unknown",
+            "closed_key": "OIGO@CQ@_WG?A@_OoAc@O",
+            "operation": {
+              "edge": [
+                5,
+                12
+              ],
+              "type": "contract_edge"
+            }
+          },
+          {
+            "closed_class": "unknown",
+            "closed_key": "OGD@?gQIAO?O@@_POAS@O",
+            "operation": {
+              "edge": [
+                2,
+                12
+              ],
+              "type": "contract_edge"
+            }
+          },
+          {
+            "closed_class": "unknown",
+            "closed_key": "OGD@?gQIAO?O@@_POAS@O",
+            "operation": {
+              "edge": [
+                3,
+                10
+              ],
+              "type": "contract_edge"
+            }
+          },
+          {
+            "closed_class": "unknown",
+            "closed_key": "OGD@?gQIAO?O@@_POAS@O",
+            "operation": {
+              "edge": [
+                4,
+                11
+              ],
+              "type": "contract_edge"
+            }
+          },
+          {
+            "closed_class": "unknown",
+            "closed_key": "OGD@?gQIAO?O@@_POAS@O",
+            "operation": {
+              "edge": [
+                6,
+                13
+              ],
+              "type": "contract_edge"
+            }
+          }
+        ],
+        "site": [
+          6,
+          39,
+          40,
+          41
+        ],
+        "source_key": "N@P@?_?AWLPOoOd?SC?"
+      },
+      "raw_obstruction": "9/32*n^9 - 243/16*n^8 + 8739/32*n^7 - 31203/16*n^6 + 17037/4*n^5 + 15021/2*n^4 - 59229/2*n^3 + 2133*n^2 + 32760*n",
+      "relation": [
+        [
+          "-3/16*n^8 + 69/8*n^7 - 855/8*n^6 + 1553/4*n^5 + 222*n^4 - 2396*n^3 + 834*n^2 + 2820*n",
+          "?"
+        ],
+        [
+          "1",
+          "O@P?@GgC_S?oS?_QOEC?K"
+        ],
+        [
+          "1",
+          "OGD@?gQIAO?O@@_POAS@O"
+        ],
+        [
+          "1",
+          "OIGO@CQ@_WG?A@_OoAc@O"
+        ]
+      ],
+      "source_key": "N@P@?_?AWLPOoOd?SC?"
+    },
+    {
+      "display_index": 31,
+      "factorisation": "(9/32) * (n - 26) * (n - 14) * (n - 8) * (n - 5) * n * (n + 1) * (n + 2) * (n - 2)^2",
+      "multiplier": "9/32",
+      "normalised_obstruction": "n^9 - 54*n^8 + 971*n^7 - 6934*n^6 + 15144*n^5 + 26704*n^4 - 105296*n^3 + 7584*n^2 + 116480*n",
+      "provenance": {
+        "constructions": [
+          {
+            "closed_class": "unknown",
+            "closed_key": "OBHA?WI@?CAAGA_KOHC?K",
+            "operation": {
+              "edge": [
+                4,
+                10
+              ],
+              "type": "contract_edge"
+            }
+          },
+          {
+            "closed_class": "unknown",
+            "closed_key": "OBHA?WI@?CAAGA_KOHC?K",
+            "operation": {
+              "edge": [
+                6,
+                13
+              ],
+              "type": "contract_edge"
+            }
+          },
+          {
+            "closed_class": "unknown",
+            "closed_key": "OGD@?gQ@`O@?O@_OoCc?o",
+            "operation": {
+              "edge": [
+                0,
+                5
+              ],
+              "type": "contract_edge"
+            }
+          }
+        ],
+        "site": [
+          6,
+          21,
+          26,
+          41
+        ],
+        "source_key": "NB?HA??AgJOWcGi?W_?"
+      },
+      "raw_obstruction": "9/32*n^9 - 243/16*n^8 + 8739/32*n^7 - 31203/16*n^6 + 17037/4*n^5 + 15021/2*n^4 - 59229/2*n^3 + 2133*n^2 + 32760*n",
+      "relation": [
+        [
+          "-3/16*n^8 + 69/8*n^7 - 393/4*n^6 + 205*n^5 + 505*n^4 - 1154*n^3 - 436*n^2 + 784*n",
+          "?"
+        ],
+        [
+          "1",
+          "OBHA?WI@?CAAGA_KOHC?K"
+        ],
+        [
+          "2",
+          "OGD@?gQ@`O@?O@_OoCc?o"
+        ]
+      ],
+      "source_key": "NB?HA??AgJOWcGi?W_?"
+    },
+    {
+      "display_index": 32,
+      "factorisation": "(-9/32) * (n - 26) * (n - 14) * (n - 8) * (n - 5) * n * (n + 1) * (n + 2) * (n - 2)^2",
+      "multiplier": "-9/32",
+      "normalised_obstruction": "n^9 - 54*n^8 + 971*n^7 - 6934*n^6 + 15144*n^5 + 26704*n^4 - 105296*n^3 + 7584*n^2 + 116480*n",
+      "provenance": {
+        "constructions": [
+          {
+            "closed_class": "unknown",
+            "closed_key": "OBHA?WI@?_?PGC_KOHC?K",
+            "operation": {
+              "edge": [
+                5,
+                10
+              ],
+              "type": "contract_edge"
+            }
+          },
+          {
+            "closed_class": "unknown",
+            "closed_key": "OBHA?WI@?_?PGC_KOHC?K",
+            "operation": {
+              "edge": [
+                5,
+                14
+              ],
+              "type": "contract_edge"
+            }
+          },
+          {
+            "closed_class": "unknown",
+            "closed_key": "OGD@?KSA`_@?O@_Oo@c@_",
+            "operation": {
+              "edge": [
+                7,
+                14
+              ],
+              "type": "contract_edge"
+            }
+          },
+          {
+            "closed_class": "unknown",
+            "closed_key": "O@XQ?c_A?G?S?E_OoEC?W",
+            "operation": {
+              "edge": [
+                7,
+                12
+              ],
+              "type": "contract_edge"
+            }
+          }
+        ],
+        "site": [
+          0,
+          5,
+          20,
+          25
+        ],
+        "source_key": "NB?I@??AgJOWe?h?WC?"
+      },
+      "raw_obstruction": "-9/32*n^9 + 243/16*n^8 - 8739/32*n^7 + 31203/16*n^6 - 17037/4*n^5 - 15021/2*n^4 + 59229/2*n^3 - 2133*n^2 - 32760*n",
+      "relation": [
+        [
+          "3/16*n^8 - 165/16*n^7 + 255/2*n^6 - 1531/4*n^5 - 289*n^4 + 2525*n^3 - 896*n^2 - 3316*n",
+          "?"
+        ],
+        [
+          "1",
+          "O@XQ?c_A?G?S?E_OoEC?W"
+        ],
+        [
+          "1",
+          "OBHA?WI@?_?PGC_KOHC?K"
+        ],
+        [
+          "1",
+          "OGD@?KSA`_@?O@_Oo@c@_"
+        ]
+      ],
+      "source_key": "NB?I@??AgJOWe?h?WC?"
+    },
+    {
+      "display_index": 33,
+      "factorisation": "(9/32) * (n - 26) * (n - 14) * (n - 8) * (n - 5) * n * (n + 1) * (n + 2) * (n - 2)^2",
+      "multiplier": "9/32",
+      "normalised_obstruction": "n^9 - 54*n^8 + 971*n^7 - 6934*n^6 + 15144*n^5 + 26704*n^4 - 105296*n^3 + 7584*n^2 + 116480*n",
+      "provenance": {
+        "constructions": [
+          {
+            "closed_class": "unknown",
+            "closed_key": "OHP??gQA`C@?@@_HO@SA_",
+            "operation": {
+              "edge": [
+                4,
+                9
+              ],
+              "type": "contract_edge"
+            }
+          },
+          {
+            "closed_class": "unknown",
+            "closed_key": "OIGOOoEO@??P@C_KOGc?S",
+            "operation": {
+              "edge": [
+                3,
+                14
+              ],
+              "type": "contract_edge"
+            }
+          },
+          {
+            "closed_class": "unknown",
+            "closed_key": "OIGG_oaO?C?a@A_HOHC?c",
+            "operation": {
+              "edge": [
+                2,
+                11
+              ],
+              "type": "contract_edge"
+            }
+          },
+          {
+            "closed_class": "unknown",
+            "closed_key": "OIGG_oaO?C?a@A_HOHC?c",
+            "operation": {
+              "edge": [
+                4,
+                12
+              ],
+              "type": "contract_edge"
+            }
+          }
+        ],
+        "site": [
+          6,
+          29,
+          34,
+          41
+        ],
+        "source_key": "NGC?H@?DOTPGcGh?WO?"
+      },
+      "raw_obstruction": "9/32*n^9 - 243/16*n^8 + 8739/32*n^7 - 31203/16*n^6 + 17037/4*n^5 + 15021/2*n^4 - 59229/2*n^3 + 2133*n^2 + 32760*n",
+      "relation": [
+        [
+          "-3/16*n^8 + 159/16*n^7 - 1089/8*n^6 + 1019/2*n^5 + 262*n^4 - 3137*n^3 + 1142*n^2 + 3760*n",
+          "?"
+        ],
+        [
+          "1",
+          "OHP??gQA`C@?@@_HO@SA_"
+        ],
+        [
+          "1",
+          "OIGG_oaO?C?a@A_HOHC?c"
+        ],
+        [
+          "1",
+          "OIGOOoEO@??P@C_KOGc?S"
+        ]
+      ],
+      "source_key": "NGC?H@?DOTPGcGh?WO?"
+    },
+    {
+      "display_index": 34,
+      "factorisation": "(-9/64) * (n - 26) * (n - 14) * (n - 8) * (n - 5) * n * (n + 1) * (n + 2) * (n - 2)^2",
+      "multiplier": "-9/64",
+      "normalised_obstruction": "n^9 - 54*n^8 + 971*n^7 - 6934*n^6 + 15144*n^5 + 26704*n^4 - 105296*n^3 + 7584*n^2 + 116480*n",
+      "provenance": {
+        "constructions": [
+          {
+            "closed_class": "unknown",
+            "closed_key": "O@P@?oSA`G?OO@_OoCc?o",
+            "operation": {
+              "edge": [
+                3,
+                9
+              ],
+              "type": "contract_edge"
+            }
+          },
+          {
+            "closed_class": "unknown",
+            "closed_key": "O@P@?oSA`G?OO@_OoCc?o",
+            "operation": {
+              "edge": [
+                5,
+                15
+              ],
+              "type": "contract_edge"
+            }
+          },
+          {
+            "closed_class": "unknown",
+            "closed_key": "OIC_@CQ@_WG?A@_OoAc@O",
+            "operation": {
+              "edge": [
+                3,
+                9
+              ],
+              "type": "contract_edge"
+            }
+          }
+        ],
+        "site": [
+          6,
+          13,
+          28,
+          41
+        ],
+        "source_key": "NGCa?OO?WKq_a_gOWC?"
+      },
+      "raw_obstruction": "-9/64*n^9 + 243/32*n^8 - 8739/64*n^7 + 31203/32*n^6 - 17037/8*n^5 - 15021/4*n^4 + 59229/4*n^3 - 2133/2*n^2 - 16380*n",
+      "relation": [
+        [
+          "-3/16*n^8 + 15/2*n^7 - 87*n^6 + 507/2*n^5 + 505*n^4 - 1316*n^3 - 616*n^2 + 728*n",
+          "?"
+        ],
+        [
+          "1",
+          "O@P@?oSA`G?OO@_OoCc?o"
+        ],
+        [
+          "2",
+          "OIC_@CQ@_WG?A@_OoAc@O"
+        ]
+      ],
+      "source_key": "NGCa?OO?WKq_a_gOWC?"
+    },
+    {
+      "display_index": 35,
+      "factorisation": "(-9/32) * (n - 26) * (n - 14) * (n - 8) * (n - 5) * n * (n + 1) * (n + 2) * (n - 2)^2",
+      "multiplier": "-9/32",
+      "normalised_obstruction": "n^9 - 54*n^8 + 971*n^7 - 6934*n^6 + 15144*n^5 + 26704*n^4 - 105296*n^3 + 7584*n^2 + 116480*n",
+      "provenance": {
+        "constructions": [
+          {
+            "closed_class": "unknown",
+            "closed_key": "OBHA?WI@?CAAGA_KOHC?K",
+            "operation": {
+              "edge": [
+                4,
+                13
+              ],
+              "type": "contract_edge"
+            }
+          },
+          {
+            "closed_class": "unknown",
+            "closed_key": "OIC_?caO_W@?@@_POCS?o",
+            "operation": {
+              "edge": [
+                7,
+                15
+              ],
+              "type": "contract_edge"
+            }
+          },
+          {
+            "closed_class": "unknown",
+            "closed_key": "OICa?KIA?Ga?G@_SOCc?S",
+            "operation": {
+              "edge": [
+                5,
+                14
+              ],
+              "type": "contract_edge"
+            }
+          }
+        ],
+        "site": [
+          12,
+          25,
+          36,
+          41
+        ],
+        "source_key": "NGCa?_G?WKu?q?`OOS?"
+      },
+      "raw_obstruction": "-9/32*n^9 + 243/16*n^8 - 8739/32*n^7 + 31203/16*n^6 - 17037/4*n^5 - 15021/2*n^4 + 59229/2*n^3 - 2133*n^2 - 32760*n",
+      "relation": [
+        [
+          "3/8*n^8 - 213/16*n^7 + 1293/8*n^6 - 627*n^5 - 157*n^4 + 4115*n^3 - 1982*n^2 - 5576*n",
+          "?"
+        ],
+        [
+          "1",
+          "OBHA?WI@?CAAGA_KOHC?K"
+        ],
+        [
+          "1",
+          "OIC_?caO_W@?@@_POCS?o"
+        ],
+        [
+          "1",
+          "OICa?KIA?Ga?G@_SOCc?S"
+        ]
+      ],
+      "source_key": "NGCa?_G?WKu?q?`OOS?"
+    },
+    {
+      "display_index": 36,
+      "factorisation": "(-9/32) * (n - 26) * (n - 14) * (n - 8) * (n - 5) * n * (n + 1) * (n + 2) * (n - 2)^2",
+      "multiplier": "-9/32",
+      "normalised_obstruction": "n^9 - 54*n^8 + 971*n^7 - 6934*n^6 + 15144*n^5 + 26704*n^4 - 105296*n^3 + 7584*n^2 + 116480*n",
+      "provenance": {
+        "constructions": [
+          {
+            "closed_class": "unknown",
+            "closed_key": "O@P?@OSG_S?oS?_PODC?c",
+            "operation": {
+              "edge": [
+                3,
+                9
+              ],
+              "type": "contract_edge"
+            }
+          },
+          {
+            "closed_class": "unknown",
+            "closed_key": "O@P?@OSG_S?oS?_PODC?c",
+            "operation": {
+              "edge": [
+                5,
+                12
+              ],
+              "type": "contract_edge"
+            }
+          },
+          {
+            "closed_class": "unknown",
+            "closed_key": "OGD@?KSA`_@?O@_Oo@c@_",
+            "operation": {
+              "edge": [
+                3,
+                9
+              ],
+              "type": "contract_edge"
+            }
+          }
+        ],
+        "site": [
+          6,
+          13,
+          16,
+          41
+        ],
+        "source_key": "NI?P?OG@GEx?cOgGOo?"
+      },
+      "raw_obstruction": "-9/32*n^9 + 243/16*n^8 - 8739/32*n^7 + 31203/16*n^6 - 17037/4*n^5 - 15021/2*n^4 + 59229/2*n^3 - 2133*n^2 - 32760*n",
+      "relation": [
+        [
+          "3/16*n^8 - 81/8*n^7 + 507/4*n^6 - 358*n^5 - 129*n^4 + 2554*n^3 - 1524*n^2 - 3840*n",
+          "?"
+        ],
+        [
+          "1",
+          "O@P?@OSG_S?oS?_PODC?c"
+        ],
+        [
+          "2",
+          "OGD@?KSA`_@?O@_Oo@c@_"
+        ]
+      ],
+      "source_key": "NI?P?OG@GEx?cOgGOo?"
+    },
+    {
+      "display_index": 37,
+      "factorisation": "(9/32) * (n - 26) * (n - 14) * (n - 8) * (n - 5) * n * (n + 1) * (n + 2) * (n - 2)^2",
+      "multiplier": "9/32",
+      "normalised_obstruction": "n^9 - 54*n^8 + 971*n^7 - 6934*n^6 + 15144*n^5 + 26704*n^4 - 105296*n^3 + 7584*n^2 + 116480*n",
+      "provenance": {
+        "constructions": [
+          {
+            "closed_class": "unknown",
+            "closed_key": "OBHA?WI@?CAAGA_KOHC?K",
+            "operation": {
+              "edge": [
+                2,
+                13
+              ],
+              "type": "contract_edge"
+            }
+          },
+          {
+            "closed_class": "unknown",
+            "closed_key": "OBHA?WI@?CAAGA_KOHC?K",
+            "operation": {
+              "edge": [
+                4,
+                14
+              ],
+              "type": "contract_edge"
+            }
+          },
+          {
+            "closed_class": "unknown",
+            "closed_key": "OIGW@DAC_O?_?B_CoHC@G",
+            "operation": {
+              "edge": [
+                4,
+                12
+              ],
+              "type": "contract_edge"
+            }
+          },
+          {
+            "closed_class": "unknown",
+            "closed_key": "OIGW@DAC_O?_?B_CoHC@G",
+            "operation": {
+              "edge": [
+                7,
+                15
+              ],
+              "type": "contract_edge"
+            }
+          }
+        ],
+        "site": [
+          16,
+          39,
+          40,
+          41
+        ],
+        "source_key": "NI?P?OG@ODx?cOgGOo?"
+      },
+      "raw_obstruction": "9/32*n^9 - 243/16*n^8 + 8739/32*n^7 - 31203/16*n^6 + 17037/4*n^5 + 15021/2*n^4 - 59229/2*n^3 + 2133*n^2 + 32760*n",
+      "relation": [
+        [
+          "-3/8*n^8 + 51/4*n^7 - 663/4*n^6 + 739*n^5 + 478*n^4 - 4280*n^3 + 764*n^2 + 4480*n",
+          "?"
+        ],
+        [
+          "1",
+          "OBHA?WI@?CAAGA_KOHC?K"
+        ],
+        [
+          "2",
+          "OIGW@DAC_O?_?B_CoHC@G"
+        ]
+      ],
+      "source_key": "NI?P?OG@ODx?cOgGOo?"
+    }
+  ],
+  "t": 16,
+  "version": 1
+}
