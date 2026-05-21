@@ -38,13 +38,14 @@ def _():
     import sys
     from pathlib import Path
 
-    # Repository containing the Python source code
-    SOURCE_ROOT = Path(__file__).resolve().parents[2]
+    # projects/f4/f4_cache.py  ->  parents[2] = cubic-jordan root
+    CUBIC_JORDAN_ROOT = Path(__file__).resolve().parents[2]
+    PROJECT_DIR = Path(__file__).resolve().parent
+    TRIVALENT_SRC = CUBIC_JORDAN_ROOT.parent / "trivalent-graphs" / "src"
 
-    SRC = SOURCE_ROOT / "src"
-
-    if str(SRC) not in sys.path:
-        sys.path.insert(0, str(SRC))
+    for p in [str(PROJECT_DIR), str(TRIVALENT_SRC)]:
+        if p not in sys.path:
+            sys.path.insert(0, p)
     return
 
 
