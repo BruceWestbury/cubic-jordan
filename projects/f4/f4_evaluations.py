@@ -14,6 +14,7 @@ from sage.graphs.graph import Graph
 from algebra.linear_comb import Graphs
 from combinatorics.graph_convert import from_sage_graph
 from export.cache_wrappers import cache_document
+from visualisation.dot import dart_graph_to_dot
 from export.paths import evaluation_cache_dir, raw_graph_cache_dir
 from rewriting.reduce import reduce_element_fully
 from theory.examples.f4_series import F4_series_pentagons
