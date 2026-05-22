@@ -201,9 +201,10 @@ def write_e6_closed_evaluation_cache(t: int, closed_eval: dict) -> Path:
 
         if key in closed_eval:
             record["status"] = "known"
-            record["value"] = str(closed_eval[key])
+            record["evaluation"] = str(closed_eval[key])
         else:
             record["status"] = "unknown"
+            record["evaluation"] = None
 
         records.append(record)
 
@@ -217,8 +218,8 @@ def write_e6_closed_evaluation_cache(t: int, closed_eval: dict) -> Path:
         metadata={
             "t": int(t),
             "count": len(records),
-            "known_count": sum(r["status"] == "known" for r in records),
-            "unknown_count": sum(r["status"] == "unknown" for r in records),
+            "known_count": sum(r["evaluation"] is not None for r in records),
+            "unknown_count": sum(r["evaluation"] is None for r in records),
             "method": "pipeline",
         },
     )
