@@ -2,27 +2,30 @@
   "format": "evaluation_cache",
   "metadata": {
     "count": 3,
-    "known_count": 0,
+    "known_count": 3,
     "method": "pipeline",
     "t": 18,
-    "unknown_count": 3
+    "unknown_count": 0
   },
   "project": "e6",
   "records": [
     {
       "graph": "Q@GaA@?@OP?oA_COACC?o_@I?B?",
       "method": "pipeline",
-      "status": "unknown"
+      "status": "known",
+      "value": "-40*nn^10 + 1848*nn^9 - 19872*nn^8 - 2592*nn^7 + 545616*nn^6 + 11664*nn^5 - 2262816*nn^4 + 14066784*nn^3 + 58104216*nn^2 + 63772920*nn"
     },
     {
       "graph": "QBH@A??AOK@_?g?WACC?c_AQ?C_",
       "method": "pipeline",
-      "status": "unknown"
+      "status": "known",
+      "value": "32*nn^10 - 1392*nn^9 + 14400*nn^8 + 15552*nn^7 - 238464*nn^6 + 443232*nn^5 + 4059072*nn^4 + 15816384*nn^3 + 52697952*nn^2 + 61410960*nn"
     },
     {
       "graph": "QBO`A??B?S?g?g?WACC?c_AQ?C_",
       "method": "pipeline",
-      "status": "unknown"
+      "status": "known",
+      "value": "-28*nn^10 + 1188*nn^9 - 12096*nn^8 - 2592*nn^7 + 293544*nn^6 + 5832*nn^5 + 349920*nn^4 + 17216064*nn^3 + 55978452*nn^2 + 60387444*nn"
     }
   ],
   "version": 1

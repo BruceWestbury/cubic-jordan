@@ -2,17 +2,18 @@
   "format": "evaluation_cache",
   "metadata": {
     "count": 1,
-    "known_count": 0,
+    "known_count": 1,
     "method": "pipeline",
     "t": 16,
-    "unknown_count": 1
+    "unknown_count": 0
   },
   "project": "e6",
   "records": [
     {
       "graph": "OIO??SQG_g@_H?_QOCS?g",
       "method": "pipeline",
-      "status": "unknown"
+      "status": "known",
+      "value": "-20*nn^9 + 696*nn^8 - 4392*nn^7 - 13608*nn^6 + 149040*nn^5 + 604584*nn^4 + 1895400*nn^3 + 6351048*nn^2 + 7794468*nn"
     }
   ],
   "version": 1

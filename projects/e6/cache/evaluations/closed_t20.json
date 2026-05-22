@@ -2,62 +2,72 @@
   "format": "evaluation_cache",
   "metadata": {
     "count": 10,
-    "known_count": 0,
+    "known_count": 10,
     "method": "pipeline",
     "t": 20,
-    "unknown_count": 10
+    "unknown_count": 0
   },
   "project": "e6",
   "records": [
     {
       "graph": "S?LPA?_O?_?W?K?a?H?O_@GA?EC?@c?AO",
       "method": "pipeline",
-      "status": "unknown"
+      "status": "known",
+      "value": "-80*nn^11 + 4176*nn^10 - 63936*nn^9 + 226368*nn^8 + 1319328*nn^7 - 5777568*nn^6 - 11057472*nn^5 + 36811584*nn^4 + 148121136*nn^3 + 427987152*nn^2 + 476171136*nn"
     },
     {
       "graph": "S?LR?__O???K?S?K?`?COAAA?Ac?Ac?GO",
       "method": "pipeline",
-      "status": "unknown"
+      "status": "known",
+      "value": "-56*nn^11 + 2784*nn^10 - 38376*nn^9 + 134784*nn^8 + 535248*nn^7 - 3374784*nn^6 + 1248048*nn^5 + 42270336*nn^4 + 135891432*nn^3 + 421373664*nn^2 + 475698744*nn"
     },
     {
       "graph": "S?La`@?C???B?S?W?`?COAGA?DC?DC??o",
       "method": "pipeline",
-      "status": "unknown"
+      "status": "known",
+      "value": "-44*nn^11 + 2160*nn^10 - 29988*nn^9 + 90720*nn^8 + 526824*nn^7 - 2379456*nn^6 - 822312*nn^5 + 36881568*nn^4 + 150351876*nn^3 + 425467728*nn^2 + 463652748*nn"
     },
     {
       "graph": "S?La`@?C???B?W?S?`?COAGA?CK?Cc?B?",
       "method": "pipeline",
-      "status": "unknown"
+      "status": "known",
+      "value": "52*nn^11 - 2544*nn^10 + 35964*nn^9 - 118368*nn^8 - 624024*nn^7 + 3374784*nn^6 + 5149656*nn^5 + 2309472*nn^4 + 140484132*nn^3 + 453811248*nn^2 + 469321452*nn"
     },
     {
       "graph": "S?Laa?_C???D?Q?S@@?D?@CA?DC?CS?@_",
       "method": "pipeline",
-      "status": "unknown"
+      "status": "known",
+      "value": "-32*nn^11 + 1392*nn^10 - 18000*nn^9 + 95040*nn^8 + 466560*nn^7 - 2247264*nn^6 - 2869344*nn^5 + 35691840*nn^4 + 166491936*nn^3 + 427357296*nn^2 + 448772400*nn"
     },
     {
       "graph": "S?Laa?_C???D?Q?S@@?D?@CA?DC?Cc?@O",
       "method": "pipeline",
-      "status": "unknown"
+      "status": "known",
+      "value": "40*nn^11 - 1920*nn^10 + 25848*nn^9 - 82944*nn^8 - 496368*nn^7 + 1990656*nn^6 + 3720816*nn^5 + 12317184*nn^4 + 151637832*nn^3 + 445938048*nn^2 + 458692632*nn"
     },
     {
       "graph": "S?Sq@@?G?_?W?K?Q?P?H?ACA?Ac?Gc?AO",
       "method": "pipeline",
-      "status": "unknown"
+      "status": "known",
+      "value": "76*nn^11 - 3936*nn^10 + 59796*nn^9 - 208224*nn^8 - 1205928*nn^7 + 4735584*nn^6 + 6117768*nn^5 - 11967264*nn^4 + 133713180*nn^3 + 466093440*nn^2 + 476407332*nn"
     },
     {
       "graph": "S?Sq@@?G?_?W?c?Q?D?H?ACA?Ac?Gc?AO",
       "method": "pipeline",
-      "status": "unknown"
+      "status": "known",
+      "value": "-68*nn^11 + 3408*nn^10 - 50220*nn^9 + 177120*nn^8 + 922104*nn^7 - 4510080*nn^6 - 5033016*nn^5 + 39400992*nn^4 + 142846092*nn^3 + 423578160*nn^2 + 476407332*nn"
     },
     {
       "graph": "S?Sq@@?G?_?W?c?Q?D?H?ACA?Cc?Cc?AO",
       "method": "pipeline",
-      "status": "unknown"
+      "status": "known",
+      "value": "64*nn^11 - 3168*nn^10 + 46080*nn^9 - 158976*nn^8 - 808704*nn^7 + 3468096*nn^6 + 93312*nn^5 - 14556672*nn^4 + 138988224*nn^3 + 470502432*nn^2 + 476171136*nn"
     },
     {
       "graph": "S?[O`?_OA??W@G?c?`?A_?IA?@c??s?K?",
       "method": "pipeline",
-      "status": "unknown"
+      "status": "known",
+      "value": "88*nn^11 - 4560*nn^10 + 71640*nn^9 - 250560*nn^8 - 1592784*nn^7 + 5870880*nn^6 + 12398832*nn^5 - 9097920*nn^4 + 126758520*nn^3 + 463888944*nn^2 + 475698744*nn"
     }
   ],
   "version": 1

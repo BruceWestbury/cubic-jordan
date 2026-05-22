@@ -7,6 +7,7 @@ app = marimo.App(width="medium")
 @app.cell
 def _():
     import marimo as mo
+
     return (mo,)
 
 
@@ -57,6 +58,16 @@ def _():
 
 @app.cell
 def _():
+    from e6_evaluations import write_all_e6_closed_catalogue_caches
+
+    catalogue_paths = write_all_e6_closed_catalogue_caches()
+    for p in catalogue_paths:
+        print(p)
+    return (catalogue_paths,)
+
+
+@app.cell
+def _():
     from e6_obstructions import write_e6_t22_obstruction_cache
 
     obstruction_path = write_e6_t22_obstruction_cache()
@@ -65,17 +76,22 @@ def _():
 
 
 @app.cell
-def _(evaluation_paths, obstruction_path, mo):
+def _(catalogue_paths, evaluation_paths, obstruction_path, mo):
     mo.md(
-        "\n".join([
-            "## Written caches",
-            "",
-            "### Evaluation caches",
-            *[f"- `{p}`" for p in evaluation_paths],
-            "",
-            "### Obstruction cache",
-            f"- `{obstruction_path}`",
-        ])
+        "\n".join(
+            [
+                "## Written caches",
+                "",
+                "### Evaluation caches",
+                *[f"- `{p}`" for p in evaluation_paths],
+                "",
+                "### Catalogue caches",
+                *[f"- `{p}`" for p in catalogue_paths],
+                "",
+                "### Obstruction cache",
+                f"- `{obstruction_path}`",
+            ]
+        )
     )
     return
 
