@@ -1,0 +1,19 @@
+{
+  "format": "evaluation_cache",
+  "metadata": {
+    "count": 1,
+    "known_count": 0,
+    "method": "pipeline",
+    "t": 16,
+    "unknown_count": 1
+  },
+  "project": "e6",
+  "records": [
+    {
+      "graph": "OIO??SQG_g@_H?_QOCS?g",
+      "method": "pipeline",
+      "status": "unknown"
+    }
+  ],
+  "version": 1
+}

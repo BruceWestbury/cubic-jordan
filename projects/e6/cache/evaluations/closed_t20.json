@@ -1,0 +1,64 @@
+{
+  "format": "evaluation_cache",
+  "metadata": {
+    "count": 10,
+    "known_count": 0,
+    "method": "pipeline",
+    "t": 20,
+    "unknown_count": 10
+  },
+  "project": "e6",
+  "records": [
+    {
+      "graph": "S?LPA?_O?_?W?K?a?H?O_@GA?EC?@c?AO",
+      "method": "pipeline",
+      "status": "unknown"
+    },
+    {
+      "graph": "S?LR?__O???K?S?K?`?COAAA?Ac?Ac?GO",
+      "method": "pipeline",
+      "status": "unknown"
+    },
+    {
+      "graph": "S?La`@?C???B?S?W?`?COAGA?DC?DC??o",
+      "method": "pipeline",
+      "status": "unknown"
+    },
+    {
+      "graph": "S?La`@?C???B?W?S?`?COAGA?CK?Cc?B?",
+      "method": "pipeline",
+      "status": "unknown"
+    },
+    {
+      "graph": "S?Laa?_C???D?Q?S@@?D?@CA?DC?CS?@_",
+      "method": "pipeline",
+      "status": "unknown"
+    },
+    {
+      "graph": "S?Laa?_C???D?Q?S@@?D?@CA?DC?Cc?@O",
+      "method": "pipeline",
+      "status": "unknown"
+    },
+    {
+      "graph": "S?Sq@@?G?_?W?K?Q?P?H?ACA?Ac?Gc?AO",
+      "method": "pipeline",
+      "status": "unknown"
+    },
+    {
+      "graph": "S?Sq@@?G?_?W?c?Q?D?H?ACA?Ac?Gc?AO",
+      "method": "pipeline",
+      "status": "unknown"
+    },
+    {
+      "graph": "S?Sq@@?G?_?W?c?Q?D?H?ACA?Cc?Cc?AO",
+      "method": "pipeline",
+      "status": "unknown"
+    },
+    {
+      "graph": "S?[O`?_OA??W@G?c?`?A_?IA?@c??s?K?",
+      "method": "pipeline",
+      "status": "unknown"
+    }
+  ],
+  "version": 1
+}
