@@ -144,11 +144,55 @@ sources = closed_sources
 # singleton on its own — it also involves the t=14 graph. Processing t=14
 # first gives a singleton evaluation that unlocks all subsequent levels.
 PIPELINE_LEVELS = [14, 16, 18, 20, 22]
-CACHE_LEVELS = [16, 18, 20, 22]
+CACHE_LEVELS = [14, 16, 18, 20, 22]
+
+
+def _write_raw_closed_graph_cache(t: int) -> Path:
+    """Generate and write the raw closed graph cache for level t.
+
+    Used for t=14 (Heawood graph) which has no pre-existing cache file.
+    """
+    from e6_sources import closed_bipartite_cubic_graphs
+    from sage.graphs.graph import Graph as _Graph
+
+    graphs = []
+    for i, G in enumerate(closed_bipartite_cubic_graphs(t)):
+        g6 = G.graph6_string()
+        if isinstance(g6, bytes):
+            g6 = g6.decode()
+        closed_key = G.canonical_label().graph6_string()
+        if isinstance(closed_key, bytes):
+            closed_key = closed_key.decode()
+        graphs.append(
+            {
+                "id": f"e6_closed_bipartite_t{int(t)}_{i:03d}",
+                "closed_key": closed_key,
+                "graph6": g6,
+                "num_vertices": G.order(),
+                "num_edges": G.size(),
+            }
+        )
+
+    doc = {
+        "format": "closed_graph_cache",
+        "version": 1,
+        "project": PROJECT,
+        "name": f"closed_bipartite_t{int(t)}",
+        "graph_type": "closed_bipartite_cubic_girth6",
+        "count": len(graphs),
+        "graphs": graphs,
+    }
+
+    path = cache_root(PROJECT) / "closed" / f"closed_bipartite_t{int(t)}.json"
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(json.dumps(doc, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+    return path
 
 
 def raw_closed_graph_items(t: int) -> list[dict]:
     path = cache_root(PROJECT) / "closed" / f"closed_bipartite_t{int(t)}.json"
+    if not path.exists():
+        _write_raw_closed_graph_cache(t)
     with path.open("r", encoding="utf-8") as f:
         doc = json.load(f)
     return doc["graphs"]
