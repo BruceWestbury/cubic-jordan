@@ -184,23 +184,28 @@ def write_e6_closed_evaluation_cache(t: int, closed_eval: dict) -> Path:
 
     for item in items:
         key = item["closed_key"]
+        graph = Graph(item["graph6"])
+        svg = _graph_to_svg(graph)
+        dot = _sage_to_dot(graph)
+        invariants = _graph_invariants(graph)
+
+        record = {
+            "id": item["id"],
+            "graph": key,
+            "graph6": item["graph6"],
+            "svg": svg,
+            "dot": dot,
+            "invariants": invariants,
+            "method": "pipeline",
+        }
+
         if key in closed_eval:
-            records.append(
-                {
-                    "graph": key,
-                    "status": "known",
-                    "value": str(closed_eval[key]),
-                    "method": "pipeline",
-                }
-            )
+            record["status"] = "known"
+            record["value"] = str(closed_eval[key])
         else:
-            records.append(
-                {
-                    "graph": key,
-                    "status": "unknown",
-                    "method": "pipeline",
-                }
-            )
+            record["status"] = "unknown"
+
+        records.append(record)
 
     records.sort(key=lambda r: r["graph"])
 
