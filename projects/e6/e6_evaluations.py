@@ -15,6 +15,7 @@ Run via the e6_cache.py marimo notebook.
 from __future__ import annotations
 
 import json
+import re
 from pathlib import Path
 
 import graphviz
@@ -27,6 +28,25 @@ from e6_sources import closed_sources
 from export.cache_wrappers import cache_document
 from export.paths import cache_root, catalogue_cache_dir, evaluation_cache_dir
 from sage.graphs.graph import Graph
+
+# ---------------------------------------------------------------------------
+# Polynomial formatting
+# ---------------------------------------------------------------------------
+
+_EXPONENT_RE = re.compile(r"\^(\d+)")
+
+
+def _format_polynomial(poly: str) -> str:
+    """Normalise a Sage polynomial string for web display.
+
+    - Replaces the internal variable name ``nn`` with ``n``.
+    - Wraps all exponents in braces so ``n^12`` becomes ``n^{12}``
+      (without braces only the first digit renders as a LaTeX superscript).
+    """
+    s = poly.replace("nn", "n")
+    s = _EXPONENT_RE.sub(r"^{\1}", s)
+    return s
+
 
 # ---------------------------------------------------------------------------
 # Catalogue utilities (SVG / invariants / record building)
@@ -201,7 +221,7 @@ def write_e6_closed_evaluation_cache(t: int, closed_eval: dict) -> Path:
 
         if key in closed_eval:
             record["status"] = "known"
-            record["evaluation"] = str(closed_eval[key])
+            record["evaluation"] = _format_polynomial(str(closed_eval[key]))
         else:
             record["status"] = "unknown"
             record["evaluation"] = None
