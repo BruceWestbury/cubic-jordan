@@ -1,3 +1,10 @@
+from projects.f4.f4_sources import closed_cubic_girth5_graphs
+
+
+def count_closed_graphs(t):
+    return len(list(closed_cubic_girth5_graphs(t)))
+
+
 def test_closed_cubic_girth5_counts():
     expected = {
         4: 0,

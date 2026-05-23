@@ -5,13 +5,13 @@ Tests for the pentagons rule in the F4 series.
 """
 
 import pytest
-
 from algebra.linear_comb import Graphs
-from closed_graphs.f4_sources import closed_cubic_girth5_graphs
 from combinatorics.graph_convert import from_sage_graph
-from rewriting.reduce import reduce_element_fully
-from theory.examples import f4_series
 from combinatorics.small_graphs import _empty_graph
+from rewriting.reduce import reduce_element_fully
+
+import projects.f4.f4_series as f4_series
+from projects.f4.f4_sources import closed_cubic_girth5_graphs
 
 THEORY = f4_series.F4_series_free
 PRESENTATION = f4_series.F4_series_pentagons
@@ -20,10 +20,29 @@ EMPTY = M0.from_graph(_empty_graph())
 n = THEORY.loop_value
 
 EXPECTED = {
-    (10, "I@OZCMgs?"): (1/4*n**6-27/4*n**5+25/2*n**4+45*n**3-54*n**2-72*n),
-    (12, "K?HHa`_aSKQC"): (-1/8*n**7+19/4*n**6-33*n**5+5*n**4+192*n**3-96*n**2-232*n),
-    (12, "KG?qPPO_[WQO"): (5/32*n**7-43/8*n**6+81/2*n**5-11/2*n**4-485/2*n**3+108*n**2+312*n)
+    (10, "I@OZCMgs?"): (
+        1 / 4 * n**6 - 27 / 4 * n**5 + 25 / 2 * n**4 + 45 * n**3 - 54 * n**2 - 72 * n
+    ),
+    (12, "K?HHa`_aSKQC"): (
+        -1 / 8 * n**7
+        + 19 / 4 * n**6
+        - 33 * n**5
+        + 5 * n**4
+        + 192 * n**3
+        - 96 * n**2
+        - 232 * n
+    ),
+    (12, "KG?qPPO_[WQO"): (
+        5 / 32 * n**7
+        - 43 / 8 * n**6
+        + 81 / 2 * n**5
+        - 11 / 2 * n**4
+        - 485 / 2 * n**3
+        + 108 * n**2
+        + 312 * n
+    ),
 }
+
 
 def from_closed_sage_graph(G):
     """Convert a closed Sage graph to a closed DartGraph."""

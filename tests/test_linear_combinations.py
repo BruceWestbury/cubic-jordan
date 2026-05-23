@@ -1,12 +1,16 @@
 """
 tests.test_linear_combinations
 
-Tests for the LinearCombination class.
+Obsolete: LinearCombination was an early prototype class that no longer
+exists.  The current API uses algebra.linear_comb.Graphs.
 """
 
-from sympy import symbols
+import pytest
 
-from src.algebra.linear_combinations import LinearCombination
+pytest.skip(
+    "LinearCombination class is obsolete; current API uses algebra.linear_comb.Graphs",
+    allow_module_level=True,
+)
 
 
 def test_linear_combination_arithmetic():

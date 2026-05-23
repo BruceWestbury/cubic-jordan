@@ -15,10 +15,8 @@
         "graph6": "K?ABEagE`gH_"
       },
       "invariants": {
-        "automorphism_group_order": 16,
+        "automorphism_group_order": null,
         "chromatic_number": 3,
-        "chromatic_polynomial": "x^12 - 18*x^11 + 153*x^10 - 816*x^9 + 3052*x^8 - 8444*x^7 + 17680*x^6 - 28015*x^5 + 32819*x^4 - 26877*x^3 + 13675*x^2 - 3210*x",
-        "crossing_number": 2,
         "diameter": 3,
         "is_hamiltonian": true,
         "num_spanning_trees": 9800,
@@ -35,10 +33,8 @@
         "graph6": "K?`@E`gEcKE_"
       },
       "invariants": {
-        "automorphism_group_order": 18,
+        "automorphism_group_order": null,
         "chromatic_number": 3,
-        "chromatic_polynomial": "x^12 - 18*x^11 + 153*x^10 - 816*x^9 + 3051*x^8 - 8433*x^7 + 17628*x^6 - 27876*x^5 + 32588*x^4 - 26635*x^3 + 13527*x^2 - 3170*x",
-        "crossing_number": 2,
         "diameter": 3,
         "is_hamiltonian": true,
         "num_spanning_trees": 9747,

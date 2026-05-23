@@ -46,7 +46,7 @@ def f4_source_records(n: int) -> Iterator[SourceRecord]:
     contracting one edge to a four-valent vertex, then deleting that
     vertex to form a DartGraph with a 4-element site.
     """
-    from closed_graphs.f4_sources import (
+    from f4_sources import (
         closed_cubic_girth5_graphs,
         contract_to_four_valent,
         four_valent_graph_to_source,
@@ -107,7 +107,7 @@ def e6_source_records(n: int) -> Iterator[SourceRecord]:
     an interval a-b-c, identifying a and c, and deleting the resulting
     five-valent/two-valent source structure.
     """
-    from closed_graphs.e6_sources import (
+    from e6_sources import (
         closed_bipartite_cubic_graphs,
         contract_interval_to_five_valent,
         five_valent_graph_to_source,

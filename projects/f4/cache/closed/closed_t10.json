@@ -15,10 +15,8 @@
         "graph6": "ICOf@pSb?"
       },
       "invariants": {
-        "automorphism_group_order": 120,
+        "automorphism_group_order": null,
         "chromatic_number": 3,
-        "chromatic_polynomial": "x^10 - 15*x^9 + 105*x^8 - 455*x^7 + 1353*x^6 - 2861*x^5 + 4275*x^4 - 4305*x^3 + 2606*x^2 - 704*x",
-        "crossing_number": 2,
         "diameter": 2,
         "is_hamiltonian": false,
         "num_spanning_trees": 2000,
