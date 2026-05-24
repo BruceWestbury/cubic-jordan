@@ -69,6 +69,6 @@ def test_f4_witness_cache_writer():
     data = json.loads(path.read_text())
     assert data["project"] == "f4"
     assert data["records"]
-    # written to cache/obstructions_t16.json (not cache/closed/)
-    assert path.name == "obstructions_t16.json"
+    # written to cache/witnesses_t16.json (not cache/closed/)
+    assert path.name == "witnesses_t16.json"
     assert path.parent.name == "cache"

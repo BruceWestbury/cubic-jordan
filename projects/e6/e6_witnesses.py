@@ -24,8 +24,8 @@ def _project_root(project: str) -> Path:
     return Path(__file__).resolve().parents[1] / project
 
 
-def _obstruction_cache_path(project: str, t: int) -> Path:
-    return _project_root(project) / "cache" / f"obstructions_t{int(t)}.json"
+def _witness_cache_path(project: str, t: int) -> Path:
+    return _project_root(project) / "cache" / f"witnesses_t{int(t)}.json"
 
 
 def _closed_keys(t: int) -> set:
@@ -154,7 +154,7 @@ def write_e6_t22_witness_cache(closed_eval: dict | None = None) -> Path:
         "records": witnesses,
     }
 
-    path = _obstruction_cache_path("e6", 22)
+    path = _witness_cache_path("e6", 22)
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(
         json.dumps(doc, indent=2, sort_keys=True) + "\n",

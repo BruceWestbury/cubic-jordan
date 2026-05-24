@@ -72,6 +72,6 @@ def test_e6_witness_cache_writer():
     data = json.loads(path.read_text())
     assert data["project"] == "e6"
     assert data["records"]
-    # written to cache/obstructions_t22.json (not cache/closed/)
-    assert path.name == "obstructions_t22.json"
+    # written to cache/witnesses_t22.json (not cache/closed/)
+    assert path.name == "witnesses_t22.json"
     assert path.parent.name == "cache"
