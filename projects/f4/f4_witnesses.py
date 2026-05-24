@@ -3,7 +3,7 @@ f4_witnesses.py
 
 F4 obstruction witnesses at t=16.
 
-A witness is a source site at which the seven-term relation, after reduction
+A witness is a source site at which the six-term relation, after reduction
 and full evaluation, leaves a nonzero scalar — a rational multiple of the
 known F4 obstruction polynomial.
 
@@ -19,8 +19,13 @@ from pathlib import Path
 from sage.all import QQ
 
 
-def _catalogue_cache_dir(project: str) -> Path:
-    return Path(__file__).resolve().parents[2] / project / "cache" / "closed"
+def _project_root(project: str) -> Path:
+    # __file__ is projects/{project}/f4_witnesses.py; parents[1] = projects/
+    return Path(__file__).resolve().parents[1] / project
+
+
+def _obstruction_cache_path(project: str, t: int) -> Path:
+    return _project_root(project) / "cache" / f"obstructions_t{int(t)}.json"
 
 
 def _closed_keys(t: int) -> set:
@@ -35,13 +40,19 @@ def _closed_keys(t: int) -> set:
     return keys
 
 
-def f4_t16_witnesses() -> list[dict]:
+def f4_t16_witnesses(closed_eval: dict | None = None) -> list[dict]:
     """
     Compute F4 obstruction witnesses at t=16.
 
     Returns a list of witness records, one per source site whose fully
     evaluated relation is a nonzero rational multiple of the obstruction
     polynomial.
+
+    Parameters
+    ----------
+    closed_eval :
+        Pre-computed evaluation dict from compute_all_f4_evaluations().
+        Computed internally if not provided.
     """
     from projects.common.closed_pipeline import (
         closed_partially_evaluated_relations,
@@ -53,11 +64,12 @@ def f4_t16_witnesses() -> list[dict]:
     from projects.f4.f4_series import F4_series_quotient
     from projects.f4.f4_sources import closed_sources
 
+    if closed_eval is None:
+        closed_eval = compute_all_f4_evaluations()
+
     _presentation = F4_series_quotient
     R = _presentation.theory.base_ring
     (n,) = R.gens()
-
-    closed_eval = compute_all_f4_evaluations()
 
     collected16 = [
         d
@@ -120,8 +132,16 @@ def f4_t16_witnesses() -> list[dict]:
     return witnesses
 
 
-def write_f4_t16_witness_cache() -> Path:
-    witnesses = f4_t16_witnesses()
+def write_f4_t16_witness_cache(closed_eval: dict | None = None) -> Path:
+    """
+    Compute and write the F4 t=16 obstruction witness cache.
+
+    Parameters
+    ----------
+    closed_eval :
+        Pre-computed evaluation dict. Computed internally if not provided.
+    """
+    witnesses = f4_t16_witnesses(closed_eval)
 
     doc = {
         "format": "f4_witness_cache",
@@ -133,7 +153,7 @@ def write_f4_t16_witness_cache() -> Path:
         "records": witnesses,
     }
 
-    path = _catalogue_cache_dir("f4") / "witnesses_t16.json"
+    path = _obstruction_cache_path("f4", 16)
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(
         json.dumps(doc, indent=2, sort_keys=True) + "\n",

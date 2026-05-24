@@ -1,9 +1,0 @@
-{
-  "count": 0,
-  "format": "e6_obstruction_witness_cache",
-  "obstruction_polynomial": "(nn-27)(nn-15)(nn-9)(nn-6)(nn-3)^2(nn-1)nn^2(nn+1)(nn+3)^2",
-  "project": "e6",
-  "records": [],
-  "t": 22,
-  "version": 1
-}

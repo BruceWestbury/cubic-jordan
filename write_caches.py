@@ -13,27 +13,25 @@ def _():
 
 @app.cell(hide_code=True)
 def _(mo):
-    mo.md(r"""# Write F4 and E6 caches
-
-    sage -python -m marimo edit write_caches.py
-
-        """)
+    mo.md(r"""# Write F4 and E6 caches""")
     return
 
 
 @app.cell(hide_code=True)
 def _(mo):
     mo.md(r"""
-    Writes evaluation, catalogue, and witness caches for the F4 and E6
-    closed-graph pipelines.
+    Writes catalogue and obstruction-witness caches for the F4 and E6 pipelines.
 
-    Run this notebook using
+    Each pipeline's evaluations are computed once in memory and reused for all
+    catalogue levels and the witness cache.
 
-        sage -python -m marimo run write_caches.py
+    **Note:** the authoritative writer is `write_caches_script.py` — Sage imports
+    inside Marimo can fail due to cysignals/threading.  Use this notebook for
+    interactive inspection only.
 
-    or interactively with
+    Run the script with:
 
-        sage -python -m marimo edit write_caches.py
+        sage -python write_caches_script.py
     """)
     return
 
@@ -60,29 +58,28 @@ def _(mo):
 
 @app.cell
 def _():
-    from projects.f4.f4_evaluations import write_all_f4_closed_evaluation_caches
+    from projects.f4.f4_evaluations import compute_all_f4_evaluations
 
-    f4_evaluation_paths = write_all_f4_closed_evaluation_caches()
-    for p in f4_evaluation_paths:
-        print(p)
-    return (f4_evaluation_paths,)
+    f4_eval = compute_all_f4_evaluations()
+    print(f"F4: {len(f4_eval)} evaluations computed")
+    return (f4_eval,)
 
 
 @app.cell
-def _():
+def _(f4_eval):
     from projects.f4.f4_evaluations import write_all_f4_closed_catalogue_caches
 
-    f4_catalogue_paths = write_all_f4_closed_catalogue_caches()
+    f4_catalogue_paths = write_all_f4_closed_catalogue_caches(f4_eval)
     for p in f4_catalogue_paths:
         print(p)
     return (f4_catalogue_paths,)
 
 
 @app.cell
-def _():
+def _(f4_eval):
     from projects.f4.f4_witnesses import write_f4_t16_witness_cache
 
-    f4_witness_path = write_f4_t16_witness_cache()
+    f4_witness_path = write_f4_t16_witness_cache(f4_eval)
     print(f4_witness_path)
     return (f4_witness_path,)
 
@@ -95,29 +92,28 @@ def _(mo):
 
 @app.cell
 def _():
-    from projects.e6.e6_evaluations import write_all_e6_closed_evaluation_caches
+    from projects.e6.e6_evaluations import compute_all_e6_evaluations
 
-    e6_evaluation_paths = write_all_e6_closed_evaluation_caches()
-    for p in e6_evaluation_paths:
-        print(p)
-    return (e6_evaluation_paths,)
+    e6_eval = compute_all_e6_evaluations()
+    print(f"E6: {len(e6_eval)} evaluations computed")
+    return (e6_eval,)
 
 
 @app.cell
-def _():
+def _(e6_eval):
     from projects.e6.e6_evaluations import write_all_e6_closed_catalogue_caches
 
-    e6_catalogue_paths = write_all_e6_closed_catalogue_caches()
+    e6_catalogue_paths = write_all_e6_closed_catalogue_caches(e6_eval)
     for p in e6_catalogue_paths:
         print(p)
     return (e6_catalogue_paths,)
 
 
 @app.cell
-def _():
+def _(e6_eval):
     from projects.e6.e6_witnesses import write_e6_t22_witness_cache
 
-    e6_witness_path = write_e6_t22_witness_cache()
+    e6_witness_path = write_e6_t22_witness_cache(e6_eval)
     print(e6_witness_path)
     return (e6_witness_path,)
 
@@ -125,10 +121,8 @@ def _():
 @app.cell
 def _(
     e6_catalogue_paths,
-    e6_evaluation_paths,
     e6_witness_path,
     f4_catalogue_paths,
-    f4_evaluation_paths,
     f4_witness_path,
     mo,
 ):
@@ -137,22 +131,16 @@ def _(
             [
                 "## Written caches",
                 "",
-                "### F4 evaluation caches",
-                *[f"- `{p}`" for p in f4_evaluation_paths],
-                "",
                 "### F4 catalogue caches",
                 *[f"- `{p}`" for p in f4_catalogue_paths],
                 "",
-                "### F4 witness cache",
+                "### F4 obstruction witnesses",
                 f"- `{f4_witness_path}`",
-                "",
-                "### E6 evaluation caches",
-                *[f"- `{p}`" for p in e6_evaluation_paths],
                 "",
                 "### E6 catalogue caches",
                 *[f"- `{p}`" for p in e6_catalogue_paths],
                 "",
-                "### E6 witness cache",
+                "### E6 obstruction witnesses",
                 f"- `{e6_witness_path}`",
             ]
         )

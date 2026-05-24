@@ -54,3 +54,11 @@ venv/
 *.ipynb
 notebooks/*
 !notebooks/*.py
+attic/
+__marimo__/
+
+projects/f4/cache/raw/
+projects/f4/cache/evaluations/
+
+projects/e6/cache/raw/
+projects/e6/cache/evaluations/

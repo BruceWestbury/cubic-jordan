@@ -1,15 +1,14 @@
 """
 f4_evaluations.py
 
-Export F4 closed-graph evaluation caches using the source/relation pipeline.
+Computes and writes F4 closed-graph catalogue caches directly in memory,
+without intermediate raw or evaluation JSON files.
 
-For t=10 and t=12 the evaluations are seeded directly (the pipeline does not
-bootstrap these levels). For t=14 and t=16 the pipeline is run using the
-seeded values as prior knowledge.
-
-Note: compute_all_f4_evaluations() and write_all_f4_closed_evaluation_caches()
-require trivalent-graphs/src on sys.path (for closed_graphs.closed_pipeline).
-All other functions are importable without trivalent-graphs.
+Public API:
+    seeded_closed_evaluations() -> dict
+    compute_all_f4_evaluations() -> dict
+    write_f4_closed_catalogue_cache(t, closed_eval=None) -> Path
+    write_all_f4_closed_catalogue_caches(closed_eval=None) -> list[Path]
 """
 
 from __future__ import annotations
@@ -25,7 +24,7 @@ PROJECT = "f4"
 
 
 # ---------------------------------------------------------------------------
-# Path helpers (inlined from export.paths to avoid trivalent-graphs dependency)
+# Path helpers
 # ---------------------------------------------------------------------------
 
 
@@ -34,16 +33,8 @@ def _project_root(project: str) -> Path:
     return Path(__file__).resolve().parents[1] / project
 
 
-def _evaluation_cache_dir(project: str) -> Path:
-    return _project_root(project) / "cache" / "evaluations"
-
-
 def _catalogue_cache_dir(project: str) -> Path:
     return _project_root(project) / "cache" / "closed"
-
-
-def _raw_graph_cache_dir(project: str) -> Path:
-    return _project_root(project) / "cache" / "raw" / "closed"
 
 
 def _cache_document(
@@ -78,7 +69,7 @@ def _format_polynomial(poly: str) -> str:
 
 
 # ---------------------------------------------------------------------------
-# Catalogue utilities
+# SVG / invariant helpers
 # ---------------------------------------------------------------------------
 
 
@@ -130,20 +121,6 @@ def _graph_invariants(graph) -> dict:
     }
 
 
-def _load_evaluation_lookup(path: Path) -> dict:
-    if not path.exists():
-        return {}
-    with path.open("r", encoding="utf-8") as f:
-        doc = json.load(f)
-    lookup = {}
-    for record in doc.get("records", []):
-        key = record.get("closed_key") or record.get("key") or record.get("graph")
-        value = record.get("value") or record.get("evaluation")
-        if key is not None:
-            lookup[key] = value
-    return lookup
-
-
 def _closed_catalogue_record(
     *,
     item: dict,
@@ -174,9 +151,7 @@ def seeded_closed_evaluations() -> dict:
     """
     Return hardcoded evaluations for t=10 and t=12.
 
-    These values cannot be bootstrapped from the pipeline alone and must
-    be supplied as prior knowledge.
-
+    These values cannot be bootstrapped from the pipeline alone.
     Requires trivalent-graphs/src on sys.path (for f4_series polynomial ring).
     """
     from projects.f4.f4_series import F4_series_quotient
@@ -223,6 +198,7 @@ def compute_all_f4_evaluations() -> dict:
     Return all known F4 closed-graph evaluations.
 
     Seeds t=10 and t=12 directly, then runs the pipeline at t=14 and t=16.
+    Requires trivalent-graphs/src on sys.path.
     """
     from projects.common.closed_pipeline import (
         closed_partially_evaluated_relations,
@@ -248,113 +224,72 @@ def compute_all_f4_evaluations() -> dict:
 
 
 # ---------------------------------------------------------------------------
-# Cache I/O
+# Catalogue
 # ---------------------------------------------------------------------------
 
 
-def raw_closed_graph_items(t: int) -> list[dict]:
-    path = _raw_graph_cache_dir(PROJECT) / f"closed_t{int(t)}.json"
-    with path.open("r", encoding="utf-8") as f:
-        doc = json.load(f)
-    return doc["graphs"]
+def _f4_catalogue_records(t: int, closed_eval: dict) -> list[dict]:
+    """
+    Build catalogue records for all closed cubic girth>=5 graphs at level t.
 
+    Generates graph data directly from f4_sources without reading any
+    intermediate JSON files.
+    """
+    from projects.f4.f4_sources import closed_cubic_girth5_graphs
 
-def write_f4_closed_evaluation_cache(t: int, closed_eval: dict) -> Path:
-    items = raw_closed_graph_items(t)
+    entries = []
+    for G in closed_cubic_girth5_graphs(t):
+        g6 = G.graph6_string()
+        if isinstance(g6, bytes):
+            g6 = g6.decode()
+        closed_key = G.canonical_label().graph6_string()
+        if isinstance(closed_key, bytes):
+            closed_key = closed_key.decode()
+        entries.append((closed_key, g6, G))
+
+    entries.sort(key=lambda x: x[0])
+
     records = []
-
-    for item in items:
-        key = item["closed_key"]
-        graph = Graph(item["graph6"])
-        svg = _graph_to_svg(graph)
-        dot = _sage_to_dot(graph)
-        invariants = _graph_invariants(graph)
-
-        record = {
-            "id": item["id"],
-            "graph": key,
-            "graph6": item["graph6"],
-            "svg": svg,
-            "dot": dot,
-            "invariants": invariants,
-            "method": "pipeline",
+    for i, (closed_key, g6, G) in enumerate(entries):
+        item = {
+            "id": f"f4_closed_t{int(t)}_{i:03d}",
+            "closed_key": closed_key,
+            "graph6": g6,
         }
-
-        if key in closed_eval:
-            record["status"] = "known"
-            record["evaluation"] = _format_polynomial(str(closed_eval[key]))
-        else:
-            record["status"] = "unknown"
-            record["evaluation"] = None
-
-        records.append(record)
-
-    records.sort(key=lambda r: r["graph"])
-
-    doc = _cache_document(
-        format="evaluation_cache",
-        version=1,
-        project=PROJECT,
-        records=records,
-        metadata={
-            "t": int(t),
-            "count": len(records),
-            "known_count": sum(r["evaluation"] is not None for r in records),
-            "unknown_count": sum(r["evaluation"] is None for r in records),
-            "method": "pipeline",
-        },
-    )
-
-    path = _evaluation_cache_dir(PROJECT) / f"closed_t{int(t)}.json"
-    path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(
-        json.dumps(doc, indent=2, sort_keys=True) + "\n",
-        encoding="utf-8",
-    )
-    return path
-
-
-def write_all_f4_closed_evaluation_caches() -> list[Path]:
-    """
-    Compute all F4 evaluations and write one cache file per level.
-
-    Requires trivalent-graphs/src on sys.path (delegates to
-    compute_all_f4_evaluations).
-    """
-    closed_eval = compute_all_f4_evaluations()
-    return [write_f4_closed_evaluation_cache(t, closed_eval) for t in [10, 12, 14, 16]]
-
-
-# ---------------------------------------------------------------------------
-# Catalogue cache (SVG + evaluation merged)
-# ---------------------------------------------------------------------------
-
-
-def write_f4_closed_catalogue_cache(t: int) -> Path:
-    """Write the web-facing catalogue cache for F4 closed graphs at level t."""
-    raw_path = _raw_graph_cache_dir(PROJECT) / f"closed_t{int(t)}.json"
-    with raw_path.open("r", encoding="utf-8") as f:
-        raw_doc = json.load(f)
-
-    evaluation_path = _evaluation_cache_dir(PROJECT) / f"closed_t{int(t)}.json"
-    evaluations = _load_evaluation_lookup(evaluation_path)
-
-    records = []
-    for item in raw_doc["graphs"]:
-        graph = Graph(item["graph6"])
-        svg = _graph_to_svg(graph)
-        dot = _sage_to_dot(graph)
-        invariants = _graph_invariants(graph)
-        evaluation = evaluations.get(item["closed_key"])
-
+        evaluation = closed_eval.get(closed_key)
         record = _closed_catalogue_record(
             item=item,
-            svg=svg,
-            dot=dot,
-            evaluation=evaluation,
-            invariants=invariants,
+            svg=_graph_to_svg(G),
+            dot=_sage_to_dot(G),
+            evaluation=(
+                _format_polynomial(str(evaluation)) if evaluation is not None else None
+            ),
+            invariants=_graph_invariants(G),
         )
         records.append(record)
+
+    return records
+
+
+def write_f4_closed_catalogue_cache(t: int, closed_eval: dict | None = None) -> Path:
+    """
+    Write the F4 closed-graph catalogue cache for level t.
+
+    Computes everything in memory; does not read from cache/raw or
+    cache/evaluations.
+
+    Parameters
+    ----------
+    t :
+        Vertex count (10, 12, 14, or 16).
+    closed_eval :
+        Pre-computed evaluation dict from compute_all_f4_evaluations().
+        Computed internally if not provided.
+    """
+    if closed_eval is None:
+        closed_eval = compute_all_f4_evaluations()
+
+    records = _f4_catalogue_records(t, closed_eval)
 
     doc = _cache_document(
         format="closed_graph_catalogue",
@@ -373,6 +308,14 @@ def write_f4_closed_catalogue_cache(t: int) -> Path:
     return out_path
 
 
-def write_all_f4_closed_catalogue_caches() -> list[Path]:
-    """Write web-facing catalogue caches for all F4 levels."""
-    return [write_f4_closed_catalogue_cache(t) for t in [10, 12, 14, 16]]
+def write_all_f4_closed_catalogue_caches(
+    closed_eval: dict | None = None,
+) -> list[Path]:
+    """
+    Write F4 catalogue caches for all levels.
+
+    Evaluations are computed once and reused across all levels.
+    """
+    if closed_eval is None:
+        closed_eval = compute_all_f4_evaluations()
+    return [write_f4_closed_catalogue_cache(t, closed_eval) for t in [10, 12, 14, 16]]

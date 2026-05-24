@@ -19,8 +19,13 @@ from pathlib import Path
 from sage.all import QQ
 
 
-def _catalogue_cache_dir(project: str) -> Path:
-    return Path(__file__).resolve().parents[2] / project / "cache" / "closed"
+def _project_root(project: str) -> Path:
+    # __file__ is projects/{project}/e6_witnesses.py; parents[1] = projects/
+    return Path(__file__).resolve().parents[1] / project
+
+
+def _obstruction_cache_path(project: str, t: int) -> Path:
+    return _project_root(project) / "cache" / f"obstructions_t{int(t)}.json"
 
 
 def _closed_keys(t: int) -> set:
@@ -35,13 +40,19 @@ def _closed_keys(t: int) -> set:
     return keys
 
 
-def e6_t22_witnesses() -> list[dict]:
+def e6_t22_witnesses(closed_eval: dict | None = None) -> list[dict]:
     """
     Compute E6 obstruction witnesses at t=22.
 
     Returns a list of witness records, one per source site whose fully
     evaluated relation is a nonzero rational multiple of the obstruction
     polynomial.
+
+    Parameters
+    ----------
+    closed_eval :
+        Pre-computed evaluation dict from compute_all_e6_evaluations().
+        Computed internally if not provided.
     """
     from projects.common.closed_pipeline import (
         closed_partially_evaluated_relations,
@@ -53,11 +64,12 @@ def e6_t22_witnesses() -> list[dict]:
     from projects.e6.e6_series import E6_series_quotient
     from projects.e6.e6_sources import closed_sources
 
+    if closed_eval is None:
+        closed_eval = compute_all_e6_evaluations()
+
     _presentation = E6_series_quotient
     R = _presentation.theory.base_ring
     (nn,) = R.gens()
-
-    closed_eval = compute_all_e6_evaluations()
 
     collected22 = [
         d
@@ -119,8 +131,16 @@ def e6_t22_witnesses() -> list[dict]:
     return witnesses
 
 
-def write_e6_t22_witness_cache() -> Path:
-    witnesses = e6_t22_witnesses()
+def write_e6_t22_witness_cache(closed_eval: dict | None = None) -> Path:
+    """
+    Compute and write the E6 t=22 obstruction witness cache.
+
+    Parameters
+    ----------
+    closed_eval :
+        Pre-computed evaluation dict. Computed internally if not provided.
+    """
+    witnesses = e6_t22_witnesses(closed_eval)
 
     doc = {
         "format": "e6_witness_cache",
@@ -134,7 +154,7 @@ def write_e6_t22_witness_cache() -> Path:
         "records": witnesses,
     }
 
-    path = _catalogue_cache_dir("e6") / "witnesses_t22.json"
+    path = _obstruction_cache_path("e6", 22)
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(
         json.dumps(doc, indent=2, sort_keys=True) + "\n",
