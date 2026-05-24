@@ -8,14 +8,14 @@
   "records": [
     {
       "dot": "graph {\n  0;\n  1;\n  2;\n  3;\n  4;\n  5;\n  6;\n  7;\n  8;\n  9;\n  0 -- 3;\n  0 -- 6;\n  0 -- 9;\n  1 -- 4;\n  1 -- 6;\n  1 -- 8;\n  2 -- 5;\n  2 -- 6;\n  2 -- 7;\n  3 -- 7;\n  3 -- 8;\n  4 -- 7;\n  4 -- 9;\n  5 -- 8;\n  5 -- 9;\n}",
-      "evaluation": "1/4*n^6 - 27/4*n^5 + 25/2*n^4 + 45*n^3 - 54*n^2 - 72*n",
+      "evaluation": "1/4*n^{6} - 27/4*n^{5} + 25/2*n^{4} + 45*n^{3} - 54*n^{2} - 72*n",
       "id": "f4_closed_t10_000",
       "internal": {
         "closed_key": "I@OZCMgs?",
         "graph6": "ICOf@pSb?"
       },
       "invariants": {
-        "automorphism_group_order": null,
+        "automorphism_group_order": 120,
         "chromatic_number": 3,
         "diameter": 2,
         "is_hamiltonian": false,

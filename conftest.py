@@ -14,3 +14,10 @@ from pathlib import Path
 _TRIVALENT_SRC = Path(__file__).resolve().parent.parent / "trivalent-graphs" / "src"
 if str(_TRIVALENT_SRC) not in sys.path:
     sys.path.insert(0, str(_TRIVALENT_SRC))
+
+
+def pytest_configure(config):
+    config.addinivalue_line(
+        "markers",
+        "slow: marks tests as slow (deselect with -m 'not slow')",
+    )
