@@ -15,14 +15,16 @@ from typing import Any, Iterator
 class SourceConstruction:
     closed_key: str
     operation: dict[str, Any]
-    closed_class: str  # "pentagon_evaluable" or "residual"
+    closed_class: str = ""  # "pentagon_evaluable", "residual", or "" if not classified
 
 
 @dataclass
 class SourceRecord:
     source_key: str
-    graph: Any
+    graph: Any  # DartGraph used for algebra/substitution/certification
     site: tuple[int, ...]
+    display_graph: Any = None  # Sage graph with the special vertex still present
+    dot: str | None = None  # DOT string for display_graph, recorded at construction
     constructions: list[SourceConstruction] = field(default_factory=list)
 
 
@@ -46,7 +48,8 @@ def f4_source_records(n: int) -> Iterator[SourceRecord]:
     contracting one edge to a four-valent vertex, then deleting that
     vertex to form a DartGraph with a 4-element site.
     """
-    from f4_sources import (
+    from projects.export.rendering import source_graph_to_dot
+    from projects.f4.f4_sources import (
         closed_cubic_girth5_graphs,
         contract_to_four_valent,
         four_valent_graph_to_source,
@@ -61,31 +64,30 @@ def f4_source_records(n: int) -> Iterator[SourceRecord]:
         for e in G.edges(labels=False):
             edge = tuple(e[:2])
 
+            # F = (H, w): H is the Sage graph with the 4-valent vertex w
             F = contract_to_four_valent(G, edge)
+            H, _w = F
 
             K = four_valent_key(F)
             source_key = K.graph6_string()
             if isinstance(source_key, bytes):
                 source_key = source_key.decode()
 
-            graph, site = four_valent_graph_to_source(F)
-
-            closed_class = "unknown"
-
             construction = SourceConstruction(
                 closed_key=closed_key,
-                operation={
-                    "type": "contract_edge",
-                    "edge": list(edge),
-                },
-                closed_class=closed_class,
+                operation={"type": "contract_edge", "edge": list(edge)},
             )
 
             if source_key not in records:
+                # Record the DartGraph for algebra and the Sage graph for display.
+                # Both are derived from F here; no round-trip needed later.
+                graph, site = four_valent_graph_to_source(F)
                 records[source_key] = SourceRecord(
                     source_key=source_key,
                     graph=graph,
                     site=tuple(site),
+                    display_graph=H,
+                    dot=source_graph_to_dot(H),
                     constructions=[construction],
                 )
             else:
@@ -107,7 +109,7 @@ def e6_source_records(n: int) -> Iterator[SourceRecord]:
     an interval a-b-c, identifying a and c, and deleting the resulting
     five-valent/two-valent source structure.
     """
-    from e6_sources import (
+    from projects.e6.e6_sources import (
         closed_bipartite_cubic_graphs,
         contract_interval_to_five_valent,
         five_valent_graph_to_source,
@@ -115,6 +117,7 @@ def e6_source_records(n: int) -> Iterator[SourceRecord]:
         intervals_of_length_two,
         validate_five_valent_graph,
     )
+    from projects.export.rendering import e6_source_graph_to_dot
 
     records: dict[str, SourceRecord] = {}
 
@@ -122,26 +125,27 @@ def e6_source_records(n: int) -> Iterator[SourceRecord]:
         closed_key = _sage_graph_key(G)
 
         for a, b, c in intervals_of_length_two(G):
+            # F is the Sage graph with the 5-valent vertex still present
             F = contract_interval_to_five_valent(G, a, b, c)
             validate_five_valent_graph(F)
 
             source_key = five_valent_key(F)
 
-            graph, site = five_valent_graph_to_source(F)
-
             construction = SourceConstruction(
                 closed_key=closed_key,
-                operation={
-                    "type": "contract_interval",
-                    "interval": [a, b, c],
-                },
+                operation={"type": "contract_interval", "interval": [a, b, c]},
             )
 
             if source_key not in records:
+                # Record the DartGraph for algebra and the Sage graph for display.
+                # Both are derived from F here; no round-trip needed later.
+                graph, site = five_valent_graph_to_source(F)
                 records[source_key] = SourceRecord(
                     source_key=source_key,
                     graph=graph,
                     site=tuple(site),
+                    display_graph=F,
+                    dot=e6_source_graph_to_dot(F),
                     constructions=[construction],
                 )
             else:

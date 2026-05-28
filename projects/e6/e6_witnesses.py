@@ -18,6 +18,9 @@ from pathlib import Path
 
 from sage.all import QQ
 
+from projects.export.provenance_sources import e6_source_records
+from projects.export.rendering import dot_to_svg
+
 
 def _project_root(project: str) -> Path:
     # __file__ is projects/{project}/e6_witnesses.py; parents[1] = projects/
@@ -100,9 +103,17 @@ def e6_t22_witnesses(closed_eval: dict | None = None) -> list[dict]:
         * (nn + 3) ** 2
     )
 
+    source_records = list(e6_source_records(22))
+
+    if len(source_records) != len(collected22):
+        raise ValueError(
+            f"source record count ({len(source_records)}) does not match "
+            f"relation count ({len(collected22)}) — order matching would be wrong"
+        )
+
     witnesses = []
 
-    for i, d in enumerate(collected22):
+    for i, (d, source_record) in enumerate(zip(collected22, source_records)):
         scalar, unknowns = fully_evaluate_relation_dict(d, known22)
 
         if unknowns or scalar == 0:
@@ -113,10 +124,27 @@ def e6_t22_witnesses(closed_eval: dict | None = None) -> list[dict]:
         if multiplier not in QQ:
             raise ValueError(f"non-rational multiplier at index {i}: {multiplier}")
 
+        if source_record.dot is None:
+            raise ValueError(
+                f"source_record.dot is None for source {source_record.source_key}"
+            )
+
         witnesses.append(
             {
                 "index": i,
-                "raw_obstruction": str(scalar),
+                "source_key": source_record.source_key,
+                "site": list(source_record.site),
+                "source_dot": source_record.dot,
+                "source_svg": dot_to_svg(source_record.dot),
+                "constructions": [
+                    {
+                        "closed_key": c.closed_key,
+                        "operation": c.operation,
+                        "closed_class": c.closed_class,
+                    }
+                    for c in source_record.constructions
+                ],
+                "raw_witness": str(scalar),
                 "factorisation": str(scalar.factor()),
                 "normalised_obstruction": str(normalised_obstruction),
                 "multiplier": str(multiplier),
