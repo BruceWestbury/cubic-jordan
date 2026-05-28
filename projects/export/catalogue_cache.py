@@ -8,15 +8,15 @@ import json
 from pathlib import Path
 
 import graphviz
-from sage.graphs.graph import Graph
-
-from export.cache_wrappers import cache_document
 from export.paths import (
     cache_root,
     catalogue_cache_dir,
     evaluation_cache_dir,
     raw_graph_cache_dir,
 )
+from sage.graphs.graph import Graph
+
+from projects.export.cache_wrappers import cache_document
 
 
 def write_closed_catalogue_cache(
@@ -254,42 +254,6 @@ def sage_to_dot(graph) -> str:
     lines.append("}")
 
     return "\n".join(lines)
-
-
-def source_graph_to_dot(graph) -> str:
-    """
-    Return DOT for a source graph with one four-valent vertex.
-
-    The four-valent vertex is drawn as a box, to distinguish it from
-    a crossing.
-    """
-    four_valent = [v for v in graph.vertices() if graph.degree(v) == 4]
-
-    if len(four_valent) != 1:
-        raise ValueError(f"expected one four-valent vertex, got {four_valent}")
-
-    special = four_valent[0]
-
-    lines = ["graph {"]
-
-    for v in sorted(graph.vertices()):
-        if v == special:
-            lines.append(f'  {v} [shape=box, style=filled, label="{v}"];')
-        else:
-            lines.append(f'  {v} [shape=circle, label="{v}"];')
-
-    for u, v in sorted(tuple(sorted(e[:2])) for e in graph.edges(labels=False)):
-        lines.append(f"  {u} -- {v};")
-
-    lines.append("}")
-    return "\n".join(lines)
-
-
-def source_graph_to_svg(graph) -> str:
-    """
-    Return SVG for a source graph with one four-valent vertex.
-    """
-    return dot_to_svg(source_graph_to_dot(graph))
 
 
 def obstruction_source_record(
