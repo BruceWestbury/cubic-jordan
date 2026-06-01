@@ -1,0 +1,954 @@
+\documentclass[12pt]{amsart}
+\usepackage{
+	amssymb,
+	amsfonts,
+	bm,
+	hyperref,
+	mathtools,
+	xcolor,
+	tikz-cd,
+}
+
+\usetikzlibrary{arrows.meta, positioning}
+\tikzset{
+	none/.style={line width=2mm},
+	vertex/.style={circle, fill, inner sep=1pt},
+	edge/.style={draw}
+}
+\pgfdeclarelayer{nodelayer}
+\pgfdeclarelayer{edgelayer}
+\pgfsetlayers{edgelayer,nodelayer,main}
+
+\usetikzlibrary{decorations.markings}
+\tikzset{
+	mid arrow/.style={
+		postaction={decorate,
+			decoration={
+				markings,
+				mark=at position 0.6 with {\arrow{stealth}}
+			}
+		}
+	}
+}
+
+%================
+% Margin Settings
+%================
+
+\leftmargin=0in
+\topmargin=0pt
+\headheight=0pt
+\oddsidemargin=0in
+\evensidemargin=0in
+\textheight=8.75in
+\textwidth=6.5in
+\parindent=0.5cm
+\headsep=0.25in
+\widowpenalty10000
+\clubpenalty10000
+
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{defn}[thm]{Definition}
+\newtheorem{lemma}[thm]{Lemma}
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{ex}[thm]{Example}
+
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\End}{End}
+\DeclareMathOperator{\Hom}{Hom}
+\newcommand{\Dfn}[1]{\emph{\color{blue}#1}}
+\newcommand{\oeis}[1]{\href{https://oeis.org/#1}{#1}}
+%\newcommand{\qbinom}[2]{\genfrac{[}{]}{0pt}{}{#1}{#2}}
+\newcommand\bA{\mathbb{A}}
+\newcommand\bC{\mathbb{C}}
+\newcommand\bH{\mathbb{H}}
+\newcommand\bO{\mathbb{O}}
+\newcommand\bN{\mathbb{N}}
+\newcommand\bQ{\mathbb{Q}}
+\newcommand\bZ{\mathbb{Z}}
+\newcommand\bR{\mathbb{R}}
+\newcommand\cC{\mathcal{C}}
+\newcommand\fg{\mathfrak{g}}
+\newcommand\fsl{\mathfrak{sl}}
+\newcommand\fS{\mathfrak{S}}
+\newcommand\nn{\mathbf{n}}
+\newcommand\der{\mathbf{der}}
+\newcommand\str{\mathbf{str}}
+
+\begin{document}
+\title{Cubic Jordan algebras are not a series}
+\author{Bruce Westbury}
+%\author{Dylan Thurston}
+\date{\today}
+\begin{abstract}
+The idea that the rows of the Freudenthal magic square corresponding to $\bR$ and $\bC$ should form a
+series was first proposed in \cite{Deligne2002}. Soon after that proposal, the preprint 
+\cite{Thurston2004} was widely circulated stating that both of these proposed series are sets
+based on a computer calculation. This preprint was influential but, unfortunately,
+has not been published and the computer calculation has not been reproduced. 
+\end{abstract}
+\maketitle
+\tableofcontents
+
+\input{pictures}
+
+%============= 
+% Introduction
+%=============
+\section{Introduction}
+The classification of complex simple Lie algebras is due to Killing in 1888 in what is arguably the greatest
+mathematical paper of all time, \cite{coleman1989}. The classification consists of four infinite families, known as the classical Lie algebras, and five others, known as the exceptional Lie algebras.
+
+A more recent development was the discovery of the Vogel plane, partially published in \cite{Vogel2011}.
+Vogel proved (independently from Killing's classification) that the complement of the trivial representation in the symmetric square of the adjoint representation of a simple Lie algebra (other than $\fsl(2)$) has either two or three composition factors. Furthermore, for the exceptional algebras, the number of composition factors is two.
+The four infinite families of classical Lie algebras are often regarded as forming a series; for example,
+the ring of symmetric functions can be regarded as the character ring of $\fsl(n)$ where $n$ is a formal variable. The radical idea implicit in Vogel's work is that the exceptional Lie algebras might also form 
+a series.
+
+In earlier work,\cite{Freudenthal1964}, Freudenthal gave a uniform matrix construction of the exceptional
+Lie algebras. This construction is now known as the Freudenthal magic square. The fourth row of the magic square consists of four of the exceptional Lie algebras. These two lines were combined
+in \cite{Deligne2002} who asked if the other rows of the magic square were a series. The result announced in
+\cite{Thurston2004} is the negative answer that the first two rows of the magic square do not form a series. This result was obtained by a computer calculation and unfortunately has not been published.
+
+In this paper we present a new proof of this result. Our proof was also found by a computer calculation.
+This proof is amenable to inspection and auditing by a human although it would require some stamina to check the proof by hand. The proof works with linear combinations of trivalent graphs and consists of several sequences of reductions. A reduction step consists in a substitution which replaces part of a trivalent graph by a linear
+combination. Each term has fewer vertices than the original graph. This implies that there is no infinite sequence of reductions. Any individual reduction step can be checked by hand but the sequence of reduction steps is too long to be fully checked by hand.
+
+The context for this proof is that the relations should be regarded as a presentation of a linear rigid symmetric monoidal category. So this  should be thought of as the analogue in the setting of two-dimensional algebra of a finitely presented algebra in the setting of one-dimensional algebra. In this analogy, trivalent graphs correspond to words. One important difference is that the completion algorithms that are used for
+presentations of algebras do not apply in our context as a relation with several terms with the maximal number of vertices cannot be oriented.
+
+Warning: The $\nn$ for the derivation algebra and the $\nn$ for the structure algebra are different.
+
+
+
+
+
+
+Previous work is in \cite[Chapter~19]{Cvitanovic2008}, \cite{gandhi2022}, \cite[\S6.2.3,\S6.7]{morrison2024}.
+For connected simple trivalent graphs of degree five, see \href{https://oeis.org/A014372}{Degree 3, Girth 5},
+and \href{https://houseofgraphs.org/meta-directory/cubic}{Cubic graphs}
+and \href{https://www.mathe2.uni-bayreuth.de/markus/reggraphs.html}{Regular Graphs}.
+
+\section{Cubic Jordan algebras}
+The classical Lie algebras
+all have matrix constructions; so the classification raised the problem of giving matrix constructions
+of the exceptional Lie algebras. The Lie algebra $G_2$ was shown to be the derivation algebra of the octonions by Elie Cartan in 1913. Then matrix constructions of $F_4$ and $E_6$ were given in \cite{freudenthal1953}.
+The Albert algebra is the exceptional Jordan algebra of $3\times 3$ Hermitian matrices with entries in the octonions.
+The Lie algebra $F_4$ is the derivation algebra of the Albert algebra and the Lie algebra $E_6$ also has a matrix construction given by an action on the Albert algebra. An accessible account of these constructions is given
+in \cite{adams1982}. 
+
+
+%The original papers are \cite{chevalley1950}, \cite{tits1966}, \cite{freudenthal1953}.
+ 
+These are the text books on Jordan algebras.
+\cite{jacobson1968}, \cite{springer1997}, \cite{knus1998}, \cite[Part~II~4]{mccrimmon2004}, \cite[VI]{garibaldi2024}.
+
+%A more geometric interpretation is given in \cite[\S4.2,\S4.4]{baez2002}.
+
+\subsection{Algebras}
+Let $\bA$ be a (unital) \Dfn{composition algebra} with involution $x\mapsto \overline{x}$ and norm $N(x)\coloneqq x\overline{x}$. The condition for a composition algebra is
+\begin{equation*}
+	N(xy) = N(x)N(y)
+\end{equation*}
+
+An element $x\in \bA$ is \Dfn{real} if $\overline{x}=x$ and \Dfn{imaginary} if
+$\overline{x}=-x$. Every $x\in \bA$ has a real part $\Re(x)\coloneqq \frac12(x+\overline{x})$
+and an imaginary part $\Im(x)\coloneqq \frac12(x-\overline{x})$ with $x=\Re(x)+\Im(x)$.
+
+A \Dfn{Jordan algebra} is a commutative algebra that satisfies the Jordan identity.
+The \Dfn{Jordan identity} is $x(x^2y) = x^2(xy)$ for all $x,y$ and this implies that $x^m(x^ny)=x^n(x^my)$.
+A polarised version of the Jordan identity is:
+\begin{equation*}
+	((xz)y)w+((zw)y)x+((wx)y)z=(xz)(yw)+(zw)(yx)+(wx)(yz)
+\end{equation*}
+%I haven't seen this written as a string diagram.
+
+The paradigm for cubic Jordan algebras is $3\times 3$ matrices.
+Recall that, if $A$ is a generic $3\times 3$ matrix with entries in a commutative ring, then, by the Cayley-Hamilton, the minimal polynomial of $A$ is
+
+\begin{equation*}
+	A^3 - \sigma_1(A) A^2 + \sigma_2(A)A - \sigma_3(A)I
+\end{equation*}
+where, for $1\leqslant k\leqslant 3$, $\sigma_k$ is a polynomial of degree $k$ in the entries of $A$.
+These polynomials are given explicitly by $\sigma_3(A) = \det(A)$, the determinant, $\sigma_1(A) = \tr(A)$, the matrix trace, and $\sigma_2(A) = \frac12 \left[ \tr(A)^2 - \tr(A^2)\right]$. The quadratic function $\sigma_2(A)$
+is also the sum of the principal $2\times 2$ minors
+\begin{equation*}
+	\sigma_2(A) = \sum_{1\leqslant i<j \leqslant 3} \begin{vmatrix}
+	a_{i\,i} & a_{i\,j} \\ a_{j\,i} & a_{j\,j}
+\end{vmatrix}
+\end{equation*}
+
+The adjoint matrix is 
+A\begin{equation*}
+	A^\# \coloneqq A^2 - \sigma_1(A) A + \sigma_2(A)I = A^2 - \tr(A) A + \sigma_2(A)I
+\end{equation*}
+The basic property of the adjoint is the identity
+\begin{equation*}
+	AA^\# = \det(A)I = A^\#A
+\end{equation*}
+
+A \Dfn{cubic Jordan algebra} is a Jordan algebra, $J$, together with a linear form $T$, a quadratic form $S$
+and a cubic form $N$ such that a generic element $A\in J$ satisfies
+\begin{equation*}
+	A^3 - T(A) A^2 + S(A)A - N(A)I
+\end{equation*}
+Define the adjoint by 
+\begin{equation*}
+	A^\# = A^2 - T(A) A + S(A)I
+\end{equation*}
+Then $AA^\# = N(A)A = A^\#A$.
+
+\subsection{Construction}
+Let $\bA$ be a complex composition algebra of dimension $m\in \{1,2,4,8\}$.
+Let $H_3(\bA)$ be the space of Hermitian $3\times 3$ matrices with entries in $\bA$.
+The space $H_3(\bA)$ has dimension $3m+3$.
+
+The Jordan product of $X,Y\in H_3(\bA)$ is
+\begin{equation*}
+	X \circ Y \coloneqq \frac12 (XY+YX)
+\end{equation*}
+It is clear that the Jordan product is commutative and power associative; also, the unit matrix is a unit for the Jordan product. The Jordan product also satisfies the Jordan identity. This is clear if $\bA$ is associative, and, remarkably, also holds for $\bA=\bO$, the octonions. The Jordan algebra $H_3(\bO)$ is the \Dfn{Albert algebra} and is the unique exceptional simple Jordan algebra.
+
+The Jordan algebra $H_3(\bA)$ is a cubic Jordan algebra. An element $X\in H_3(\bA)$
+can be written as
+\begin{equation*}
+	X=\begin{pmatrix}
+		\alpha & x & \overline{z} \\
+		\overline{x} & \beta & y \\
+		z & \overline{y} & \gamma
+	\end{pmatrix}
+\end{equation*}
+where the diagonal entries $\alpha,\beta,\gamma$ are scalars and the remaining entries are in $\bA$.
+The \Dfn{norm}, $N$, is given explicitly by
+\begin{equation*}
+	N(X) = \alpha\beta\gamma - \alpha N(y) - \beta N(z) - \gamma N() + \Re ((xy)z)
+\end{equation*}
+This is a natural extension of the determinant.
+
+Define a symmetric inner product using the matrix trace by
+\begin{equation*}
+	(X,Y) = \tr (X\circ Y)
+\end{equation*}
+
+The properties of the inner product are that it is non-degenerate and invariant where invariance
+is the condition that,for $X,Y,Z\in H_3(\bA)$,
+\begin{equation*}
+	(X,Y\circ Z) = (X\circ Y,Z)
+\end{equation*}
+
+Let $\fg_\bA$ be the derivation algebra of $H_3(\bA)$. Then $\fg_\bA$ preserves the inner product.
+Let $H'_3(\bA)\subset H_3(\bA)$ be the subspace of trace-free matrices. Then $H_3(\bA)$ decomposes
+as a sum of irreducible $\fg_\bA$-modules
+\begin{equation*}
+	H_3(\bA) \cong H'_3(\bA) \oplus \bC
+\end{equation*}
+where $\bC$ is the subspace of scalar matrices.
+The projection map $H_3(\bA) \to H'_3(\bA)$, $a\mapsto a-\frac13 \tr(a)$ is a map of $\fg_\bA$-modules.
+
+Define a product on $H'_3(\bA)$ by
+\begin{equation*}
+	X.Y = X\circ Y - \frac13 \tr(X\circ Y)
+\end{equation*}
+This is a map of $\fg_\bA$-modules, $H'_3(\bA)\otimes H'_3(\bA)\to H'_3(\bA)$.
+
+Define $N(X)$, the \Dfn{norm} of $X\in H'(\bA)$, by $N(X) = (X,X)$.
+Then the \Dfn{fundamental identity} is that, for $X\in H'_3(\bA)$.
+\begin{equation*}
+	N(X)^2 = N(X^2)
+\end{equation*}
+The polarisation of the fundamental identity, using the symmetry of the product and the inner product, is
+\begin{equation}
+	(X\circ Y, Z\circ W) + (X\circ Z, Y\circ W) + (X\circ W,Y\circ Z)
+	= (a,d)(b,c) + (a,b)(c,d) + (a,c)(b,d)
+\end{equation}
+for $X,Y,Z,W\in H'_3(\bA)$.
+
+\subsection{Cubic forms}
+Let $N$ be a symmetric cubic form on a finite dimensional vector space $V$. Then the first linearisation is $N(x;y)$ which is the coefficient
+of $t$ in the expansion of $N(x+ty)$, so
+\begin{equation*}
+	N(x+ty) = N(x) + tN(x;y) + t^2N(y;x) + t^3N(y)
+\end{equation*}
+Note that $N(x;y)$ is quadratic in $x$ and linear in $y$. The second linearisation is 
+\begin{equation*}
+	N(x,y,z) = N(x+z;y) - N(x;y) - N(z;y)
+\end{equation*}
+which comes from the expansion
+\begin{equation*}
+	N(x+tz;y) = N(x;y) + tN(x,y,z) + t^2N(z;y)
+\end{equation*}
+Note that $N(x,y,z)$ is linear in all three variables.
+
+The cubic form can be recovered from the polarisation (if 6 is invertible) since
+\begin{equation*}
+	N(x) = 6N(x,x,x)
+\end{equation*}
+
+A \Dfn{basepoint} is an element $c\in V$ with $N(c)=1$, which is a constant.
+Then we define linear forms
+\begin{gather*}
+	T(x) = N(c;x) \\
+T(x,y) = T(x)T(y) - N(c,x,y)
+\end{gather*}
+Then we have a quadratic form and its polarisation
+\begin{gather*}
+	S(x) = N(x;c) \\
+	S(x,y) = N(x,y,c)
+\end{gather*}
+These satisfy
+\begin{equation*}
+	T(c)=3 \quad,\quad S(c)=3 \quad,\quad T(c,y) = T(y)
+\end{equation*}
+
+Assume the bilinear trace, $T$, is a nondegenerate bilinear form. Then we define the adjoint by
+\begin{equation*}
+	T(x^\#,y) = N(x;y)
+\end{equation*}
+This satisfies $S(x) = T(x^\#)$.
+
+The identity $N(x^\#) = N(x)^2$ appears in \cite[Problem~4.5]{mccrimmon2004}.
+
+A \Dfn{Jordan cubic norm} is a cubic norm that satisfies
+\begin{equation*}
+	x^{\#\,\#} = N(x)x
+\end{equation*}
+
+We can construct a cubic Jordan algebra from a Jordan cubic norm.
+The map $x\mapsto x^\#$ is quadratic. The linearisation is a bilinear product
+\begin{equation*}
+	x\# y \coloneqq (x+y)^\# - x^\# - y^\#
+\end{equation*}
+This satisfies $S(x,y) = T(x\# y)$.
+
+The Jordan product is determined by the sharp product
+\begin{equation*}
+	x \circ y \coloneqq \frac12 \left(x\# y + T(x)y + T(y)x - S(x,y)c \right)
+\end{equation*}
+
+The conclusion is Springer's result that a cubic Jordan algebra has a Jordan cubic norm
+(by construction) and that a Jordan cubic norm together with a basepoint is a cubic Jordan algebra.
+The small print is that we are working with finite dimensional vector spaces and 6 is invertible.
+
+\subsection{Lie algebras}
+Let $N$ be a Jordan cubic norm on $V$. Define the automorphism group to be the subgroup of $Aut(V)$
+which preserves $N$. Note that the structure group is an algebraic group. 
+
+Let $J$ be a cubic Jordan algebra. Then we have the automorphism group and the derivation algebra,
+$\der(J)$. Define the structure algebra, $\str(J)$, to be the Lie algebra of the automorphism group
+of the Jordan cubic norm. By construction, $\der(J)$ is a subalgebra of $\str(J)$.
+
+The action of $\der(J)$ on $J$ preserves the unit, $c$. Define $J'\subset J$ to be the subspace orthogonal
+to $c$, equivalently, the kernel of $T$. Then $J$, as a module for $\der(J)$, decomposes as $J\cong J'\oplus I$.
+Also, $\str(J)$,  as a module for $\der(J)$, decomposes as $\str(J) \cong \der(J)\oplus J'$.
+
+Restricting to the kernel of $T$,
+\begin{equation*}
+	x \circ y \coloneqq \frac12 \left(x\# y - S(x,y)c \right)
+\end{equation*}
+and then projecting to the orthogonal complement to $c$ gives $\frac12 x\# y$.
+This shows that the sharp product is a bilinear product on $J'$ and that $\der(J)$ is the Lie algebra
+of derivations.
+
+Then the quadratic norm on $J'$ satisfies
+$S(x\# x) = S(x)^2$.
+
+%-------------------------------------------------
+\section{Derivation algebras}
+%-------------------------------------------------
+\subsection{String diagrams}
+The string diagrams are discussed in \cite[Chapter~19]{Cvitanovic2008} (our convention is $\alpha=(\nn+2)$)
+ and \cite{gandhi2022} (our convention is $\delta=\nn$ and $\alpha=(\nn+2)$).
+
+The free category is the cobordism category of trivalent graphs.
+
+The \Dfn{fundamental relation} is:
+\begin{equation*}
+\Kcirc + \Hcirc + \Acirc = 2\Icirc +2 \Ucirc +2 \Xcirc
+\end{equation*}
+The reduction rules are:
+\begin{align*}
+\circle &\coloneqq \nn \empty & 	\tadpole &\coloneqq 0 \\
+	\bigon &\coloneqq (\nn+2)\linecirc & 	\trianglecirc &\coloneqq \frac{1}{2} (2-\nn)\trivalent
+\end{align*}
+The first reduction rule defines the loop value. The second reduction rule is independent of the
+fundamental relation and excludes an infinite sequence of cubic Jordan algebras. The third and
+fourth reduction rules are consequences of the fundamental relation and the first two reduction rules.
+
+The last reduction rule is
+\begin{align*}
+	\squarecirc &\coloneqq \Acirc + \Icirc + \Ucirc + \Xcirc \\
+	& = \Kcirc + \Hcirc + \Icirc + \Ucirc + \Xcirc
+\end{align*}
+Note that the last reduction rule is invariant under rotation.
+
+\subsection{Two string algebra} Let $A(2)$ be the two string algebra.
+The algebra $A(2)$ has dimension five and we take the basis to be $I$,$U$,$X$,$K$,$H$.
+The multiplication table is
+\begin{equation*}
+	\begin{array}{c|ccccc}
+		& I & U & X & K & H \\ \hline
+		I & I & U & X & K & H \\
+		U & U & \nn\,U & U & 0 & (\nn+2)\,U \\
+		X & X & U & I & K & A \\
+		K & K & 0 & K & (\nn+2)\,K & \frac{(2-\nn)}{2}\,K \\
+		H & H & (\nn+2)\,U & A & \frac{(2-\nn)}{2}\,K & H^2 \\
+	\end{array}
+\end{equation*}
+where $A\coloneqq -K-H+2(I+U+X)$ and $2\,H^2\coloneqq (6-\nn)\,A + (3\,\nn+2)(I+U) - (\nn+6)\,X$.
+or $2\,H^2\coloneqq (\nn-6)(K+H) + (\nn+14)(I+U) - 3\,(\nn-2)\,X$.
+
+The Gram matrix for the inner product given by the matrix trace is
+\begin{equation*}
+	\begin{pmatrix}
+		5 & \nn & 1 & \nn + 2  &  \nn + 2 \\
+		\nn & \nn^2 & \nn &  0 &  \nn(\nn + 2) \\
+		1 & \nn  & 5 & \nn + 2 &  8 \\
+		\nn + 2   &  0 & \nn + 2 & (\nn+2)^2 & (4-\nn^2)/2 \\
+		\nn + 2 & \nn(\nn+2) & 8 & (4-\nn^2)/2 & (3\nn^2 + 8\nn + 52)/2
+	\end{pmatrix}
+\end{equation*}
+The discriminant of $A(2)$ is the determinant of the Gram matrix:
+\[ \nn^2  (\nn + 2)^2  (\nn + 10)^2 \]
+Hence the algebra $A(2)$ is separable for $\nn\notin \{0,-2,-10\}$.
+First write $I$ as the sum of two orthogonal idempotents
+$I = (1+X)/2 + (1-X)/2$. Write $(1+X)/2$ as the sum of three orthogonal idempotents,
+
+\begin{equation*}
+	\begin{array}{ccc}
+		\frac1\nn U & \frac1{(\nn+2)}K & \frac12 (1+X) - \frac1\nn U - \frac1{(\nn+2)}K \\ \hline
+		1 & \nn & \frac12 (\nn+1)(\nn-2)
+	\end{array}
+\end{equation*}
+
+Write $(1-X)/2$ as the sum of two orthogonal idempotents;
+\begin{equation*}
+	\begin{array}{cc}
+		\frac1{(\nn+10)}\left[2\,I - 2\,U -6\,X + K + 2\,H \right] &
+		\frac1{2(\nn+10)}\left[(\nn+6)\,I + 4\,U -(\nn-2)\,X - 2\,K - 4\,H \right] \\ \hline
+		\frac{3\,\nn(\nn-2)}{(\nn+10)} &  \frac{\nn(\nn+1)(\nn+2)}{2\,(\nn+10)}
+	\end{array}
+\end{equation*}
+
+The one dimensional representations are 
+\begin{equation*}
+	\begin{array}{ccccc}
+		I & U & X & K & H \\ \hline
+		1 & \nn & 1 & 0 & (\nn+2) \\
+		1 & 0 & 1 & (\nn+2) & \frac{(2-\nn)}{2} \\
+		1 & 0 & 1 & 0 & 2 \\
+		1 & 0 & -1 & 0 & -4 \\
+		1 & 0 & -1 & 0 & \frac{(\nn+2) }{2}
+	\end{array}
+\end{equation*}
+
+For $\nn\in \{0,-2,-10\}$ the radical of $A(2)$ has dimension 1 and two of the one dimensional
+representations are the same.
+For $\nn=0$, $U$ is nilpotent, for $\nn=-2$, $K$ is nilpotent and for $\nn=-10$ the element
+$2\,I - 2\,U -6\,X + K + 2\,H $ is nilpotent.
+
+The Gram matrix for the inner product given by the categorical trace is
+\begin{equation*}
+	G \coloneqq	\begin{pmatrix}
+		\nn & 1 & 1 & (\nn+2) & 0 \\
+		1 & \nn & 1 & 0 & (\nn+2) \\
+		1 & 1 & \nn & (\nn+2) & (\nn+2) \\
+		(\nn+2) & 0 & (\nn+2) & (\nn+2)^2 & \frac{(4-\nn^2)}{2}\\
+		0 & (\nn+2) & (\nn+2) & \frac{(4-\nn^2)}{2} & (\nn+2)^2 \\
+	\end{pmatrix}
+\end{equation*}
+The determinant of the Gram matrix is
+\[ \det(G) = (3/4)  (\nn - 2)^2  (\nn + 1)^2  (\nn + 2)^3 \]
+
+\begin{description}
+	\item[$\nn=-2$] The relations are $I+U+X=0$, $K=0$, $H=0$. This is the Temperley-Lieb
+	algebra.
+	\item[$\nn=-1$] The relations are $3(I+U)+2X = 2(K+H)$ and
+	$(I-U) + 2(K-H) =0$. This is the orthosymplectic super algebra $\mathrm{osp}(2m-1|2m)$ for any $m\geqslant 1$.
+	\item[$\nn=2$] The relations are $4(I-U)=(K-H)$ and
+	$4X=K+H$. This is given by the symmetric group $\fS_3$ and the two dimensional irreducible representation.
+\end{description}
+
+The dimension of the adjoint representation is
+\[ \frac{3\nn(\nn-2)}{(\nn+10)} \]
+
+\subsection{Confluence}
+We distinguish the reduction rules from the fundamental relation. Each reduction rule substitutes one
+diagram by a linear combination where each term of the linear combination has fewer vertices. This defines 
+a relation on linear combinations of diagrams. A reduction step consists of making the substitution in one term.
+For $i\geqslant 0$, define a function $v_i$ on linear combinations by taking the number of terms in the 
+support which have $i$ vertices. Define a partial order on functions by $v>w$ if, for some $k\geqslant 0$,
+$v_i = w_i$ for $i>k$ and $v_k > w_k$. This is a variation of lexicographic order. The principle
+of well-founded induction applies so this partial order has no infinite descending sequence.
+
+The partial order on sequences defines a partial order on linear combinations. The key property is that a
+reduction step gives a strictly smaller linear combination. This shows that there is no infinite sequence
+of reduction steps.
+
+\begin{prop} The reduction rules are confluent.
+\end{prop}
+
+\begin{proof} It is sufficient to show that the reduction rules are terminating and locally confluent.
+	The reduction rules are terminating by the above discussion. The reduction rules are locally
+	confluent by the construction of $A(2)$.
+\end{proof}
+
+A graph is \Dfn{irreducible} if and only if it has girth at least five. This means that any linear combination
+of graphs has a normal form which is a linear combination of graphs of girth at least five. This includes graphs
+with no cycle.
+
+\subsection{Closed graphs}
+In this section we evaluate connected trivalent graphs. Let $G$ be a trivalent graph. An \Dfn{evaluation} of $G$ is a relation of the form $G=p_G(\nn)\,[]$ where $p_G(\nn)\in \bQ[\nn]$ and $[]$ is the empty graph.
+We refer to $p_G(\nn)$ as the evaluation. For example, the evaluation of the loop is $\nn$.
+The evaluation of a graph is the product of the evaluations of the connected components, so we assume $G$
+is connected. There is no connected trivalent graph of girth five with fewer than 10 vertices. Hence the
+normal form of a connected trivalent graph with fewer than 10 vertices is an evaluation.
+
+A \Dfn{source} is a connected graph with one vertex of valence four and all other vertices of valence three.
+Given a source we can substitute the six-term relation to get a relation which is a linear combination
+of six closed trivalent graphs. If the source has $t$ trivalent vertices then three of the terms have $t$ vertices and three have $t+2$ vertices. The normal form of this relation is a linear combination
+of connected trivalent graphs of girth at least five.
+
+This gives an inductive procedure for finding evaluations. Assume we have found evaluations of all
+trivalent graphs of girth at least five with fewer than $t$ vertices. Given a source with $t-2$
+trivalent vertices we construct the relation and its normal form. The normal form is a linear combination
+of trivalent graphs where each term has girth at least five and at most $t$ vertices. If any term has a
+connected component with fewer than $t$ vertices then, by the inductive assumption, we have found the
+evaluation and we substitute the evaluation for the component. The result of these substitutions is
+a linear combination of connected trivalent graphs of girth at least five and precisely $t$ vertices.
+
+\begin{ex}
+The Petersen graph is the unique (up to isomorphism) connected trivalent graph with 10 vertices.
+There is also a unique (up to isomorphism) source with 8 trivalent vertices. Substituting the 
+six term relation gives a linear combination of six connected trivalent graphs. One of the terms is
+the Petersen graph and the other five terms have girth at most four. Therefore the normal form of this
+relation is the evaluation of the Petersen graph.
+\end{ex}
+
+We implemented this procedure and applied it for $t=10,12,14,16$.
+For the numbers of connected trivalent graphs of girth at least five with $t$ vertices see \oeis{A014372}.
+See Table~\ref{table:f4}.
+
+\begin{table}[h]
+\begin{equation*}
+\begin{array}{rrrr}
+10 & 12 & 14 & 16 \\ \hline
+1 & 2 & 9 & 49 \\
+1 & 4 & 31 & 335
+\end{array}
+\end{equation*}
+\caption{Trivalent graphs and sources}\label{table:f4}
+\end{table}
+
+For each $t$ we generated all sources
+with $t-2$ trivalent vertices (up to isomorphism) and computed the linear combination of
+connected trivalent graphs of girth at least five and $t$ vertices. We observed that for each 
+connected trivalent graph there was a source that gave an evaluation. For $t<16$ substituting these
+evaluations in the remaining relations gave 0. However for $t=16$ there were 145 sources where this polynomial
+was non-zero. For all sources which gave a non-zero polynomial the polynomial was of the form
+\[ \pm \frac{3^r}{2^s} (\nn - 26) (\nn - 14) (\nn - 8) (\nn - 5)(\nn - 2)^2 \nn (\nn + 1) (\nn + 2) \]
+where $r,s$ are positive integers.
+
+
+%-------------------------------------------------
+\section{Structure algebras}
+%-------------------------------------------------
+\subsection{String diagrams}
+The string diagrams are discussed in \cite[Chapter~18]{Cvitanovic2008}
+(our convention is $\alpha=2(\nn+3)$).
+
+The free category is the cobordism category of oriented trivalent graphs such that every trivalent
+vertex is either a source or a sink, see Figure~\ref{fig:sink}. The monoid of objects is the free monoid on two generators.
+
+
+\begin{figure}[h]
+\source \qquad \sink
+\caption{Source and sink}\label{fig:sink}
+\end{figure}
+
+The seven term relation is shown in Figure~\ref{fig:seventerm}
+\begin{figure}[h]
+	\begin{multline*}
+		\Wa + \Wb + \Wc \\ = 6 \Vu + 6 \Vv + 6 \Vw + 6 \Vx
+\end{multline*}
+\caption{Seven term relation}\label{fig:seventerm}
+\end{figure}
+
+
+The three reduction rules are:
+\begin{equation*}
+\circledir \coloneqq \nn \empty
+\qquad
+\bigondir \coloneqq 2(\nn+3)\linedir
+\end{equation*}
+
+\begin{equation*}
+	\squaredir \coloneqq (3-\nn) \Adir + 6(\nn+3) \Idir + 6(\nn+3) \Udir 
+\end{equation*}
+
+The projection to the adjoint representation is
+\[ \frac1{(\nn+9)}\left[ 6 + 2\,U - A \right] \]
+The dimension of the adjoint representation is
+\[ \frac{4\nn(\nn-1)}{(\nn+9)} \]
+
+\subsection{Closed graphs}
+In this section we evaluate connected trivalent bipartite graphs. Let $G$ be a trivalent bipartite graph. An \Dfn{evaluation} of $G$ is a relation of the form $G=p_G(\nn)\,[]$ where $p_G(\nn)\in \bQ[\nn]$ and $[]$ is the empty graph.
+We refer to $p_G(\nn)$ as the evaluation. For example, the evaluation of the loop is $\nn$.
+The evaluation of a graph is the product of the evaluations of the connected components, so we assume $G$
+is connected. There is no connected trivalent bipartite graph of girth six with fewer than 14 vertices. Hence the
+normal form of a connected trivalent graph with fewer than 14 vertices is an evaluation.
+
+A \Dfn{source} is a connected bipartite graph with one vertex of valence two connected to a vertex of valence four and all other vertices of valence three.
+Given a source we can substitute the seven term relation to get a relation which is a linear combination
+of seven closed trivalent bipartite graphs. If the source has $t$ trivalent vertices then four of the terms have $t+1$ vertices and three have $t+3$ vertices. The normal form of this relation is a linear combination
+of connected trivalent bipartite graphs of girth at least six.
+
+This gives an inductive procedure for finding evaluations. Assume we have found evaluations of all
+trivalent bipartite graphs of girth at least six with fewer than $t$ vertices. Given a source with $t-3$
+trivalent vertices we construct the relation and its normal form. The normal form is a linear combination
+of trivalent bipartite graphs where each term has girth at least six and at most $t$ vertices. If any term has a
+connected component with fewer than $t$ vertices then, by the inductive assumption, we have found the
+evaluation and we substitute the evaluation for the component. The result of these substitutions is
+a linear combination of connected trivalent bipartite graphs of girth at least six and precisely $t$ vertices.
+
+\begin{ex}
+	The Heawood graph is the unique (up to isomorphism) connected trivalent bipartite graph with 14 vertices.
+	There is also a unique (up to isomorphism) source with 11 trivalent vertices. Substituting the 
+	seven term relation gives a linear combination of seven connected trivalent bipartite graphs. One of the terms is
+	the Heawood graph and the other six terms have girth at most four. Therefore the normal form of this
+	relation is the evaluation of the Heawood graph.
+\end{ex}
+
+We implemented this procedure and applied it for $t=14,16,18,20,22$. See Table~\ref{table:e6}.
+\begin{table}[h]
+	\begin{equation*}
+		\begin{array}{rrrrr}
+			14 & 16 & 18 & 20 & 22 \\ \hline
+			1 & 1 & 3 & 10 & 28 \\
+			1 & 1 & 6 & 47 & 406
+		\end{array}
+	\end{equation*}
+	\caption{Trivalent graphs and sources}\label{table:e6}
+\end{table}
+For each $t$ we generated all sources
+with $t-3$ trivalent vertices (up to isomorphism) and computed the linear combination of
+connected trivalent bipartite graphs of girth at least six and $t$ vertices. We observed that for each 
+connected trivalent bipartite graph there was a source that gave an evaluation. For $t<22$ substituting these
+evaluations in the remaining relations gave 0. However for $t=22$ there were 149 sources where this polynomial
+was non-zero. For all sources which gave a non-zero polynomial the polynomial was of the form
+\[ \pm 2^r 3^s (\nn - 27) (\nn - 15) (\nn - 9) (\nn - 6)(\nn - 3)^2(\nn - 1)\nn^2 (\nn + 1) (\nn + 3)^2 \]
+where $r,s$ are positive integers.
+
+
+\bibliographystyle{alphaurl}
+\bibliography{F4series}
+
+%-------------------------------------------------
+\end{document}
+%-------------------------------------------------
+
+\section{Graphs}
+
+\subsection{Graphs}
+\begin{defn} A \Dfn{graph}, $\Gamma=(V,E)$ is a pair consisting of a finite non-empty set, $V$,
+and $E$ is a subset of the set of subsets of $V$ of size 2. Formally,
+\begin{equation*}
+E \subseteq \{ X \subseteq V : |X|=2 \}
+\end{equation*}
+\end{defn}
+We say $e\in E$ is \Dfn{incident} to $v\in V$ if $v\in e$. Then, for $v\in V$, the set of edges incident 
+to $v$ is
+\begin{equation*}
+\{ e\in E : v\in e \}
+\end{equation*}
+The \Dfn{degree} of $v\in V$, $\deg(v)$, is the cardinality of this set.
+
+The definition of graph isomorphisms is standard and intuitive. We include it here as it needs to implemented
+in computations.
+
+\begin{defn} A \Dfn{morphism}, $\psi\colon \Gamma_1\to \Gamma_2$ is a pair of maps, $\psi_V\colon V_1\to V_2$
+	and $\psi_E\colon E_1\to E_2$ such that, if $\{v,v'\}\in E_1$ then $\{ \psi_E(v),\psi_E(v')\} \in E_2$.
+\end{defn}
+In particular a \Dfn{graph isomorphism} is a morphism $\psi\colon \Gamma_1\to \Gamma_2$ such that $\psi_V$ and $\psi_E$
+are bijections.
+
+The graphs we consider have the property that every vertex either has degree 3 or degree 1. From this point
+on a graph will mean a graph with this property.
+
+This property gives a partition of $V$: a vertex of degree 3 is an \Dfn{internal} vertex and
+a vertex of degree 1 is a \Dfn{boundary} vertex. The set of boundary vertices is denoted $B$
+and the set of internal vertices is denoted $I$. In particular, $V=B\coprod I$.
+
+A graph is \Dfn{closed} if $B=\emptyset$.
+
+Define a relation on $V$ by $u\sim v$ if $u,v\in e$ for some $e\in E$. The transitive closure of the relation
+is an equivalence relation and the equivalence classes are the \Dfn{components} of $\Gamma$. A graph $\Gamma$
+is \Dfn{connected} if it has one component. This is a constructive,or computational, definition. An equivalent,
+non-constructive or non-computational definition is that a graph is connected if is not the disjoint union of two subgraphs.
+
+\subsection{Cobordism category}
+There is a cobordism category of graphs, $\cC$. The set of objects is $\bN$ and a morphism $[m]\to [n]$
+is a graph $\Gamma$ together with a bijection between $[m] \coprod [n]$ and $B$.
+Composition is given by connecting boundary points in pairs. This is a monoidal category with
+tensor product essentially disjoint union and the trivial object is $[0]$. Furthermore this is
+a rigid symmetric monoidal category.
+
+The universal property is an equivalence of categories.
+
+
+\subsection{Interpolation}
+\section{Reductions}
+
+\subsection{Substitution}
+
+Define a \Dfn{partial order} on graphs by $\Gamma_1<\Gamma_2$ if $|B_1|<|B_2|$ or if $|B_1|=|B_2|$
+and $|I_1|<|I_2|$. Usually, we only compare graphs $\Gamma_1,\Gamma_2$ if $|B_1|=|B_2|$.
+
+An \Dfn{occurrence} of graphs is a morphism $\psi\colon \Gamma_1\to \Gamma_2$ such that $\psi \colon I_1\to I_2$ 
+is an inclusion.
+
+Assume we are given;
+\begin{itemize}
+	\item a graph $\Gamma$
+	\item a pair of graphs $G_1$, $G_2$
+	\item a bijection $B_1\to B_2$
+	\item an inclusion $B_1\to \Gamma$
+\end{itemize}
+Then we can \Dfn{substitute} $G_2$ for $G_1$, or replace $G_2$ by $G_1$ to get a graph $\Gamma'$.
+
+A key property of the partial order is that it is \Dfn{substitution invariant}. Formally, if
+$G_2 < G_1$ then $\Gamma'<\Gamma$.
+
+\subsection{Relations}
+We work with linear combinations of graphs with coefficients in a fixed commutative unital ring.
+Let $\sum_i c_i\, \Gamma_i$ be a linear combination. The \Dfn{support} is the set of graphs
+\begin{equation*}
+\{ \Gamma_i : c_i \ne 0 \}
+\end{equation*}
+
+\begin{defn} A \Dfn{relation} is a formal linear combination, $\sum_i c_i\, \Gamma_i$. We require that
+	$k=|B_i|$ is independent of $i$ and that for each $i$ we have an ordering of $B_i$ (a bijection
+	$B_i\to \{1,2,\dotsc ,k\})$.
+\end{defn}
+Actually, we require something weaker: namely that, for any two graphs in the support, we have a bijection
+between the two boundaries such that composing bijections only depends on the endpoints.
+
+\begin{defn} A \Dfn{reduction rule} is a pair $(\Gamma,S)$ where $\Gamma$ is a graph and $S$ is a 
+	formal linear combination together with bijections between the boundary of $\Gamma$ and the boundary
+	of each graph in $S$.
+\end{defn}
+
+This implies that $\Gamma-S$ is a relation. I have never encountered a reduction rule in which $\Gamma$
+is not connected but I don't know if this is a condition we want to impose.
+
+If the support of a relation has a unique maximal element whose coefficient is invertible then we can 
+convert to a reduction rule.
+
+Assume we are given:
+\begin{itemize}
+	\item a graph $\Gamma$
+	\item a reduction rule $(G,S)$
+	\item an inclusion of $G$ in $\Gamma$
+\end{itemize}
+Then we can substitute $S$ into $\Gamma$ to get a linear combination of graphs.
+
+Given a linear combination we substitute into one of the graphs in the support.
+
+Given a set of reduction rules and a graph, $\Gamma$, then we say $\Gamma$ is \Dfn{irreducible} if no reduction rule can be applied. 
+We say a linear combination is \Dfn{irreducible} if every graph in the support is irreducible.
+
+\section{Numerology}
+The dimensions of the spaces of invariant tensors are
+\begin{equation*}
+\begin{array}{c|ccccccccccc}
+& 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 \\ \hline
+F_4 & 1 & 0 & 1 & 1 & 5 & 15 & 70 & 330 & 1820 & 10858 & 70875 \\
+C_3 & 1 & 0 & 1 & 1 & 5 & 16 & 75 & 366 & 2016 & 11936 & 75678 \\
+A_2 & 1 & 0 & 1 & 1 & 5 & 16 & 75 & 351 & 1806 & 9640 & 53601
+\end{array}
+\end{equation*}
+ 
+ The spaces of invariant tensors have an action of the symmetric group.
+ The Frobenius characters are the Schur functions:
+ \begin{equation*}
+\begin{array}{c|c}
+0 & 1 \\
+1 & 0 \\
+2 & s_2 \\
+3 & s_3 \\
+4 & s_4 + 2\,s_{2,2} \\
+5 & s_5 + s_{4,1} + s_{3,2} + s_{2,2,1} + s_{1,1,1,1,1} \\
+6 & 2\,s_6 + 3\,s_{4,2} + s_{3,2,1} + s_{3,1,1,1} + 3\,s_{2,2,2} + s_{2,1,1,1,1}
+\end{array}
+\end{equation*}  
+
+The Schur functions for the connected series are:
+ \begin{equation*}
+	\begin{array}{c|c}
+		1 & 0 \\
+		2 & s[2] \\
+		3 & s[3] \\
+		4 & s[2,2] \\
+		5 & s[1, 1, 1, 1, 1] + s[2, 2, 1] \\
+		6 & s[2, 1, 1, 1, 1] + s[2, 2, 2] + s[3, 1, 1, 1]
+	\end{array}
+\end{equation*}
+For $n=4$ this is a two dimensional representation. For $n=5$, $s[1, 1, 1, 1, 1]$ has basis the pentagon and $s[2, 2, 1]$ has basis the five trees. 
+For $n=6$, $s[2, 1, 1, 1, 1] + s[3, 1, 1, 1]$ has basis the 14 trees and $s[2, 2, 2]$ has basis the five diagrams given by forking a leg of the pentagon. Note that all these diagrams are planar.
+
+\section{Two string} Let $A(2)$ be the two string algebra.
+The algebra $A(2)$ has dimension five and we take the basis to be $I$,$U$,$X$,$K$,$H$.
+The multiplication table is
+\begin{equation*}
+\begin{array}{c|ccccc}
+	 & I & U & X & K & H \\ \hline
+	 I & I & U & X & K & H \\
+	 U & U & \nn\,U & U & 0 & (\nn+2)\,U \\
+	 X & X & U & I & K & A \\
+	 K & K & 0 & K & (\nn+2)\,K & \frac{(2-\nn)}{2}\,K \\
+	 H & H & (\nn+2)\,U & A & \frac{(2-\nn)}{2}\,K & H^2 \\
+\end{array}
+\end{equation*}
+where $A\coloneqq -K-H+2(I+U+X)$ and $2\,H^2\coloneqq (6-\nn)\,A + (3\,\nn+2)(I+U) - (\nn+6)\,X$.
+or $2\,H^2\coloneqq (\nn-6)(K+H) + (\nn+14)(I+U) - 3\,(\nn-2)\,X$.
+
+The Gram matrix for the inner product given by the matrix trace is
+\begin{equation*}
+	\begin{pmatrix}
+		5 & \nn & 1 & \nn + 2  &  \nn + 2 \\
+		\nn & \nn^2 & \nn &  0 &  \nn(\nn + 2) \\
+		1 & \nn  & 5 & \nn + 2 &  8 \\
+		\nn + 2   &  0 & \nn + 2 & (\nn+2)^2 & (4-\nn^2)/2 \\
+		\nn + 2 & \nn(\nn+2) & 8 & (4-\nn^2)/2 & (3\nn^2 + 8\nn + 52)/2
+	\end{pmatrix}
+\end{equation*}
+The discriminant of $A(2)$ is the determinant of the Gram matrix:
+\[ \nn^2  (\nn + 2)^2  (\nn + 10)^2 \]
+Hence the algebra $A(2)$ is separable for $\nn\notin \{0,-2,-10\}$.
+First write $I$ as the sum of two orthogonal idempotents
+$I = (1+X)/2 + (1-X)/2$. Write $(1+X)/2$ as the sum of three orthogonal idempotents,
+
+\begin{equation*}
+	\begin{array}{ccc}
+		\frac1\nn U & \frac1{(\nn+2)}K & \frac12 (1+X) - \frac1\nn U - \frac1{(\nn+2)}K \\ \hline
+		1 & \nn & \frac12 (\nn+1)(\nn-2)
+	\end{array}
+\end{equation*}
+
+Write $(1-X)/2$ as the sum of two orthogonal idempotents;
+\begin{equation*}
+	\begin{array}{cc}
+		\frac1{(\nn+10)}\left[2\,I - 2\,U -6\,X + K + 2\,H \right] &
+		\frac1{2(\nn+10)}\left[(\nn+6)\,I + 4\,U -(\nn-2)\,X - 2\,K - 4\,H \right] \\ \hline
+		\frac{3\,\nn(\nn-2)}{(\nn+10)} &  \frac{\nn(\nn+1)(\nn+2)}{2\,(\nn+10)}
+	\end{array}
+\end{equation*}
+
+The one dimensional representations are 
+\begin{equation*}
+\begin{array}{ccccc}
+	I & U & X & K & H \\ \hline
+	1 & \nn & 1 & 0 & (\nn+2) \\
+	1 & 0 & 1 & (\nn+2) & \frac{(2-\nn)}{2} \\
+	1 & 0 & 1 & 0 & 2 \\
+	1 & 0 & -1 & 0 & -4 \\
+	1 & 0 & -1 & 0 & \frac{(\nn+2) }{2}
+\end{array}
+\end{equation*}
+
+For $\nn\in \{0,-2,-10\}$ the radical of $A(2)$ has dimension 1 and two of the one dimensional
+representations are the same.
+For $\nn=0$, $U$ is nilpotent, for $\nn=-2$, $K$ is nilpotent and for $\nn=-10$ the element
+$2\,I - 2\,U -6\,X + K + 2\,H $ is nilpotent.
+
+The Gram matrix for the inner product given by the categorical trace is
+\begin{equation*}
+G \coloneqq	\begin{pmatrix}
+\nn & 1 & 1 & (\nn+2) & 0 \\
+1 & \nn & 1 & 0 & (\nn+2) \\
+1 & 1 & \nn & (\nn+2) & (\nn+2) \\
+(\nn+2) & 0 & (\nn+2) & (\nn+2)^2 & \frac{(4-\nn^2)}{2}\\
+0 & (\nn+2) & (\nn+2) & \frac{(4-\nn^2)}{2} & (\nn+2)^2 \\
+\end{pmatrix}
+\end{equation*}
+The determinant of the Gram matrix is
+\[ \det(G) = (3/4)  (\nn - 2)^2  (\nn + 1)^2  (\nn + 2)^3 \]
+
+\begin{description}
+\item[$\nn=-2$] The relations are $I+U+X=0$, $K=0$, $H=0$. This is the Temperley-Lieb
+algebra.
+\item[$\nn=-1$] The relations are $3(I+U)+2X = 2(K+H)$ and
+$(I-U) + 2(K-H) =0$. This is the orthosymplectic super algebra $\mathrm{osp}(2m-1|2m)$ for any $m\geqslant 1$.
+\item[$\nn=2$] The relations are $4(I-U)=(K-H)$ and
+$4X=K+H$. This is given by the symmetric group $\fS_3$ and the two dimensional irreducible representation.
+\end{description}
+
+The Petersen graph is the unique (up to isomorphism) connected simple trivalent graph with 10 vertices and girth 5. A construction is to take $[5]\coloneqq\{1,2,3,4,5\}$, the set of vertices is the set of subsets of $[5]$ of size 2 and two vertices are connected if and only if they are disjoint. The evaluation is
+\[\nn\,(\nn - 2)\,(\nn + 2)\,(\nn^3 - 27\,\nn^2 + 54\,\nn + 72)/4 \]
+
+There are (up to isomorphism) two connected simple trivalent graphs with 12 vertices and girth 5.
+Their evaluations are
+\begin{gather*}
+- \nn (\nn^2 - 4) (\nn^4 - 38\,\nn^3 + 268\,\nn^2 - 192\,\nn - 464)/8 \\
+\nn (\nn^2 - 4) (5\,\nn^4 - 172\,\nn^3 + 1316\,\nn^2 - 864\,\nn - 2496)/32
+\end{gather*}
+
+\section{Strategy}
+The strategy for computing these evaluations is:
+
+We distinguish between relations and reductions. We have one relation, the six term relation, and reductions for lollipop, bigon, triangle and square. A generalisation of the lollipop relation is that if a graph has an edge such that cutting the edge results in a closed 
+connected component then the evaluation of the graph is zero. A graph is \Dfn{irreducible} if it cannot be reduced. The closed irreducible graphs are simple, bridgeless, trivalent and have girth at least five. Using the reductions, any closed graph can be written as a linear combination of closed irreducible graphs. The evaluation of any closed graph is the product of the evaluations of its connected components. These observations reduce the problem of evaluating closed graphs to the problem of evaluating irreducible connected closed graphs.
+
+We find the evaluations of irreducible connected closed graphs recursively on the number of vertices.
+The starting point is there is no irreducible connected closed graph with less than ten vertices.
+For the numbers of irreducible connected closed graphs with $t$ vertices see \oeis{A014372}.
+Assume we have evaluations of all irreducible connected closed graphs with at most $t-2$ vertices.
+We generate (up to isomorphism) all graphs which can be obtained by choosing an edge in a
+irreducible connected closed graph with $t$ vertices and contracting the edge to create a four valent vertex.
+The numbers of graphs and the numbers of relations are shown in Figure~\ref{fig:counts}
+
+\begin{figure}
+	\begin{equation*}
+	\begin{array}{ccccc}
+\mathrm{vertices} & 10 & 12 & 14 & 16 \\ \hline
+\mathrm{graphs} & 1 & 2 & 9 & 49 \\
+\mathrm{relations} & 1 & 4 & 31 & 335
+\end{array}
+\end{equation*}
+\caption{Enumerations}\label{fig:counts}
+\end{figure}
+
+Substitute the six term relation for the four valent vertex to produce a relation which is a linear combination
+of connected graphs with at most $t$ vertices. Use the reductions to reduce each relation to a linear combination of 
+irreducible connected closed graphs with at most $t$ vertices. Use the known evaluations to reduce each relation to a linear combination of irreducible connected graphs with $t$ vertices. This is a linear system of equations over the polynomial ring $\bQ[\nn]$.
+We find that it is straightforward to solve these equations. For each irreducible connected graph with $t$ vertices there is a relation that gives the evaluation. We collect these evaluations and add them to the list of known evaluations. We also substitute these evaluations into each remaining relation to give a polynomial. If all these polynomials are zero we proceed to $t+2$ vertices.
+
+The result we obtain is that for $t=10, 12, 14$ we find evaluations of all irreducible connected graphs with $t$ vertices
+and no polynomial relation. For $t=16$ we find evaluations of all 49 irreducible connected graphs with $16$ vertices
+and (up to scale) the single polynomial
+\[  \nn (\nn - 26) (\nn - 14) (\nn - 8) (\nn - 5) (\nn + 1) (\nn + 2) (\nn - 2)^2 \]
+For each root of this polynomial the defining relations are known to be consistent. (Although it is not clear why $\nn=2$ is a double root.)
+
+\begin{equation*}
+\Bigon
+\end{equation*}
+
+\begin{equation*}
+	\Triangle
+\end{equation*}
+
+\begin{equation*}
+	\Square
+\end{equation*}
+
+\begin{equation*}
+	\SixTerm
+\end{equation*}
+
+
+
+\nocite{*}
+
+\bibliographystyle{alphaurl}
+\bibliography{F4series}
+
+\end{document}

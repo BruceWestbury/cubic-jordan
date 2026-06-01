@@ -1,0 +1,438 @@
+
+\tikzset{bwwpicture/.style={rotate=0,baseline={([yshift=-\the\dimexpr\fontdimen22\textfont2\relax]current  bounding  box.center)}, red, ultra thick,scale=.9,line join=round}}
+\tikzset{bwwcircle/.style={bwwpicture,execute at begin picture={\path (0,0) circle [radius=1.2];  \fill[bgdfill] circle [radius=1.0];},
+		execute at end picture={\draw[bgddraw] circle [radius=1.0];}}}
+\tikzset{bwwrect/.style 2 args={bwwpicture,execute at begin picture={\fill[bgdfill] #1 coordinate (a) rectangle #2 coordinate (b); \path (barycentric cs:a=1.11,b=-.11) rectangle (barycentric cs:a=-.11,b=1.11); \clip (a) rectangle (b);},
+		execute at end picture={\draw[bgddraw] #1 rectangle #2;}},bwwrect/.default={(0,0)}{(1.5,1.5)}}
+
+\tikzstyle{bgddraw}=[blue, thin]
+\tikzstyle{bgdfill}=[fill=blue!20]
+\tikzstyle{wipe}=[double distance=1.6pt,double=red,blue!20,line width=3pt]
+
+\def\trivalent{
+	\begin{tikzpicture}[bwwcircle]
+		\draw  (0,0) -- (270:1);
+		\draw  (0,0) -- (30:1);
+		\draw  (0,0) -- (150:1);
+	\end{tikzpicture}
+}
+
+\def\circle{
+	\begin{tikzpicture}[bwwcircle]
+		\draw  (0,0) circle [radius=0.5];		
+	\end{tikzpicture}
+}
+
+\def\empty{
+	\begin{tikzpicture}[bwwcircle]
+	\end{tikzpicture}
+}
+
+\def\tadpole{
+	\begin{tikzpicture}[bwwcircle]
+		\draw  (0,-0.2) -- (270:1);
+		\draw  (0,-0.2) to[out=30,in=270] +(45:0.5) arc(0:180:0.3535) to[out=270,in=150] (0,-0.2);
+	\end{tikzpicture}
+}
+
+\def\bigon{
+	\begin{tikzpicture}[bwwcircle]
+		\draw  (0,0.5) to [out=210, in=90] (-0.4,0) to [out=270, in=150] (0,-0.5);
+		\draw  (0,0.5) to [out=330, in=90] (0.4,0) to [out=270, in=30](0,-0.5);
+		\draw  (0,0.5) -- (0,1);
+		\draw  (0,-0.5) -- (0,-1);
+	\end{tikzpicture}
+}
+
+\def\linecirc{
+	\begin{tikzpicture}[bwwcircle]
+		\draw  (0,1) -- (0,-1);
+	\end{tikzpicture}
+}
+
+\def\trianglecirc{
+	\begin{tikzpicture}[bwwcircle]
+		\draw  (90:0.5) -- (90:1);
+		\draw  (210:0.5) -- (210:1);
+		\draw  (330:0.5) -- (330:1);
+		\draw  (90:0.5) to [out=210, in=90] (210:0.5);
+		\draw  (210:0.5) to [out=330, in=210] (330:0.5);
+		\draw  (330:0.5) to [out=90, in=330] (90:0.5);
+	\end{tikzpicture}
+}
+
+\def\Xcirc{
+	\begin{tikzpicture}[bwwcircle]
+		\draw  (45:1) -- (225:1);
+		\draw  (135:1) -- (315:1);
+	\end{tikzpicture}
+}
+
+\def\Icirc{
+	\begin{tikzpicture}[bwwcircle]
+		\draw  (45:1) to [out=225,in=135] (315:1);
+		\draw  (135:1) to [out=315,in=45] (225:1);
+	\end{tikzpicture}
+}
+
+\def\Ucirc{
+	\begin{tikzpicture}[bwwcircle]
+		\draw  (45:1) to [out=225,in=315] (135:1);
+		\draw  (315:1) to [out=135,in=45] (225:1);
+	\end{tikzpicture}
+}
+
+\def\Kcirc{
+	\begin{tikzpicture}[bwwcircle]
+		\draw  (45:1) to [out=225,in=30] (0,0.3);
+		\draw  (135:1) to [out=315,in=150] (0,0.3);
+		\draw  (225:1) to [out=45,in=210] (0,-0.3);
+		\draw  (315:1) to [out=135,in=330] (0,-0.3);
+		\draw  (0,0.3) -- (0,-0.3);
+	\end{tikzpicture}
+}
+
+\def\Hcirc{
+	\begin{tikzpicture}[bwwcircle]
+		\draw  (45:1) to [out=225,in=60] (0.3,0);
+		\draw  (135:1) to [out=315,in=120] (-0.3,0);
+		\draw  (225:1) to [out=45,in=240] (-0.3,0);
+		\draw  (315:1) to [out=135,in=300] (0.3,0);
+		\draw  (0.3,0) -- (-0.3,0);
+	\end{tikzpicture}
+}
+
+\def\squarecirc{
+	\begin{tikzpicture}[bwwcircle]
+		\draw  (45:0.5) -- (45:1);
+		\draw  (135:0.5) -- (135:1);
+		\draw  (225:0.5) -- (225:1);
+		\draw  (315:0.5) -- (315:1);
+		\draw  (45:0.5) to [out=165,in=15] (135:0.5);
+		\draw  (135:0.5) to [out=255,in=105] (225:0.5);
+		\draw  (225:0.5) to[out=345,in=195] (315:0.5);
+		\draw  (315:0.5) to [out=75,in=285] (45:0.5);
+	\end{tikzpicture}
+}
+
+\def\twosquare{
+	\begin{tikzpicture}[bwwcircle]
+		\def\x{0.3}
+		\coordinate (A) at (0,\x) {};
+		\coordinate (B) at (0,-\x) {};
+		\draw  (45:0.5) -- (45:1);
+		\draw  (135:0.5) -- (135:1);
+		\draw  (225:0.5) -- (225:1);
+		\draw  (315:0.5) -- (315:1);
+		\draw  (45:0.5) -- (A) -- (135:0.5);
+		\draw  (135:0.5) -- (225:0.5);
+		\draw  (225:0.5) -- (B) -- (315:0.5);
+		\draw  (315:0.5) -- (45:0.5);
+		\draw (A) -- (B);
+	\end{tikzpicture}
+}
+
+\def\Xpos{
+	\begin{tikzpicture}[bwwcircle]
+		\posdot{0,0}; %Not defined
+		\draw (45:1) -- (225:1);
+		\draw	(135:1) -- (315:1);
+	\end{tikzpicture}
+}
+
+\def\Acirc{
+	\begin{tikzpicture}[bwwcircle]
+		\draw (45:1) to [out=225,in=105] (225:0.5);
+		\draw (135:1) to [out=315,in=75] (315:0.5);
+		\draw (225:0.5) to [out=345,in=195] (315:0.5);
+		\draw (225:0.5) -- (225:1);
+		\draw (315:0.5) -- (315:1);
+	\end{tikzpicture}
+}
+
+%------------- Directed --------------------
+
+\def\source{
+	\begin{tikzpicture}[bwwcircle]
+		\draw[mid arrow] (0,0) -- (270:1);
+		\draw[mid arrow] (0,0) -- (30:1);
+		\draw[mid arrow] (0,0) -- (150:1);
+	\end{tikzpicture}
+}
+
+\def\sink{
+	\begin{tikzpicture}[bwwcircle]
+		\draw[mid arrow] (270:1) -- (0,0);
+		\draw[mid arrow] (30:1) -- (0,0);
+		\draw[mid arrow] (150:1) -- (0,0);
+	\end{tikzpicture}
+}
+
+\def\circledir{
+	\begin{tikzpicture}[bwwcircle]
+		\draw[mid arrow]  (0,0) circle [radius=0.5];		
+	\end{tikzpicture}
+}
+
+\def\bigondir{
+	\begin{tikzpicture}[bwwcircle]
+	\draw[mid arrow]  (0,0.5) to [out=210, in=90] (-0.4,0) to [out=270, in=150] (0,-0.5);
+	\draw[mid arrow]  (0,0.5) to [out=330, in=90] (0.4,0) to [out=270, in=30](0,-0.5);
+	\draw[mid arrow]  (0,0.5) -- (0,1);
+	\draw[mid arrow]  (0,-1) -- (0,-0.5);
+\end{tikzpicture}
+}
+
+\def\linedir{
+\begin{tikzpicture}[bwwcircle]
+	\draw[mid arrow]  (0,-1) -- (0,1);
+\end{tikzpicture}
+}
+
+\def\squaredir{
+	\begin{tikzpicture}[bwwcircle]
+		\draw[mid arrow]  (45:1) -- (45:0.5);
+		\draw[mid arrow]  (135:0.5) -- (135:1);
+		\draw[mid arrow]  (225:1) -- (225:0.5);
+		\draw[mid arrow]  (315:0.5) -- (315:1);
+		\draw[mid arrow]  (135:0.5) -- (45:0.5); %to [out=165,in=15] (135:0.5);
+		\draw[mid arrow]  (135:0.5) to [out=255,in=105] (225:0.5);
+		\draw[mid arrow]  (315:0.5) -- (225:0.5); %to[out=345,in=195] (315:0.5);
+		\draw[mid arrow]  (315:0.5) to [out=75,in=285] (45:0.5);
+	\end{tikzpicture}
+}
+
+\def\Adir{
+	\begin{tikzpicture}[bwwcircle]
+		\draw[mid arrow] (45:1) to [out=225,in=105] (225:0.5);
+		\draw[mid arrow] (315:0.5) to [out=60,in=315] (135:1); %(135:1) to [out=315,in=75] (315:0.5);
+		\draw[mid arrow] (315:0.5) -- (225:0.5); %(225:0.5) to [out=345,in=195] (315:0.5);
+		\draw[mid arrow] (225:1) -- (225:0.5);
+		\draw[mid arrow] (315:0.5) -- (315:1);
+	\end{tikzpicture}
+}
+
+\def\Idir{
+	\begin{tikzpicture}[bwwcircle]
+		\draw[mid arrow]  (45:1) to [out=225,in=135] (315:1);
+		\draw[mid arrow]  (225:1) to [out=45,in=315] (135:1);
+	\end{tikzpicture}
+}
+
+\def\Udir{
+	\begin{tikzpicture}[bwwcircle]
+		\draw[mid arrow]  (45:1) to [out=225,in=315] (135:1);
+		\draw[mid arrow]  (225:1) to [out=45,in=135] (315:1);
+	\end{tikzpicture}
+}
+
+\def\Wa{
+	\begin{tikzpicture}[bwwcircle]
+		\coordinate (b0) at (90:1);
+		\coordinate (b1) at (215:1);
+		\coordinate (b2) at (255:1);
+		\coordinate (b3) at (285:1);
+		\coordinate (b4) at (325:1);
+		\coordinate (v0) at (90:0.5);
+		\coordinate (v1) at (-0.4,0);
+		\coordinate (v2) at (0.4,0);
+		\draw[mid arrow] (b0) -- (v0);
+		\draw[mid arrow] (v0) -- (v1);
+		\draw[mid arrow] (v0) -- (v2);
+		\draw[mid arrow] (v1) -- (b1);
+		\draw[mid arrow] (v1) -- (b2);
+		\draw[mid arrow] (v2) -- (b3);
+		\draw[mid arrow] (v2) -- (b4);
+	\end{tikzpicture}
+}
+
+\def\Wb{
+	\begin{tikzpicture}[bwwcircle]
+		\coordinate (b0) at (90:1);
+		\coordinate (b1) at (215:1);
+		\coordinate (b2) at (255:1);
+		\coordinate (b3) at (285:1);
+		\coordinate (b4) at (325:1);
+		\coordinate (v0) at (90:0.5);
+		\coordinate (v1) at (-0.4,0);
+		\coordinate (v2) at (0.4,0);
+		\draw[mid arrow] (b0) -- (v0);
+		\draw[mid arrow] (v0) -- (v1);
+		\draw[mid arrow] (v0) -- (v2);
+		\draw[mid arrow] (v1) -- (b1);
+		\draw[mid arrow] (v1) -- (b3);
+		\draw[mid arrow] (v2) -- (b2);
+		\draw[mid arrow] (v2) -- (b4);
+	\end{tikzpicture}
+}
+
+\def\Wc{
+	\begin{tikzpicture}[bwwcircle]
+		\coordinate (b0) at (90:1);
+		\coordinate (b1) at (215:1);
+		\coordinate (b2) at (255:1);
+		\coordinate (b3) at (285:1);
+		\coordinate (b4) at (325:1);
+		\coordinate (v0) at (90:0.5);
+		\coordinate (v1) at (-0.4,0);
+		\coordinate (v2) at (0.4,0);
+		\draw[mid arrow] (b0) -- (v0);
+		\draw[mid arrow] (v0) -- (v1);
+		\draw[mid arrow] (v0) -- (v2);
+		\draw[mid arrow] (v1) -- (b1);
+		\draw[mid arrow] (v1) -- (b4);
+		\draw[mid arrow] (v2) -- (b2);
+		\draw[mid arrow] (v2) -- (b3);
+	\end{tikzpicture}
+}
+
+\def\Vu{
+	\begin{tikzpicture}[bwwcircle]
+		\coordinate (b0) at (90:1);
+		\coordinate (b1) at (215:1);
+		\coordinate (b2) at (255:1);
+		\coordinate (b3) at (285:1);
+		\coordinate (b4) at (325:1);
+		\coordinate (v0) at (90:0.5);
+		\draw[mid arrow] (b0) -- (b1);
+		\draw[mid arrow] (v0) -- (b2);
+		\draw[mid arrow] (v0) -- (b3);
+		\draw[mid arrow] (v0) -- (b4);
+	\end{tikzpicture}
+}
+
+\def\Vv{
+	\begin{tikzpicture}[bwwcircle]
+		\coordinate (b0) at (90:1);
+		\coordinate (b1) at (215:1);
+		\coordinate (b2) at (255:1);
+		\coordinate (b3) at (285:1);
+		\coordinate (b4) at (325:1);
+		\coordinate (v0) at (90:0.5);
+		\draw[mid arrow] (b0) -- (b2);
+		\draw[mid arrow] (v0) -- (b1);
+		\draw[mid arrow] (v0) -- (b3);
+		\draw[mid arrow] (v0) -- (b4);
+	\end{tikzpicture}
+}
+
+\def\Vw{
+	\begin{tikzpicture}[bwwcircle]
+		\coordinate (b0) at (90:1);
+		\coordinate (b1) at (215:1);
+		\coordinate (b2) at (255:1);
+		\coordinate (b3) at (285:1);
+		\coordinate (b4) at (325:1);
+		\coordinate (v0) at (90:0.5);
+		\draw[mid arrow] (b0) -- (b3);
+		\draw[mid arrow] (v0) -- (b1);
+		\draw[mid arrow] (v0) -- (b2);
+		\draw[mid arrow] (v0) -- (b4);
+	\end{tikzpicture}
+}
+
+\def\Vx{
+	\begin{tikzpicture}[bwwcircle]
+		\coordinate (b0) at (90:1);
+		\coordinate (b1) at (215:1);
+		\coordinate (b2) at (255:1);
+		\coordinate (b3) at (285:1);
+		\coordinate (b4) at (325:1);
+		\coordinate (v0) at (90:0.5);
+		\draw[mid arrow] (b0) -- (b4);
+		\draw[mid arrow] (v0) -- (b1);
+		\draw[mid arrow] (v0) -- (b2);
+		\draw[mid arrow] (v0) -- (b3);
+	\end{tikzpicture}
+}
+
+
+
+
+%------------- Redundant --------------------
+
+
+\def\leftover{
+	\begin{tikzpicture}[bwwcircle,rotate=90]
+		\draw (45:1) to [out=225,in=105] (225:0.5);
+		\draw [wipe] (135:1) to [out=315,in=75] (315:0.5);
+		\draw (225:0.5) to [out=345,in=195] (315:0.5);
+		\draw (225:0.5) -- (225:1);
+		\draw (315:0.5) -- (315:1);
+	\end{tikzpicture}
+}
+
+\def\botover{
+	\begin{tikzpicture}[bwwcircle,rotate=180]
+		\draw (45:1) to [out=225,in=105] (225:0.5);
+		\draw [wipe] (135:1) to [out=315,in=75] (315:0.5);
+		\draw (225:0.5) to [out=345,in=195] (315:0.5);
+		\draw (225:0.5) -- (225:1);
+		\draw (315:0.5) -- (315:1);
+	\end{tikzpicture}
+}
+
+\def\rightover{
+	\begin{tikzpicture}[bwwcircle,rotate=270]
+		\draw  (45:1) to [out=225,in=105] (225:0.5);
+		\draw [wipe] (135:1) to [out=315,in=75] (315:0.5);
+		\draw  (225:0.5) to [out=345,in=195] (315:0.5);
+		\draw  (225:0.5) -- (225:1);
+		\draw  (315:0.5) -- (315:1);
+	\end{tikzpicture}
+}
+
+\def\topoverbar{
+	\begin{tikzpicture}[bwwcircle,rotate=180,xscale=-1]
+		\draw (45:1) to [out=225,in=105] (225:0.5);
+		\draw [wipe] (135:1) to [out=315,in=75] (315:0.5);
+		\draw (225:0.5) to [out=345,in=195] (315:0.5);
+		\draw (225:0.5) -- (225:1);
+		\draw (315:0.5) -- (315:1);
+	\end{tikzpicture}
+}
+
+\def\pentagon{
+	\begin{tikzpicture}[bwwcircle]
+		\def\x{0.5}
+		\draw (0:1) -- (0:\x) (72:1) -- (72:\x) (144:1) -- (144:\x) (216:1) -- (216:\x) (288:1) -- (288:\x);
+		\draw  (0:\x) -- (72:\x) -- (144:\x) -- (216:\x) -- (288:\x) -- cycle; 
+	\end{tikzpicture}
+}
+
+\def\tree#1{
+	\begin{tikzpicture}[bwwcircle,rotate={#1}]
+		\def\x{0.25}
+		\coordinate (A) at (-\x+0.1,\x) {};
+		\coordinate (B) at (\x+0.1,0) {};
+		\coordinate (C) at (-\x+0.1,-\x) {};
+		\draw (A) -- (B) -- (C);
+		\draw (0:1) -- (B) (72:1) -- (A) (144:1) -- (A) (216:1) -- (C) (288:1) -- (C);
+	\end{tikzpicture}
+}
+
+\def\fivesq#1{
+	\begin{tikzpicture}[bwwcircle,rotate={#1}]
+		\def\x{0.35}
+		\coordinate (A) at (-0.5,0) {};
+		\coordinate (N) at (\x,\x) {};
+		\coordinate (S) at (\x,-\x) {};
+		\coordinate (E) at (2*\x,0) {};
+		\coordinate (W) at (0,0) {};
+		\draw (N) -- (E) -- (S) -- (W) -- cycle;
+		\draw (A) -- (W) (A) -- (144:1) (A) -- (216:1);
+		\draw (0:1) -- (E) (72:1) -- (N) (288:1) -- (S);
+	\end{tikzpicture}
+}
+
+\def\twothree#1{
+	\begin{tikzpicture}[bwwcircle,rotate={#1}]
+		\coordinate (A) at (0:0.1) {};
+		\draw (144:1) to[out=324,in=36] (216:1);
+		\draw (0:1) to[out=180,in=0] (A) (72:1) to[out=252,in=120] (A) (288:1) to[out=108,in=240] (A);
+	\end{tikzpicture}
+}
+
+%%% Local Variables:
+%%% TeX-master: "f4_closed.tex"
+%%% End:
