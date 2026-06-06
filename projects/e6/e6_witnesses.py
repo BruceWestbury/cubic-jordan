@@ -1,11 +1,22 @@
 """
 e6_witnesses.py
 
-E6 obstruction witnesses at t=22.
+E6 obstruction witnesses and V2 source-reduction certificates.
 
-A witness is a source site at which the seven-term relation, after reduction
-and full evaluation, leaves a nonzero scalar — a rational multiple of the
-known E6 obstruction polynomial.
+Two public APIs are provided:
+
+``e6_t22_witnesses(closed_eval)``
+    Compute obstruction witnesses at t=22 (pure mathematical result;
+    no certificates are written).
+
+``write_e6_source_certificate(source_record, out_path)``
+    Write a V2 source-reduction certificate for one E6 source using the
+    same V2 machinery as F4.
+
+``write_e6_source_certificates_at_t(t, out_dir, closed_eval)``
+    Write one V2 certificate per source at level *t*.
+
+The old V1 ``e6_witness_cache`` format is no longer written.
 
 Obstruction polynomial (degree 12, Thurston 2004):
     (nn-27)(nn-15)(nn-9)(nn-6)(nn-3)^2(nn-1)nn^2(nn+1)(nn+3)^2
@@ -19,16 +30,10 @@ from pathlib import Path
 from sage.all import QQ
 
 from projects.export.provenance_sources import e6_source_records
-from projects.export.rendering import dot_to_svg
 
 
 def _project_root(project: str) -> Path:
-    # __file__ is projects/{project}/e6_witnesses.py; parents[1] = projects/
     return Path(__file__).resolve().parents[1] / project
-
-
-def _witness_cache_path(project: str, t: int) -> Path:
-    return _project_root(project) / "cache" / f"witnesses_t{int(t)}.json"
 
 
 def _closed_keys(t: int) -> set:
@@ -43,19 +48,22 @@ def _closed_keys(t: int) -> set:
     return keys
 
 
+# ---------------------------------------------------------------------------
+# Obstruction-witness computation  (mathematical result, no I/O)
+# ---------------------------------------------------------------------------
+
+
 def e6_t22_witnesses(closed_eval: dict | None = None) -> list[dict]:
     """
-    Compute E6 obstruction witnesses at t=22.
+    Return obstruction witnesses at t=22.
 
-    Returns a list of witness records, one per source site whose fully
-    evaluated relation is a nonzero rational multiple of the obstruction
-    polynomial.
+    Each record identifies a source whose fully-evaluated relation is a
+    non-zero rational multiple of the known E6 obstruction polynomial.
 
     Parameters
     ----------
     closed_eval :
-        Pre-computed evaluation dict from compute_all_e6_evaluations().
-        Computed internally if not provided.
+        Pre-computed evaluation dict.  Computed internally if not provided.
     """
     from projects.common.closed_pipeline import (
         closed_partially_evaluated_relations,
@@ -103,47 +111,25 @@ def e6_t22_witnesses(closed_eval: dict | None = None) -> list[dict]:
         * (nn + 3) ** 2
     )
 
-    source_records = list(e6_source_records(22))
-
-    if len(source_records) != len(collected22):
+    source_recs = list(e6_source_records(22))
+    if len(source_recs) != len(collected22):
         raise ValueError(
-            f"source record count ({len(source_records)}) does not match "
+            f"source record count ({len(source_recs)}) does not match "
             f"relation count ({len(collected22)}) — order matching would be wrong"
         )
 
     witnesses = []
-
-    for i, (d, source_record) in enumerate(zip(collected22, source_records)):
+    for i, (d, sr) in enumerate(zip(collected22, source_recs)):
         scalar, unknowns = fully_evaluate_relation_dict(d, known22)
-
         if unknowns or scalar == 0:
             continue
-
         multiplier = scalar / normalised_obstruction
-
         if multiplier not in QQ:
             raise ValueError(f"non-rational multiplier at index {i}: {multiplier}")
-
-        if source_record.dot is None:
-            raise ValueError(
-                f"source_record.dot is None for source {source_record.source_key}"
-            )
-
         witnesses.append(
             {
                 "index": i,
-                "source_key": source_record.source_key,
-                "site": list(source_record.site),
-                "source_dot": source_record.dot,
-                "source_svg": dot_to_svg(source_record.dot),
-                "constructions": [
-                    {
-                        "closed_key": c.closed_key,
-                        "operation": c.operation,
-                        "closed_class": c.closed_class,
-                    }
-                    for c in source_record.constructions
-                ],
+                "source_key": sr.source_key,
                 "raw_witness": str(scalar),
                 "factorisation": str(scalar.factor()),
                 "normalised_obstruction": str(normalised_obstruction),
@@ -151,41 +137,90 @@ def e6_t22_witnesses(closed_eval: dict | None = None) -> list[dict]:
             }
         )
 
-    witnesses.sort(key=lambda r: r["index"])
-
-    for display_index, witness in enumerate(witnesses):
-        witness["display_index"] = display_index
+    for display_index, w in enumerate(witnesses):
+        w["display_index"] = display_index
 
     return witnesses
 
 
-def write_e6_t22_witness_cache(closed_eval: dict | None = None) -> Path:
+# ---------------------------------------------------------------------------
+# V2 source-reduction certificates
+# ---------------------------------------------------------------------------
+
+
+def write_e6_source_certificate(source_record, out_path: Path) -> Path:
     """
-    Compute and write the E6 t=22 obstruction witness cache.
+    Write a V2 source-reduction certificate for one E6 source.
+
+    Delegates entirely to ``make_source_certificate_v2`` from
+    ``trivalent-graphs/src/certificates/``.  The E6 source has a
+    5-valent vertex; the generalised V2 machinery handles any site width.
 
     Parameters
     ----------
-    closed_eval :
-        Pre-computed evaluation dict. Computed internally if not provided.
+    source_record :
+        A ``SourceRecord`` from ``e6_source_records(t)``.
+        Must have ``.graph`` (DartGraph, 5 boundary darts) and
+        ``.site`` (5-tuple of boundary dart labels).
+    out_path :
+        Destination file.
+
+    Returns
+    -------
+    Path
+        The path of the written JSON file.
     """
-    witnesses = e6_t22_witnesses(closed_eval)
+    from certificates.source_certificate import make_source_certificate_v2
 
-    doc = {
-        "format": "e6_witness_cache",
-        "version": 1,
-        "project": "e6",
-        "t": 22,
-        "count": len(witnesses),
-        "obstruction_polynomial": (
-            "(nn-27)(nn-15)(nn-9)(nn-6)(nn-3)^2(nn-1)nn^2(nn+1)(nn+3)^2"
-        ),
-        "records": witnesses,
-    }
+    from projects.e6.e6_series import E6_series_quotient, seven_term
 
-    path = _witness_cache_path("e6", 22)
-    path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(
-        json.dumps(doc, indent=2, sort_keys=True) + "\n",
+    cert = make_source_certificate_v2(
+        source_record,
+        seven_term(),
+        E6_series_quotient,
+        relation_name="e6_seven_term",
+    )
+    cert["source_key"] = source_record.source_key
+
+    out_path = Path(out_path)
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    out_path.write_text(
+        json.dumps(cert, indent=2) + "\n",
         encoding="utf-8",
     )
-    return path
+    return out_path
+
+
+def write_e6_source_certificates_at_t(
+    t: int,
+    out_dir: Path | None = None,
+) -> list[Path]:
+    """
+    Write one V2 source-reduction certificate per source at level *t*.
+
+    Files are named ``sources_{i:04d}.json`` (0-indexed), matching the
+    convention used by ``projects/e6/certificates/generate.py``.
+
+    Parameters
+    ----------
+    t :
+        Vertex count (14, 16, 18, 20, or 22).
+    out_dir :
+        Directory to write into.  Defaults to
+        ``projects/e6/certificates/t{t}/``.
+
+    Returns
+    -------
+    list[Path]
+        Paths of all written certificate files.
+    """
+    if out_dir is None:
+        out_dir = Path(__file__).resolve().parent / "certificates" / f"t{t}"
+    out_dir = Path(out_dir)
+
+    paths = []
+    for i, sr in enumerate(e6_source_records(t)):
+        path = write_e6_source_certificate(sr, out_dir / f"sources_{i:04d}.json")
+        print(f"  t={t} [{i:04d}] {sr.source_key!r} → {path.name}")
+        paths.append(path)
+    return paths
