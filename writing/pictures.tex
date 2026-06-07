@@ -150,6 +150,129 @@
 	\end{tikzpicture}
 }
 
+
+\def\overlaptwotwo{
+	\begin{tikzpicture}[bwwcircle]
+		\coordinate (A) at (0,0.5);
+		\coordinate (B) at (0,-0.5);
+		\draw (A) -- (B);
+		\draw (A) to[out=150,in=90] (-0.5,0) to [out=270,in=210] (B);
+		\draw (A) to[out=30,in=90] (0.5,0) to [out=270,in=330] (B);
+	\end{tikzpicture}
+}
+
+\def\overlaptwothree{
+	\begin{tikzpicture}[bwwcircle]
+		\coordinate (A) at (120:0.5);
+		\coordinate (B) at (240:0.5);
+		\coordinate (C) at (0:0.5);
+		\draw (A) to[out=90,in=120] (C);
+		\draw (B) to[out=270,in=240] (C);
+		\draw (C) -- (0:1);
+		\draw (A) to[out=330,in=30] (B);
+		\draw (A) to[out=210,in=120] (B);
+	\end{tikzpicture}
+}
+
+\def\overlaptwofour{
+	\begin{tikzpicture}[bwwcircle]
+		\coordinate (A) at (45:0.5);
+		\coordinate (B) at (135:0.5);
+		\coordinate (C) at (225:0.5);
+		\coordinate (D) at (315:0.5);
+		\draw (A) -- (45:1);
+		\draw (D) -- (315:1);
+		\draw (A) -- (B);
+		\draw (B) to[out=330,in=30] (C);
+		\draw (B) to[out=210,in=120] (C);
+		\draw (C) -- (D) -- (A);
+	\end{tikzpicture}
+}
+
+\def\overlapthreethree{
+	\begin{tikzpicture}[bwwcircle]
+		\coordinate (A) at (0:0.5);
+		\coordinate (B) at (90:0.5);
+		\coordinate (C) at (180:0.5);
+		\coordinate (D) at (270:0.5);
+		\draw (A) -- (B) -- (C) -- (D) -- cycle;
+		\draw (A) -- (1,0) (B) -- (D) (C) -- (-1,0);
+	\end{tikzpicture}
+}
+
+
+\def\overlapthreefour{
+	\begin{tikzpicture}[bwwcircle]
+		\coordinate (A) at (0:0.5);
+		\coordinate (B) at (72:0.5);
+		\coordinate (C) at (144:0.5);
+		\coordinate (D) at (216:0.5);
+		\coordinate (E) at (288:0.5);
+		\draw (A) -- (B) -- (C) -- (D) -- (E) -- cycle;
+		\draw (A) -- (1,0) (B) -- (E) (C) -- (120:1) (D) -- (240:1);
+	\end{tikzpicture}
+}
+
+\def\overlapfourfour{
+	\begin{tikzpicture}[bwwcircle]
+		\coordinate (A) at (30:0.5);
+		\coordinate (B) at (90:0.5);
+		\coordinate (C) at (150:0.5);
+		\coordinate (D) at (210:0.5);
+		\coordinate (E) at (270:0.5);
+		\coordinate (F) at (330:0.5);
+		\draw (A) -- (B) -- (C) -- (D) -- (E) -- (F) -- cycle;
+		\draw (B) -- (E) (A) -- (45:1) (C) -- (135:1) (D) -- (225:1) (F) -- (315:1);
+	\end{tikzpicture}
+}
+
+\def\overlaptwotwoA{
+	\begin{tikzpicture}[bwwcircle]
+		\coordinate (A) at (0,0.5);
+		\coordinate (B) at (0,-0.5);
+		\draw (A) -- (B) (0,0) -- (1,0);
+		\draw (A) to[out=150,in=90] (-0.5,0) to [out=270,in=210] (B);
+		\draw (A) to[out=30,in=90] (0.5,0) to [out=270,in=330] (B);
+	\end{tikzpicture}
+}
+
+\def\overlaptwothreeA{
+	\begin{tikzpicture}[bwwcircle]
+		\coordinate (A) at (120:0.5);
+		\coordinate (B) at (240:0.5);
+		\coordinate (C) at (0:0.5);
+		\draw (A) to[out=90,in=120] (C);
+		\draw (B) to[out=270,in=240] (C);
+		\draw (C) -- (0:1);
+		\draw (A) to[out=210,in=120] (B);
+		\draw (A) to[out=210,in=90] (0,0) to[out=270,in=120] (B);
+		\draw (0,0) -- (-1,0);
+	\end{tikzpicture}
+}
+
+\def\overlapthreethreeA{
+	\begin{tikzpicture}[bwwcircle]
+		\coordinate (A) at (0:0.5);
+		\coordinate (B) at (90:0.5);
+		\coordinate (C) at (180:0.5);
+		\coordinate (D) at (270:0.5);
+		\draw (A) -- (B) -- (C) -- (D) -- cycle;
+		\draw (A) -- (1,0) (B) -- (D) (C) -- (-1,0) (0,0) -- (45:1);
+	\end{tikzpicture}
+}
+
+\def\overlaptwotwoB{
+	\begin{tikzpicture}[bwwcircle]
+		\coordinate (A) at (0,0.5);
+		\coordinate (B) at (0,-0.5);
+		\draw (A) -- (B);
+		\draw (A) to[out=150,in=90] (-0.5,0) to [out=270,in=210] (B);
+		\draw (A) to[out=30,in=90] (0.5,0) to [out=270,in=330] (B);
+		\draw (0,0.2) -- (45:1) (0,-0.2) -- (215:1);
+	\end{tikzpicture}
+}
+
+
 %------------- Directed --------------------
 
 \def\source{

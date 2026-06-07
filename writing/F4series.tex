@@ -496,6 +496,13 @@ A graph is \Dfn{irreducible} if and only if it has girth at least five. This mea
 of graphs has a normal form which is a linear combination of graphs of girth at least five. This includes graphs
 with no cycle.
 
+\begin{figure}[h]
+	\[ \overlaptwotwo \quad \overlaptwothree \quad \overlaptwofour %
+	\quad \overlapthreethree \quad \overlapthreefour \]
+	\[ \overlapfourfour \quad \overlapthreethreeA \quad \overlaptwotwoB \]
+	\caption{Overlaps}\label{fig:overlapsf4}
+\end{figure}
+
 \subsection{Closed graphs}
 In this section we evaluate connected trivalent graphs. Let $G$ be a trivalent graph. An \Dfn{evaluation} of $G$ is a relation of the form $G=p_G(\nn)\,[]$ where $p_G(\nn)\in \bQ[\nn]$ and $[]$ is the empty graph.
 We refer to $p_G(\nn)$ as the evaluation. For example, the evaluation of the loop is $\nn$.
@@ -525,8 +532,7 @@ relation is the evaluation of the Petersen graph.
 \end{ex}
 
 We implemented this procedure and applied it for $t=10,12,14,16$.
-For the numbers of connected trivalent graphs of girth at least five with $t$ vertices see \oeis{A014372}.
-See Table~\ref{table:f4}.
+The number of trivalent graphs of girth at least five and the number of sources is shown in Table~\ref{table:f4}. For more terms in the first sequence see \oeis{A014372}.
 
 \begin{table}[h]
 \begin{equation*}
@@ -547,7 +553,6 @@ evaluations in the remaining relations gave 0. However for $t=16$ there were 145
 was non-zero. For all sources which gave a non-zero polynomial the polynomial was of the form
 \[ \pm \frac{3^r}{2^s} (\nn - 26) (\nn - 14) (\nn - 8) (\nn - 5)(\nn - 2)^2 \nn (\nn + 1) (\nn + 2) \]
 where $r,s$ are positive integers.
-
 
 %-------------------------------------------------
 \section{Structure algebras}
@@ -590,6 +595,12 @@ The projection to the adjoint representation is
 The dimension of the adjoint representation is
 \[ \frac{4\nn(\nn-1)}{(\nn+9)} \]
 
+\begin{figure}[h]
+	\[ \overlaptwotwo \quad \overlaptwofour \quad 
+	\overlapfourfour \quad \overlapthreethreeA \quad \overlaptwotwoB \]
+	\caption{Overlaps}\label{fig:overlapse6}
+\end{figure}
+
 \subsection{Closed graphs}
 In this section we evaluate connected trivalent bipartite graphs. Let $G$ be a trivalent bipartite graph. An \Dfn{evaluation} of $G$ is a relation of the form $G=p_G(\nn)\,[]$ where $p_G(\nn)\in \bQ[\nn]$ and $[]$ is the empty graph.
 We refer to $p_G(\nn)$ as the evaluation. For example, the evaluation of the loop is $\nn$.
@@ -618,7 +629,9 @@ a linear combination of connected trivalent bipartite graphs of girth at least s
 	relation is the evaluation of the Heawood graph.
 \end{ex}
 
-We implemented this procedure and applied it for $t=14,16,18,20,22$. See Table~\ref{table:e6}.
+We implemented this procedure and applied it for $t=14,16,18,20,22$. The number of trivalent bipartite
+graphs and the number of sources is shown in Table~\ref{table:e6}. For more terms in the
+first sequence see \oeis{A260811}.
 \begin{table}[h]
 	\begin{equation*}
 		\begin{array}{rrrrr}
