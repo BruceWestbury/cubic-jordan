@@ -35,6 +35,9 @@ a pure module-boundary refactor.
 
 from __future__ import annotations
 
+import json
+from pathlib import Path
+
 from algebra.linear_comb import Graphs
 from certificates.json_linear_combination import linear_combination_to_json
 from certificates.json_polynomial import polynomial_to_json
@@ -45,6 +48,8 @@ from certificates.source_certificate import (
     reduce_with_certificate_v2,
 )
 from sage.graphs.graph import Graph as _SageGraph
+
+from projects.export.provenance_sources import f4_source_records
 
 # ---------------------------------------------------------------------------
 # Closed source graph reconstruction  (FourValentSource → raw closed graph)
@@ -380,3 +385,85 @@ def make_f4_source_certificate_v2(
         "initial": initial_lc,
         "steps": [first_step] + remaining_steps,
     }
+
+
+# ---------------------------------------------------------------------------
+# V2 source-reduction certificates
+# ---------------------------------------------------------------------------
+
+
+def write_f4_source_certificate(source_record, out_path: Path) -> Path:
+    """
+    Write a V2 source-reduction certificate for one F4 source.
+
+    Delegates entirely to ``make_f4_source_certificate_v2`` from
+    ``cubic-jordan/projects/f4/``.  The F4 source has a
+    4-valent vertex; the generalised V2 machinery handles any site width.
+
+    Parameters
+    ----------
+    source_record :
+        A ``SourceRecord`` from ``f4_source_records(t)``.
+        Must have ``.graph`` (DartGraph, 4 boundary darts) and
+        ``.site`` (4-tuple of boundary dart labels).
+    out_path :
+        Destination file.
+
+    Returns
+    -------
+    Path
+        The path of the written JSON file.
+    """
+    from projects.f4.f4_series import F4_series_quotient, six_term
+    from projects.f4.f4_source_certificates import make_f4_source_certificate_v2
+
+    cert = make_f4_source_certificate_v2(
+        source_record,
+        six_term(),
+        F4_series_quotient,
+        relation_name="f4_six_term",
+    )
+    cert["source_key"] = source_record.source_key
+
+    out_path = Path(out_path)
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    out_path.write_text(
+        json.dumps(cert, indent=2) + "\n",
+        encoding="utf-8",
+    )
+    return out_path
+
+
+def write_f4_source_certificates_at_t(
+    t: int,
+    out_dir: Path | None = None,
+) -> list[Path]:
+    """
+    Write one V2 source-reduction certificate per source at level *t*.
+
+    Files are named ``sources_{i:04d}.json`` (0-indexed), matching the
+    convention used by ``projects/f4/certificates/generate.py``.
+
+    Parameters
+    ----------
+    t :
+        Vertex count (10, 12, 14 or 16).
+    out_dir :
+        Directory to write into.  Defaults to
+        ``projects/f4/certificates/t{t}/``.
+
+    Returns
+    -------
+    list[Path]
+        Paths of all written certificate files.
+    """
+    if out_dir is None:
+        out_dir = Path(__file__).resolve().parent / "certificates" / f"t{t}"
+    out_dir = Path(out_dir)
+
+    paths = []
+    for i, sr in enumerate(f4_source_records(t)):
+        path = write_f4_source_certificate(sr, out_dir / f"sources_{i:04d}.json")
+        print(f"  t={t} [{i:04d}] {sr.source_key!r} → {path.name}")
+        paths.append(path)
+    return paths

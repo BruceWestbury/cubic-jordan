@@ -35,6 +35,9 @@ of the first step differs.
 
 from __future__ import annotations
 
+import json
+from pathlib import Path
+
 from algebra.linear_comb import Graphs
 from certificates.json_linear_combination import linear_combination_to_json
 from certificates.json_polynomial import polynomial_to_json
@@ -45,6 +48,8 @@ from certificates.source_certificate import (
     reduce_with_certificate_v2,
 )
 from sage.graphs.graph import Graph as _SageGraph
+
+from projects.export.provenance_sources import e6_source_records
 
 # ---------------------------------------------------------------------------
 # Closed source graph reconstruction  (FiveValentSource → raw closed graph)
@@ -380,3 +385,85 @@ def make_e6_source_certificate_v2(
         "initial": initial_lc,
         "steps": [first_step] + remaining_steps,
     }
+
+
+# ---------------------------------------------------------------------------
+# V2 source-reduction certificates
+# ---------------------------------------------------------------------------
+
+
+def write_e6_source_certificate(source_record, out_path: Path) -> Path:
+    """
+    Write a V2 source-reduction certificate for one E6 source.
+
+    Delegates entirely to ``make_e6_source_certificate_v2`` from
+    ``cubic-jordan/projects/e6/``.  The E6 source has a
+    5-valent vertex; the generalised V2 machinery handles any site width.
+
+    Parameters
+    ----------
+    source_record :
+        A ``SourceRecord`` from ``e6_source_records(t)``.
+        Must have ``.graph`` (DartGraph, 5 boundary darts) and
+        ``.site`` (5-tuple of boundary dart labels).
+    out_path :
+        Destination file.
+
+    Returns
+    -------
+    Path
+        The path of the written JSON file.
+    """
+    from projects.e6.e6_series import E6_series_quotient, seven_term
+    from projects.e6.e6_source_certificates import make_e6_source_certificate_v2
+
+    cert = make_e6_source_certificate_v2(
+        source_record,
+        seven_term(),
+        E6_series_quotient,
+        relation_name="e6_seven_term",
+    )
+    cert["source_key"] = source_record.source_key
+
+    out_path = Path(out_path)
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    out_path.write_text(
+        json.dumps(cert, indent=2) + "\n",
+        encoding="utf-8",
+    )
+    return out_path
+
+
+def write_e6_source_certificates_at_t(
+    t: int,
+    out_dir: Path | None = None,
+) -> list[Path]:
+    """
+    Write one V2 source-reduction certificate per source at level *t*.
+
+    Files are named ``sources_{i:04d}.json`` (0-indexed), matching the
+    convention used by ``projects/e6/certificates/generate.py``.
+
+    Parameters
+    ----------
+    t :
+        Vertex count (14, 16, 18, 20, or 22).
+    out_dir :
+        Directory to write into.  Defaults to
+        ``projects/e6/certificates/t{t}/``.
+
+    Returns
+    -------
+    list[Path]
+        Paths of all written certificate files.
+    """
+    if out_dir is None:
+        out_dir = Path(__file__).resolve().parent / "certificates" / f"t{t}"
+    out_dir = Path(out_dir)
+
+    paths = []
+    for i, sr in enumerate(e6_source_records(t)):
+        path = write_e6_source_certificate(sr, out_dir / f"sources_{i:04d}.json")
+        print(f"  t={t} [{i:04d}] {sr.source_key!r} → {path.name}")
+        paths.append(path)
+    return paths
