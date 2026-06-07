@@ -2,7 +2,7 @@
 tests/test_v2_source_certificate.py
 
 Smoke tests for the V2 source-reduction certificate produced by
-``certificates.source_certificate.make_source_certificate_v2``.
+``projects.f4.f4_source_certificates.make_f4_source_certificate_v2``.
 
 Uses the Petersen graph (the unique F4 source at t=10) as a small example.
 """
@@ -30,10 +30,10 @@ OBSOLETE_V1_KEYS = {"source", "relation", "final"}
 @pytest.fixture(scope="module")
 def petersen_v2_cert():
     """Generate the V2 certificate for the Petersen graph (cached per session)."""
-    from certificates.source_certificate import make_source_certificate_v2
     from rewriting.apply_relation import FourValentSource
 
     from projects.f4.f4_series import F4_series_quotient, six_term
+    from projects.f4.f4_source_certificates import make_f4_source_certificate_v2
     from projects.f4.f4_sources import (
         closed_cubic_girth5_graphs,
         contract_to_four_valent,
@@ -46,7 +46,7 @@ def petersen_v2_cert():
     dg, site = four_valent_graph_to_source(F)
     source = FourValentSource(graph=dg, site=site)
 
-    return make_source_certificate_v2(source, six_term(), F4_series_quotient)
+    return make_f4_source_certificate_v2(source, six_term(), F4_series_quotient)
 
 
 @pytest.mark.slow

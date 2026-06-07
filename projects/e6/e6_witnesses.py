@@ -152,8 +152,8 @@ def write_e6_source_certificate(source_record, out_path: Path) -> Path:
     """
     Write a V2 source-reduction certificate for one E6 source.
 
-    Delegates entirely to ``make_source_certificate_v2`` from
-    ``trivalent-graphs/src/certificates/``.  The E6 source has a
+    Delegates entirely to ``make_e6_source_certificate_v2`` from
+    ``cubic-jordan/projects/e6/``.  The E6 source has a
     5-valent vertex; the generalised V2 machinery handles any site width.
 
     Parameters
@@ -170,11 +170,10 @@ def write_e6_source_certificate(source_record, out_path: Path) -> Path:
     Path
         The path of the written JSON file.
     """
-    from certificates.source_certificate import make_source_certificate_v2
-
     from projects.e6.e6_series import E6_series_quotient, seven_term
+    from projects.e6.e6_source_certificates import make_e6_source_certificate_v2
 
-    cert = make_source_certificate_v2(
+    cert = make_e6_source_certificate_v2(
         source_record,
         seven_term(),
         E6_series_quotient,
