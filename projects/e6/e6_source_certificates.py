@@ -236,7 +236,7 @@ def _expand_first_step_e6(
     )
 
     for rhs_graph, rhs_coeff in relation.monomial_coefficients(copy=False).items():
-        after_ns, ds, vs, kept_d, kept_v = _surgery_raw(
+        after_ns, ds, vs, kept_d, kept_v, rhs_dart_image = _surgery_raw(
             src_darts,
             src_verts,
             dict(src_vof),
@@ -246,7 +246,7 @@ def _expand_first_step_e6(
             lhs_bnd,
         )
 
-        after_occ = RawOccurrence({d: d + ds for d in rhs_graph.darts})
+        after_occ = RawOccurrence(rhs_dart_image)
         comp_iso = ComplementIsomorphism(
             dart_map={src_dart_bij[d]: d for d in kept_d},
             vertex_map={src_vert_bij[v]: v for v in kept_v},

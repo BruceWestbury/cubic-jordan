@@ -65,7 +65,7 @@ Do not invent mathematics.
 
 ## Version 1 scope
 
-Version 1 certifies the reduction trace only.
+Version 1 certifies the reduction trace only. Version 2 keeps the same goal but records explicit replacement certificates for each step.
 
 Included:
 - initial linear combination of closed DartGraphs
@@ -78,6 +78,32 @@ Excluded:
 - verification of evaluation cache lookup
 
 Those may be added later.
+
+## Version 2 conventions
+
+Version 2 certifies the reduction trace using recorded replacement certificates.
+
+### Replacement certificate coefficients
+
+In a V2 certificate, each `replacement_certificates[i].coefficient` is the coefficient of the resulting after-term in the whole linear combination.
+
+It already includes the coefficient of the selected before-term. A validator must use this coefficient directly and must not multiply it again by the selected term coefficient.
+
+### Term selection
+
+In V2 certificates, `term_index` is not necessarily the position of the selected term in the JSON array `before.terms`.
+
+It is the index used by the Python reduction engine, where terms may be ordered by canonical graph key. Validators should identify the selected term by matching the selected graph against `replacement_certificates[0].before_graph` when replacement certificates are present.
+
+If no replacement certificates are present, the validator may fall back to detecting which before-term is absent from the after linear combination.
+
+### Term collection
+
+The `after.terms` array may already have collected equal graphs by adding their coefficients. Therefore validators should compare normalized linear combinations, not raw term lists. Normalization means:
+
+1. combine terms with equal closed graphs;
+2. remove zero-coefficient terms;
+3. compare independently of term order.
 
 Schema and Convention Audit
 
