@@ -221,3 +221,28 @@ Per-source record: `source_key` (str), `certificate` (str), `steps` (int), `rela
 | Polynomial coefficients are strings, not numbers | Parse as rational strings in all cases |
 
 Everything else is structurally identical and a single Lean reader handles both without branching.
+
+### Evaluation certificate
+
+The optional `evaluation_certificate` field records evaluation polynomials for the terms of `final`.
+
+Entries are positional: `evaluation_certificate.entries[i]` is the cached evaluation of `final.terms[i].graph`.
+
+Lean does not verify the cache lookup or canonicalisation. Python performs those steps when writing the certificate. Lean verifies only that
+
+\[
+\sum_i c_i e_i = 0
+\]
+
+where `c_i` is the coefficient of `final.terms[i]` and `e_i` is the evaluation polynomial in `entries[i]`.
+
+Schema:
+
+```json
+{
+  "evaluation_certificate": {
+    "entries": [
+      { "evaluation": { "coefficients": ["6", "0", "0", "-1"] } }
+    ]
+  }
+}
